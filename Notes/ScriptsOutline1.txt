@@ -1,0 +1,63 @@
+ResourceSpawner
+Resource
+	type
+	(health?)
+	
+Ball
+	effects
+	respawning stuff
+
+Mage
+	player name
+	player color
+	player number
+	hearts
+	resources 
+	player controller
+	max_spell_slots
+	slots  (list of Slots)
+	
+	
+PlayerController
+HumanPlayerController
+AIPlayerController
+	
+
+SpellFactory
+	handles casting spell given a spellcode
+	spellcode to Spell class dictionary
+	children are Spell instances (one of each)
+	
+Spell
+	name
+	resource cost
+	prefab references etc.
+	
+	Cast(Mage player)
+		might instantiate projectiles, do other things etc.
+	
+Projectile
+	lifetime
+	collision stuff
+
+	
+ProjectileSlot  (not a gameobject)
+	SlotProjectile  (could be null)
+	cooldown time len
+	cooldown time start
+	
+	FillSlot()
+	IsEmpty()
+	
+	
+	
+SlotProjectile
+	slot id
+	mage reference
+	
+	tells mage to remove from slot when done
+	
+	
+GameSettings
+MatchManager
+
