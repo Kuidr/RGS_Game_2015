@@ -31,6 +31,7 @@ public class MineralSpawner : MonoBehaviour
     private void SpawnMineral()
     {
         Mineral m = Instantiate<Mineral>(mineral_prefab);
+        m.transform.parent = transform;
 
         if (root_mineral == null)
         {

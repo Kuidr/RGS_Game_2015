@@ -53,11 +53,15 @@ public class Projectile : MonoBehaviour
 
     // PUBLIC ACCESSORS
 
+    public Rigidbody2D GetRigidbody()
+    {
+        return rb;
+    }
 
 
     // PRIVATE MODIFIERS
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
 		ps = GetComponent<ParticleSystem>();

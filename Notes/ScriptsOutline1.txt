@@ -17,6 +17,8 @@ Mage
 	max_spell_slots
 	slots  (list of Slots)
 	
+SpellShield
+	reflects things with projectile tag
 	
 PlayerController
 HumanPlayerController
@@ -60,4 +62,15 @@ SlotProjectile
 	
 GameSettings
 MatchManager
+
+
+PlayerUI
+	player names / character names
+	hearts
+	resources
+	current spell code typed
+	spell slots
+	
+	
+
 

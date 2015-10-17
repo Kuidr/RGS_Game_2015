@@ -47,6 +47,7 @@ public class Mage : MonoBehaviour
     {
         return projectiles;
     }
+    
 
 
     // PRIVATE MODIFIERS
@@ -84,15 +85,6 @@ public class Mage : MonoBehaviour
         Refresh();
 
         // TEST SPELL CREATION
-        InstantiateSpell("YBB", 0);
-        InstantiateSpell("XXA", 0);
-        InstantiateSpell("XYX", 0);
-        InstantiateSpell("YBB", 0);
-        InstantiateSpell("XXA", 0);
-        InstantiateSpell("XYX", 0);
-        //InstantiateSpell("xyx", 1);
-        //InstantiateSpell("xxa", 1);
-        //InstantiateSpell("xxa", 1);
 
     }
     private void Update()
