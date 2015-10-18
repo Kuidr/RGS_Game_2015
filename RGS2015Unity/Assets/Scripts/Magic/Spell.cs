@@ -17,30 +17,30 @@ public class Spell : MonoBehaviour
     private SpellManager manager;
 
     // effects
-    public List<MagicEffect> effects;
+    public List<SpellEffect> effects;
 
 
+    public void Start()
+    {
+        spellcode.ToUpper();
+    }
     public void Initialize(SpellManager manager)
     {
         this.manager = manager;
     }
     public bool Cast(Mage caster)
     {
-        Debug.Log(last_cast_time + "   " + Time.time);
         if (Time.time - last_cast_time > cooldown_time)
         {
             last_cast_time = Time.time;
 
-            foreach (MagicEffect effect in effects)
+            foreach (SpellEffect effect in effects)
             {
                 effect.Do(caster);
             }
 
             return true;
         }
-
-        Debug.Log("not cast");
-
         return false;
     }
 }

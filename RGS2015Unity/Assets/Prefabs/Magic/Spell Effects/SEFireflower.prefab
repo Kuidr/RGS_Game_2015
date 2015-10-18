@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 431704}
-  - 114: {fileID: 11457138}
+  - 114: {fileID: 11477672}
   m_Layer: 0
-  m_Name: TestMagicEffect
+  m_Name: SEFireflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11457138
+--- !u!114 &11477672
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -36,7 +36,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 169844}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c25f38fd4b13be499afd78a28bd9979, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d684375d9a6dfe4b9446ac50c348dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile_prefab: {fileID: 11474436, guid: f7bcbe89789792b4c940eb52dd6eb5b2, type: 2}

@@ -15,13 +15,10 @@ public class Mage : MonoBehaviour
     public SpriteRenderer sprite;
     public Transform floating_pos;
 
-    // Spells and control groups
-    private string[] group_names = new string[] { "A", "B" };
-    private int active_group = 0;
-    public System.Action<int> event_group_swtich;
-
-    private List<Projectile> projectiles;
-    public Projectile prefab_fireball, prefab_iceball, prefab_waterball, prefab_shieldbreaker;
+    // Spells and Projectile
+    private const int StartingManaSlots = 4;
+    private List<ManaSlot> mana_slots;
+    public SpellManager spellmanager;
     public Transform cast_point;
     public TextMesh spell_code_text;
 
@@ -31,23 +28,34 @@ public class Mage : MonoBehaviour
 
     // PUBLIC MODIFIERS
 
-    public void RemoveProjectile(Projectile p)
+    public bool ManaSlotAvailable()
     {
-        projectiles.Remove(p);
+        foreach (ManaSlot ms in mana_slots)
+        {
+            if (ms.Available()) return true;
+        }
+        return false;
+    }
+    public bool FillManaSlot(Projectile p)
+    {
+        foreach (ManaSlot ms in mana_slots)
+        {
+            if (ms.Available())
+            {
+                ms.Fill(p);
+                return true;
+            }
+        }
+        return false;
     }
 
 
     // PUBLIC ACCESSORS
 
-    public int GetActiveGroupNum()
+    public List<ManaSlot> GetManaSlots()
     {
-        return active_group;
+        return mana_slots;
     }
-    public List<Projectile> GetProjectiles()
-    {
-        return projectiles;
-    }
-    
 
 
     // PRIVATE MODIFIERS
@@ -78,7 +86,9 @@ public class Mage : MonoBehaviour
         sprite.color = player_color;
 
         // spells
-        projectiles = new List<Projectile>();
+        mana_slots = new List<ManaSlot>(StartingManaSlots);
+        for (int i = 0; i < StartingManaSlots; ++i)
+            mana_slots.Add(new ManaSlot());
     }
     private void Start()
     {
@@ -89,9 +99,10 @@ public class Mage : MonoBehaviour
     }
     private void Update()
     {
-        foreach (Projectile p in projectiles)
+        foreach (ManaSlot slot in mana_slots)
         {
-            p.UpdateMovement(pc.InputMove);
+            if (slot.GetProjectile() == null) continue;
+            slot.GetProjectile().UpdateConmtrolledMovement(pc.InputMove);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -127,41 +138,13 @@ public class Mage : MonoBehaviour
 
     private void OnCastSpell()
     {
-        InstantiateSpell(pc.InputSpellCode, active_group);
+        spellmanager.Cast(this, pc.InputSpellCode);
     }
     private void OnSpellCodeChange()
     {
         spell_code_text.text = pc.InputSpellCode;
     }
-    private void InstantiateSpell(string spell_code, int group)
-    {
-        Projectile p = null;
-        Vector2 offset = GeneralHelpers.RandomDirection2D() * 0.5f;
-        Vector2 pos = (Vector2)cast_point.position + offset;
-
-
-        switch (spell_code)
-        {
-            case "YBB":
-                p = Instantiate<Projectile>(prefab_fireball);
-                p.Initialize(this, pos);
-                break;
-            case "XYX":
-                p = Instantiate<Projectile>(prefab_iceball);
-                p.Initialize(this, pos);
-                break;
-            case "XXA":
-                p = Instantiate<Projectile>(prefab_waterball);
-                p.Initialize(this, pos);
-                break;
-            case "XXXBBB":
-                p = Instantiate<Projectile>(prefab_shieldbreaker);
-                p.Initialize(this, pos);
-                break;
-        }
-
-        if (p != null) projectiles.Add(p);
-    }
+    
 
     private IEnumerator RefreshAfterWait()
     {

@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
 {
     public ProjectileType proj_type;
     private Mage caster;
+    private ManaSlot parent_slot;
 
     // movement
 	private Rigidbody2D rb;
@@ -32,7 +33,11 @@ public class Projectile : MonoBehaviour
         marker.color = caster.player_color;
         transform.position = pos;
     }
-    public void UpdateMovement(Vector2 input_move)
+    public void SetParentManaSlot(ManaSlot slot)
+    {
+        this.parent_slot = slot;
+    }
+    public void UpdateConmtrolledMovement(Vector2 input_move)
     {
         if (exploded) return;
 
@@ -119,7 +124,7 @@ public class Projectile : MonoBehaviour
 
     private void Destroy()
     {
-        caster.RemoveProjectile(this);
+        if (parent_slot) parent_slot.Empty();
         Destroy(gameObject);
     }
 
@@ -138,7 +143,7 @@ public class Projectile : MonoBehaviour
     private void UnExplode()
     {
         rb.isKinematic = false;
-        rb.velocity = RandomDirection() * max_speed / 2f;
+        rb.velocity = GeneralHelpers.RandomDirection2D() * max_speed / 2f;
         transform.GetComponent<Collider2D>().enabled = true;
 
         ps.Play();
@@ -175,10 +180,5 @@ public class Projectile : MonoBehaviour
         return x;
     }
 
-    private Vector2 RandomDirection()
-    {
-        float angle = Random.Range(0, Mathf.PI*2f);
-        return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-    }
 
 }

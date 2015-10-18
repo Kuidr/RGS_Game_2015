@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 421770}
   - 114: {fileID: 11487414}
   m_Layer: 0
-  m_Name: TestSpell
+  m_Name: Fireflower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,15 +39,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: testspell
-  spellcode: AAA
-  cost_a: 0
-  cost_b: 2
+  name: Fireflower
+  spellcode: BBB
+  cost_a: 3
+  cost_b: 0
   cost_x: 0
-  cost_y: 1
-  cooldown_time: 5
+  cost_y: 0
+  cooldown_time: 10
   effects:
-  - {fileID: 11457138, guid: df8d388b256e57947be30fad3c03bff4, type: 2}
+  - {fileID: 11477672, guid: df8d388b256e57947be30fad3c03bff4, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -61,16 +61,33 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: name
-      value: testspell
+      value: Fireflower
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellcode
-      value: AAA
+      value: BBB
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown_time
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_a
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11477672, guid: df8d388b256e57947be30fad3c03bff4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 166254}

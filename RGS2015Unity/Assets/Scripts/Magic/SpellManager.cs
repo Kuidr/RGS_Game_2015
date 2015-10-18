@@ -7,8 +7,6 @@ public class SpellManager : MonoBehaviour
     public List<Spell> spell_prefabs;
     private Dictionary<string, Spell> spellcode_dict = new Dictionary<string, Spell>();
 
-    public Mage test_caster;
-
 
     public void Start()
     {
@@ -22,6 +20,7 @@ public class SpellManager : MonoBehaviour
     }
     public void Cast(Mage caster, string spellcode)
     {
-        spellcode_dict[spellcode].Cast(caster);
+        if (spellcode_dict.ContainsKey(spellcode))
+            spellcode_dict[spellcode].Cast(caster);
     }
 }
