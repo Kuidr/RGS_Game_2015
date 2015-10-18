@@ -146,27 +146,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[1].r
-      value: .749019623
+      value: .411764741
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[1].g
-      value: .847058892
+      value: .737254918
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[1].b
-      value: .411764741
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: colors.Array.data[2].r
-      value: .749019623
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: colors.Array.data[2].g
       value: .847058892
       objectReference: {fileID: 0}
     - target: {fileID: 0}
-      propertyPath: colors.Array.data[2].b
+      propertyPath: colors.Array.data[2].r
       value: .411764741
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colors.Array.data[2].g
+      value: .737254918
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: colors.Array.data[2].b
+      value: .847058892
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[1].a
@@ -186,15 +186,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[3].r
-      value: .749019623
+      value: .411764741
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[3].g
-      value: .847058892
+      value: .737254918
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colors.Array.data[3].b
-      value: .411764741
+      value: .847058892
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

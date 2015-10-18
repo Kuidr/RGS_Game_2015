@@ -122,6 +122,17 @@ public class Mage : MonoBehaviour
             if (slot.GetProjectile() == null) continue;
             slot.GetProjectile().UpdateConmtrolledMovement(pc.InputMove);
         }
+
+        /*
+        // Raycast test
+        for (int i = 0; i < 300; ++i)
+        {
+            float a = (i / 300f) * Mathf.PI * 2f;
+            Vector2 dir = new Vector2(Mathf.Cos(a), Mathf.Sin(a));
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, 100f);
+            Debug.DrawLine(transform.position, hit.point, Color.black);
+        }
+        */
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

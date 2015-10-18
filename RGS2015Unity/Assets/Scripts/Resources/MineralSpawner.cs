@@ -18,7 +18,7 @@ public class MineralSpawner : MonoBehaviour
         while (true)
         {
             // grow minerals
-            for (int i = 0; i < Random.Range(5, 10); ++i)
+            for (int i = 0; i < Random.Range(10, 20); ++i)
             {
                 SpawnMineral();
                 yield return new WaitForSeconds(0.1f);

@@ -18,7 +18,8 @@ public class Projectile : MonoBehaviour
 	// visual
     private ParticleSystem ps;
 	public SpriteRenderer marker;
-	
+    public BackgroundLighting back_lighting;
+
     // impact
     public Explosion explosion_obj;
     private bool exploded = false;
@@ -74,6 +75,8 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 		ps = GetComponent<ParticleSystem>();
+
+        back_lighting = FindObjectOfType<BackgroundLighting>();
     }
     private void Update()
     {
@@ -84,6 +87,11 @@ public class Projectile : MonoBehaviour
         {
             if (!explosion_obj.IsExploding()) UnExplode();
         }
+
+
+        // testing
+        Color c = proj_type == ProjectileType.Fire ? new Color(1, 0.55f, 0.05f) : new Color(0.8f, 0.95f, 1);
+        back_lighting.Light(transform.position, c * 0.2f, true);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
