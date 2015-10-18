@@ -1,53 +1,46 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190050
+--- !u!1 &134266
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 414012}
-  - 114: {fileID: 11499214}
+  - 4: {fileID: 484166}
+  - 114: {fileID: 11491670}
   m_Layer: 0
-  m_Name: SlowTime
+  m_Name: SEShieldBreaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &414012
+--- !u!4 &484166
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190050}
+  m_GameObject: {fileID: 134266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .187580854, y: .0760989562, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11499214
+--- !u!114 &11491670
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190050}
+  m_GameObject: {fileID: 134266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 882a1630b690bc84e9c262146ba42293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: SlowTime
-  spellcode: YA
-  cost_a: 1
-  cost_b: 0
-  cost_x: 1
-  cost_y: 0
-  cooldown_time: 10
-  effects:
-  - {fileID: 11479250, guid: 146a1d086f69c3b419a920bc8d8a3559, type: 2}
+  projectile_prefab: {fileID: 11487662, guid: bd87685be7624624da6cdd6420cb4aee, type: 2}
+  use_mana_slot: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -56,18 +49,15 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
-      propertyPath: effects.Array.size
+      propertyPath: projectile_prefab
+      value: 
+      objectReference: {fileID: 11487662, guid: bd87685be7624624da6cdd6420cb4aee,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: use_mana_slot
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: spellcode
-      value: YA
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: cooldown_time
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 190050}
+  m_RootGameObject: {fileID: 134266}
   m_IsPrefabParent: 1

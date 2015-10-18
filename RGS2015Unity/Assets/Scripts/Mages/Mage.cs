@@ -18,12 +18,14 @@ public class Mage : MonoBehaviour
     // Spells and Projectile
     private const int StartingManaSlots = 4;
     private List<ManaSlot> mana_slots;
+ 
     public SpellManager spellmanager;
     public Transform cast_point;
     public TextMesh spell_code_text;
 
     // State
     private bool invincible = true;
+    private bool casting_allowed = true;
 
 
     // PUBLIC MODIFIERS
@@ -32,17 +34,17 @@ public class Mage : MonoBehaviour
     {
         foreach (ManaSlot ms in mana_slots)
         {
-            if (ms.Available()) return true;
+            if (ms.IsAvailable()) return true;
         }
         return false;
     }
     public bool FillManaSlot(Projectile p)
     {
-        foreach (ManaSlot ms in mana_slots)
+        for (int i = 0; i < mana_slots.Count; ++i)
         {
-            if (ms.Available())
+            if (mana_slots[i].IsAvailable())
             {
-                ms.Fill(p);
+                mana_slots[i].Fill(p);
                 return true;
             }
         }
@@ -55,6 +57,22 @@ public class Mage : MonoBehaviour
     public List<ManaSlot> GetManaSlots()
     {
         return mana_slots;
+    }
+    public ManaSlot GetOldestFilledManaSlot()
+    {
+        ManaSlot oldest = mana_slots[0];
+        float oldest_fill_time = Time.time;
+        foreach (ManaSlot slot in mana_slots)
+        {
+            if (slot.IsAvailable()) continue;
+            if (slot.GetFillTime() < oldest_fill_time)
+            {
+                oldest_fill_time = slot.GetFillTime();
+                oldest = slot;
+            }
+        }
+
+        return oldest;
     }
 
 
@@ -131,9 +149,17 @@ public class Mage : MonoBehaviour
     private void TakeHit()
     {
         rb.gravityScale = 1;
+        casting_allowed = false;
         invincible = true;
         StopAllCoroutines();
         StartCoroutine(RefreshAfterWait());
+
+        // dispel slot projectiles
+        foreach (ManaSlot slot in mana_slots)
+        {
+            if (slot.GetProjectile() == null) continue;
+            slot.GetProjectile().Destroy(ManaSlotCooldown.Short);
+        }
     }
 
     private void OnCastSpell()
@@ -148,7 +174,7 @@ public class Mage : MonoBehaviour
 
     private IEnumerator RefreshAfterWait()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         Refresh();
     }
     private IEnumerator FlashInvincible()
@@ -188,6 +214,7 @@ public class Mage : MonoBehaviour
         t = 0;
 
         rb.gravityScale = 0;
+        casting_allowed = true;
         StartCoroutine(FlashInvincible());
 
         while (t < 1)

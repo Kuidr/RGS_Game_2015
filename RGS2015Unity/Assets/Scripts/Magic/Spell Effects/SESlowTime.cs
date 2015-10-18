@@ -21,8 +21,6 @@ public class SESlowTime : SpellEffect
             t += Time.unscaledDeltaTime / 10f;
             if (t >= 1) break;
 
-            Debug.Log(1 - Mathf.Sin(t * Mathf.PI));
-
             TimeScaleManager.Instance.AddMultiplier("SEslowtime", 1f - Mathf.Sin(t * Mathf.PI), true);
 
             yield return null;

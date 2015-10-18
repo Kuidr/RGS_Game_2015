@@ -10,7 +10,7 @@ public class Spell : MonoBehaviour
     public int cost_a, cost_b, cost_x, cost_y;
 
     // cooldown
-    public int cooldown_time; // seconds
+    public float cooldown_time; // seconds
     private float last_cast_time = -10000;
 
     // references

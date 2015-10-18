@@ -62,7 +62,11 @@ public class Projectile : MonoBehaviour
     {
         return rb;
     }
-
+    public void Destroy(ManaSlotCooldown slot_cooldown)
+    {
+        if (parent_slot != null) parent_slot.Empty(slot_cooldown);
+        Destroy(gameObject);
+    }
 
     // PRIVATE MODIFIERS
 
@@ -100,7 +104,7 @@ public class Projectile : MonoBehaviour
                 {
                     if (proj.caster != caster)
                     {
-                        this.Destroy();
+                        this.Destroy(ManaSlotCooldown.Long);
                     }
                 }
             return;
@@ -113,19 +117,13 @@ public class Projectile : MonoBehaviour
             {
                 Vector3 direction = (mage.transform.position - transform.position).normalized;
                 mage.GetComponent<Rigidbody2D>().AddForceAtPosition(direction * 40f, collision.contacts[0].point, ForceMode2D.Impulse);
-                this.Destroy();
+                this.Destroy(ManaSlotCooldown.Normal);
                 return;
             }
         }
 
         StartCoroutine(WeakenSteeringForce());
         
-    }
-
-    private void Destroy()
-    {
-        if (parent_slot) parent_slot.Empty();
-        Destroy(gameObject);
     }
 
     private void Explode()
