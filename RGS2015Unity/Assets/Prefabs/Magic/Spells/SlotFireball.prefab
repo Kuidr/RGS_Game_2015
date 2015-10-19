@@ -40,11 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  spellcode: B
-  cost_a: 0
-  cost_b: 1
-  cost_x: 0
-  cost_y: 0
+  spellcode: b
   cooldown_time: 0
   effects:
   - {fileID: 11436366, guid: 0eb3a5cb2f8476f48bc71763bda59503, type: 2}
@@ -65,7 +61,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellcode
-      value: B
+      value: b
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: effects.Array.data[0]

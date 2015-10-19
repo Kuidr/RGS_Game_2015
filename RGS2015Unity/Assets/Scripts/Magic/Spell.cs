@@ -7,7 +7,7 @@ public class Spell : MonoBehaviour
     // general
     public string name;
     public string spellcode;
-    public int cost_a, cost_b, cost_x, cost_y;
+    private int cost;
 
     // cooldown
     public float cooldown_time; // seconds
@@ -22,25 +22,40 @@ public class Spell : MonoBehaviour
 
     public void Start()
     {
-        spellcode.ToUpper();
+        cost = 0;
+        for (int i = 0; i < spellcode.Length; ++i)
+        {
+            if (char.IsUpper(spellcode[i])) cost += 5;
+            else; cost += 1;
+        }
     }
     public void Initialize(SpellManager manager)
     {
         this.manager = manager;
     }
+    /// <summary>
+    /// This will force the casting of the spell regardless of resource cost and cooldown.
+    /// </summary>
+    /// <param name="caster"></param>
+    /// <returns></returns>
     public bool Cast(Mage caster)
     {
-        if (Time.time - last_cast_time > cooldown_time)
+        last_cast_time = Time.time;
+
+        foreach (SpellEffect effect in effects)
         {
-            last_cast_time = Time.time;
-
-            foreach (SpellEffect effect in effects)
-            {
-                effect.Do(caster);
-            }
-
-            return true;
+            effect.Do(caster);
         }
-        return false;
+
+        return true;
     }
+    public bool OnCooldown()
+    {
+        return Time.time - last_cast_time < cooldown_time;
+    }
+    public int GetCost()
+    {
+        return cost;
+    }
+
 }

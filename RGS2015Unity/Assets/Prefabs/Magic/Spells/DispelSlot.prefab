@@ -40,11 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Dispel Slot
-  spellcode: Y
-  cost_a: 0
-  cost_b: 0
-  cost_x: 0
-  cost_y: 1
+  spellcode: y
   cooldown_time: .5
   effects:
   - {fileID: 11477502, guid: 4ab4d145b3161d44db85da6a38245813, type: 2}
@@ -66,6 +62,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: cooldown_time
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellcode
+      value: y
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

@@ -40,11 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
-  spellcode: X
-  cost_a: 0
-  cost_b: 0
-  cost_x: 1
-  cost_y: 0
+  spellcode: x
   cooldown_time: 0
   effects:
   - {fileID: 11405860, guid: 48e07fb8113e0d4409db360535b7c8b2, type: 2}
@@ -70,7 +66,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellcode
-      value: X
+      value: x
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

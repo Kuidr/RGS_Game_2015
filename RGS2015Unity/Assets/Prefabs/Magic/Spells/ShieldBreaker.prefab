@@ -40,11 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: SlowTime
-  spellcode: BBBXXX
-  cost_a: 0
-  cost_b: 3
-  cost_x: 3
-  cost_y: 0
+  spellcode: bbbxxx
   cooldown_time: 0
   effects:
   - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
@@ -69,7 +65,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellcode
-      value: BBBXXX
+      value: bbbxxx
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: effects.Array.data[0]

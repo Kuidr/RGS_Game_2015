@@ -40,11 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Fireflower
-  spellcode: BBB
-  cost_a: 3
-  cost_b: 0
-  cost_x: 0
-  cost_y: 0
+  spellcode: bbb
   cooldown_time: 10
   effects:
   - {fileID: 11477672, guid: df8d388b256e57947be30fad3c03bff4, type: 2}
@@ -65,7 +61,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: spellcode
-      value: BBB
+      value: bbb
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown_time

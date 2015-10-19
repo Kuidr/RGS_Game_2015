@@ -15,6 +15,10 @@ public class Mage : MonoBehaviour
     public SpriteRenderer sprite;
     public Transform floating_pos;
 
+    // Resources
+    private int resources = 10;
+
+
     // Spells and Projectile
     private const int StartingManaSlots = 4;
     private List<ManaSlot> mana_slots;
@@ -130,6 +134,11 @@ public class Mage : MonoBehaviour
         {
             TakeHit();
         }
+        if (collision.collider.CompareTag("Mineral"))
+        {
+            resources += 1;
+            Debug.Log("mage " + player_number + ": " + resources);
+        }
     }
 
     private void Refresh()
@@ -156,13 +165,18 @@ public class Mage : MonoBehaviour
     private void OnCastSpell()
     {
         if (casting_allowed)
-            spellmanager.Cast(this, pc.InputSpellCode);
+        {
+            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref resources);
+            Debug.Log("mage " + player_number + ": " + resources);
+            Debug.Log(result);
+        }
+            
     }
     private void OnSpellCodeChange()
     {
         spell_code_text.text = pc.InputSpellCode;
     }
-    
+
 
     private IEnumerator RefreshAfterWait()
     {
@@ -221,7 +235,6 @@ public class Mage : MonoBehaviour
         transform.position = floating_pos.position;
         transform.rotation = Quaternion.identity;
         rb.isKinematic = false;
-        Debug.Log("here");
     }
 
 

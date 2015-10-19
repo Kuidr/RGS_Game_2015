@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum SpellCastResult { Cast, OnCooldown, NotEnoughResources, InvalidSpellCode };
+
 public class SpellManager : MonoBehaviour
 {
     public List<Spell> spell_prefabs;
@@ -18,9 +20,22 @@ public class SpellManager : MonoBehaviour
             spellcode_dict[spell.spellcode] = spell_instance;
         }
     }
-    public void Cast(Mage caster, string spellcode)
+    public SpellCastResult TryCast(Mage caster, string spellcode, ref int resources)
     {
         if (spellcode_dict.ContainsKey(spellcode))
-            spellcode_dict[spellcode].Cast(caster);
+        {
+            Spell spell = spellcode_dict[spellcode];
+            if (spell.OnCooldown()) return SpellCastResult.OnCooldown;
+            if (spell.GetCost() > resources) return SpellCastResult.NotEnoughResources;
+
+
+            resources -= spell.GetCost();
+            spell.Cast(caster);
+            return SpellCastResult.Cast;
+        }
+        else
+        {
+            return SpellCastResult.InvalidSpellCode;
+        }
     }
 }
