@@ -155,7 +155,8 @@ public class Mage : MonoBehaviour
 
     private void OnCastSpell()
     {
-        spellmanager.Cast(this, pc.InputSpellCode);
+        if (casting_allowed)
+            spellmanager.Cast(this, pc.InputSpellCode);
     }
     private void OnSpellCodeChange()
     {

@@ -5,6 +5,7 @@ public class SpellShield : MonoBehaviour
 {
     private Circle circle;
     private float radius = 0.5f;
+    private const float Force = 5f;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class SpellShield : MonoBehaviour
         if (rb != null)
         {
             Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
-            rb.AddForce(dir * 5f, ForceMode2D.Impulse);
+            rb.AddForce(dir * Force, ForceMode2D.Impulse);
 
             StopAllCoroutines();
             StartCoroutine(ActivateShieldVisual());
