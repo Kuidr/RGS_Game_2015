@@ -46,10 +46,10 @@ public abstract class Projectile : MonoBehaviour
         ProjectileType type2 = p2.type;
 
         return p1.caster != p2.caster &&
-            type2 == ProjectileType.Fragile ||
+            (type2 == ProjectileType.Fragile ||
             type1 == ProjectileType.Fire && type2 == ProjectileType.Ice ||
             type1 == ProjectileType.Ice && type2 == ProjectileType.Water ||
-            type1 == ProjectileType.Water && type2 == ProjectileType.Fire;
+            type1 == ProjectileType.Water && type2 == ProjectileType.Fire);
     }
 
 
