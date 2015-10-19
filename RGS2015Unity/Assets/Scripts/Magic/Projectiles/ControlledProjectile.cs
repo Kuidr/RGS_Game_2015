@@ -7,6 +7,7 @@ public abstract class ControlledProjectile : Projectile
 {
     // General
     protected ManaSlot slot;
+    new private Collider2D collider;
 
     // Movement
     protected float steering_force_factor = 1;
@@ -19,6 +20,12 @@ public abstract class ControlledProjectile : Projectile
 
     public override void Initialize(Mage caster, Vector2 pos)
     {
+        foreach (ManaSlot slot in caster.GetManaSlots())
+        {
+            ControlledProjectile cp = slot.GetProjectile();
+            if (cp != null)
+                Physics2D.IgnoreCollision(collider, cp.GetCollider(), true);
+        }
         base.Initialize(caster, pos);
     }
     public void SetManaSlot(ManaSlot slot)
@@ -50,9 +57,19 @@ public abstract class ControlledProjectile : Projectile
 
     // PUBLIC ACCESSORS
 
+    public Collider2D GetCollider()
+    {
+        return collider;
+    }
+
 
     // PRIVATE / PROTECTED MODIFIERS
 
+    protected override void Awake()
+    {
+        collider = GetComponent<Collider2D>();
+        base.Awake();
+    }
     protected override void Update()
     {
         // Clip speed (in case pushed)
