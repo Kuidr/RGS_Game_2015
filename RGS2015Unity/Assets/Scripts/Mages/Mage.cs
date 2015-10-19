@@ -206,19 +206,22 @@ public class Mage : MonoBehaviour
         t = 0;
 
         rb.gravityScale = 0;
+        rb.isKinematic = true;
         casting_allowed = true;
         StartCoroutine(FlashInvincible());
 
         while (t < 1)
         {
-            t += Time.deltaTime / 15f;
-            rb.MovePosition(Vector2.Lerp(transform.position, floating_pos.position, t));
+            t += Time.deltaTime / 2f;
+            rb.MovePosition(Vector2.Lerp(transform.position, floating_pos.position, Mathf.Pow(t, 4)));
             yield return null;
         }
 
         // insure final pos, rotation
         transform.position = floating_pos.position;
         transform.rotation = Quaternion.identity;
+        rb.isKinematic = false;
+        Debug.Log("here");
     }
 
 

@@ -78,7 +78,7 @@ GameObject:
   - 61: {fileID: 6182878}
   - 50: {fileID: 5064140}
   - 114: {fileID: 11470686}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mage
   m_TagString: Mage
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197334}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f60e17087da231d46b311d40e9d154b1, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -265,11 +265,7 @@ MonoBehaviour:
   ai: 0
   sprite: {fileID: 21271552}
   floating_pos: {fileID: 0}
-  prefab_fireball: {fileID: 11474436, guid: f7bcbe89789792b4c940eb52dd6eb5b2, type: 2}
-  prefab_iceball: {fileID: 11433902, guid: 8f70557a771787f42b19116d6167a0eb, type: 2}
-  prefab_waterball: {fileID: 11415420, guid: 92ca62ab4c7a23349837336ae3613286, type: 2}
-  prefab_shieldbreaker: {fileID: 11487662, guid: bd87685be7624624da6cdd6420cb4aee,
-    type: 2}
+  spellmanager: {fileID: 0}
   cast_point: {fileID: 479282}
   spell_code_text: {fileID: 10206658}
 --- !u!114 &11490162
@@ -358,12 +354,19 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: prefab_shieldbreaker
       value: 
-      objectReference: {fileID: 11487662, guid: bd87685be7624624da6cdd6420cb4aee,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f60e17087da231d46b311d40e9d154b1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197334}
