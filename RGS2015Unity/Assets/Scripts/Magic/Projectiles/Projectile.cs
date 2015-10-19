@@ -45,7 +45,8 @@ public abstract class Projectile : MonoBehaviour
         ProjectileType type1 = p1.type;
         ProjectileType type2 = p2.type;
 
-        return type2 == ProjectileType.Fragile ||
+        return p1.caster != p2.caster &&
+            type2 == ProjectileType.Fragile ||
             type1 == ProjectileType.Fire && type2 == ProjectileType.Ice ||
             type1 == ProjectileType.Ice && type2 == ProjectileType.Water ||
             type1 == ProjectileType.Water && type2 == ProjectileType.Fire;
@@ -69,7 +70,7 @@ public abstract class Projectile : MonoBehaviour
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         Projectile p = collision.collider.GetComponent<Projectile>();
-        if (p != null && Defeats(p.type, this.type))
+        if (p != null && Defeats(p, this))
         {
             // collided projectile defeats this projectile
             Destroy(gameObject);

@@ -63,11 +63,27 @@ public abstract class ControlledProjectile : Projectile
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         Projectile p = collision.collider.GetComponent<Projectile>();
-        if (p != null && Defeats(p.type, this.type))
+        if (p != null && Defeats(p, this))
         {
             // collided projectile defeats this projectile
             this.Destroy(ManaSlotCooldown.Long);
         }
+        else if (collision.collider.CompareTag("Wall"))
+        {
+            StartCoroutine(WeakenSteeringForce());
+        }
+    }
+    private IEnumerator WeakenSteeringForce()
+    {
+        float t = 0;
+        steering_force_factor = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / 0.5f;
+            steering_force_factor = Mathf.Pow(t, 2f);
+            yield return null;
+        }
+        steering_force_factor = 1;
     }
 
 
