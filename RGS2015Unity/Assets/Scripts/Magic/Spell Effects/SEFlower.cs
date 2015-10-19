@@ -14,7 +14,6 @@ public class SEFlower : SpellEffect
 
             Projectile p = Instantiate<Projectile>(projectile_prefab);
             p.Initialize(caster, pos);
-            //caster.FillManaSlot(p);
             p.GetRigidbody().AddForce(pos.normalized * 2f, ForceMode2D.Impulse);
         }
     }

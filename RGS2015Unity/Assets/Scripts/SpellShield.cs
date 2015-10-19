@@ -14,8 +14,7 @@ public class SpellShield : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-        Projectile p = collider.GetComponent<Projectile>();
-        if (rb != null && !(p != null && p.proj_type == ProjectileType.Curse))
+        if (rb != null)
         {
             Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
             rb.AddForce(dir * 5f, ForceMode2D.Impulse);

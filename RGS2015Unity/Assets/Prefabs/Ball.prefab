@@ -26,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .600000024, y: .600000024, z: 1}
+  m_LocalPosition: {x: .291000009, y: -2.28800011, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -38,10 +38,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185370}
-  m_Mass: 1
-  m_LinearDrag: 0
+  m_Mass: 3
+  m_LinearDrag: .100000001
   m_AngularDrag: .0500000007
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -59,7 +59,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .5
+  m_Radius: .319999993
 --- !u!114 &11414720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28d21f9789c82ee44a3f30e94a3b2494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball_prefab: {fileID: 11414720}
+  stone_prefab: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5, type: 2}
 --- !u!212 &21219842
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,8 +97,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 085f0905f773c924e9cc6ea9c8dc40d6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: .497000009}
+  m_Sprite: {fileID: 21300000, guid: 0e2cf75abe9d88a48910e1d9a3e9d019, type: 3}
+  m_Color: {r: .0823529437, g: .0666666701, b: .0627451017, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -112,6 +114,10 @@ Prefab:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ball_prefab
+      value: 
+      objectReference: {fileID: 11414720}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185370}

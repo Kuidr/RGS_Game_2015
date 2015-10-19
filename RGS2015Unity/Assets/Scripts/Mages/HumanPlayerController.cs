@@ -31,7 +31,6 @@ public class HumanPlayerController : PlayerController
         {
             InputCast();
             InputSpellCode = "";
-            Debug.Log("Cast");
         }
 
         base.Update();

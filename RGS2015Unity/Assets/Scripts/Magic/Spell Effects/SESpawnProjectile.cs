@@ -4,15 +4,19 @@ using System.Collections;
 public class SESpawnProjectile : SpellEffect
 {
     public Projectile projectile_prefab;
-    public bool use_mana_slot = true;
 
     public override void Do(Mage caster)
     {
-        if (use_mana_slot && !caster.ManaSlotAvailable()) return;
+        if (projectile_prefab.GetComponent<ControlledProjectile>() != null
+            && !caster.ManaSlotAvailable())
+            return;
 
         Projectile p = Instantiate<Projectile>(projectile_prefab);
         p.Initialize(caster, caster.cast_point.position);
-        if (use_mana_slot) caster.FillManaSlot(p);
+
+        ControlledProjectile cp = p as ControlledProjectile;
+        if (cp != null) caster.FillManaSlot(cp);
+
         p.GetRigidbody().AddForce(GeneralHelpers.RandomDirection2D(), ForceMode2D.Impulse);
     }
 }

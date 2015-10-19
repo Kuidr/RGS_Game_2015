@@ -46,9 +46,7 @@ public class AIPlayerController : PlayerController
                     dirs.Add(v.normalized);
 
                     float score = 0;
-                    if (p1.proj_type == ProjectileType.Fire && p2.proj_type == ProjectileType.Ice ||
-                        p1.proj_type == ProjectileType.Ice && p2.proj_type == ProjectileType.Water ||
-                        p1.proj_type == ProjectileType.Water && p2.proj_type == ProjectileType.Fire)
+                    if (Projectile.Defeats(p1, p2))
                         score += 100;
                     score -= v.magnitude / 100f;
 

@@ -9,6 +9,13 @@ public class Mineral : MonoBehaviour
     public const float WidthHeight = 0.2828f;
 
 
+    public void Break()
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0.5f;
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine(Shrink());
+    }
 
     private void Start()
     {
@@ -25,11 +32,7 @@ public class Mineral : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.gravityScale = 0.5f;
-        GetComponent<Collider2D>().enabled = false;
-
-        StartCoroutine(Shrink());
+        Break();
     }
 
     private IEnumerator Shrink()

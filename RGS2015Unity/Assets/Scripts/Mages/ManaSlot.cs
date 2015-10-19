@@ -9,16 +9,16 @@ public class ManaSlot
     private const float CooldownShort = 2f;
     private const float CooldownLong = 10f;
 
-    private Projectile projectile = null;
+    private ControlledProjectile projectile = null;
     private float cooldown_time = 0;
     private float fill_time = -1000; // Time.time when filled
 
-    public bool Fill(Projectile projectile)
+    public bool Fill(ControlledProjectile projectile)
     {
         if (IsAvailable())
         {
             this.projectile = projectile;
-            projectile.SetParentManaSlot(this);
+            projectile.SetManaSlot(this);
             return true;
         }
 
@@ -42,7 +42,7 @@ public class ManaSlot
     {
         return fill_time;
     }
-    public Projectile GetProjectile()
+    public ControlledProjectile GetProjectile()
     {
         return projectile;
     }

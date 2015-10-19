@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Explosion : MonoBehaviour
 {
-    private ParticleSystem ps;
+    public ParticleSystem ps;
 
     private void Awake()
     {
