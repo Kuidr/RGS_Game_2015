@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Ball : MonoBehaviour
 {
+    private static MatchManager matchmanager;
+
+    // Events
+    public System.Action<Ball> event_ball_hit_mage;
+
     // Growth
     public Ball ball_prefab;
     private const float MaxScale = 2f;
@@ -13,6 +18,12 @@ public class Ball : MonoBehaviour
     public Resource rock_prefab;
 
 
+    private void Awake()
+    {
+        matchmanager = FindObjectOfType<MatchManager>();
+        if (matchmanager == null) Debug.LogError("MatchManager not found");
+        matchmanager.RegisterBall(this);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Rock"))
@@ -34,6 +45,7 @@ public class Ball : MonoBehaviour
         else if (collision.collider.CompareTag("Mage"))
         {
             BreakApart();
+            if (event_ball_hit_mage != null) event_ball_hit_mage(this);
         }
     }
 

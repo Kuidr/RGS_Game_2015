@@ -28,6 +28,7 @@ public class Mage : MonoBehaviour
     public TextMesh spell_code_text;
 
     // State
+    private int hearts = 3;
     private bool invincible = true;
     private bool casting_allowed = true;
 
@@ -148,11 +149,9 @@ public class Mage : MonoBehaviour
     }
     private void TakeHit()
     {
+        // fall down
         rb.gravityScale = 1;
         casting_allowed = false;
-        invincible = true;
-        StopAllCoroutines();
-        StartCoroutine(RefreshAfterWait());
 
         // dispel slot projectiles
         foreach (ManaSlot slot in mana_slots)
@@ -160,6 +159,22 @@ public class Mage : MonoBehaviour
             if (slot.GetProjectile() == null) continue;
             slot.GetProjectile().Destroy(ManaSlotCooldown.Short);
         }
+
+        // damage
+        hearts -= 1;
+        if (hearts == 0)
+        {
+            Die();
+            return;
+        }
+
+        // recovery
+        invincible = true;
+        StopAllCoroutines();
+        StartCoroutine(RefreshAfterWait());
+    }
+    private void Die()
+    {
     }
 
     private void OnCastSpell()
