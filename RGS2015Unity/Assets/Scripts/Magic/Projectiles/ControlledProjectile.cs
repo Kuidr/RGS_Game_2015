@@ -84,10 +84,16 @@ public abstract class ControlledProjectile : Projectile
         {
             // collided projectile defeats this projectile
             this.Destroy(ManaSlotCooldown.Long);
+            return;
         }
-        else if (collision.collider.CompareTag("Wall"))
+
+        if (collision.collider.CompareTag("Wall"))
         {
             StartCoroutine(WeakenSteeringForce());
+        }
+        else if (collision.collider.CompareTag("Crystal"))
+        {
+            caster.AddCrystals(1);
         }
     }
     private IEnumerator WeakenSteeringForce()

@@ -7,7 +7,7 @@ public class Spell : MonoBehaviour
     // general
     public string name;
     public string spellcode;
-    private int cost;
+    public int cost;
 
     // cooldown
     public float cooldown_time; // seconds
@@ -20,15 +20,6 @@ public class Spell : MonoBehaviour
     public List<SpellEffect> effects;
 
 
-    public void Start()
-    {
-        cost = 0;
-        for (int i = 0; i < spellcode.Length; ++i)
-        {
-            if (char.IsUpper(spellcode[i])) cost += 5;
-            else; cost += 1;
-        }
-    }
     public void Initialize(SpellManager manager)
     {
         this.manager = manager;
@@ -56,6 +47,12 @@ public class Spell : MonoBehaviour
     public int GetCost()
     {
         return cost;
+    }
+
+
+    private void Awake()
+    {
+        spellcode = spellcode.ToUpper(); // insure uppercase spellcode 
     }
 
 }

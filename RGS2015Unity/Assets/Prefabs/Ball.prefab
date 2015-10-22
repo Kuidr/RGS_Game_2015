@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball_prefab: {fileID: 11414720}
-  stone_prefab: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5, type: 2}
+  rock_prefab: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5, type: 2}
 --- !u!212 &21219842
 SpriteRenderer:
   m_ObjectHideFlags: 1

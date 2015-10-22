@@ -27,7 +27,7 @@ public class HumanPlayerController : PlayerController
         else if (YDown()) InputSpellCode += "Y";
 
         // Casting (explicit)
-        if (Input.GetAxis("Cast" + control_scheme) > 0)
+        if (Input.GetAxis("Cast" + control_scheme) > 0 && InputSpellCode != "")
         {
             InputCast();
             InputSpellCode = "";

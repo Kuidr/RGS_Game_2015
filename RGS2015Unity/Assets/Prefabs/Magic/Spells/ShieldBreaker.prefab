@@ -41,7 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: SlowTime
   spellcode: bbbxxx
-  cooldown_time: 0
+  cost: 20
+  cooldown_time: 30
   effects:
   - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
 --- !u!1001 &100100000
@@ -72,6 +73,14 @@ Prefab:
       value: 
       objectReference: {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldown_time
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108422}

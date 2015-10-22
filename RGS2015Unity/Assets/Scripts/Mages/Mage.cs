@@ -16,7 +16,7 @@ public class Mage : MonoBehaviour
     public Transform floating_pos;
 
     // Resources
-    private int resources = 10;
+    private int crystals = 10;
 
 
     // Spells and Projectile
@@ -78,6 +78,11 @@ public class Mage : MonoBehaviour
 
         return oldest;
     }
+    public void AddCrystals(int number)
+    {
+        crystals += number;
+        Debug.Log("mage " + player_number + ": " + crystals);
+    }
 
 
     // PRIVATE MODIFIERS
@@ -134,11 +139,6 @@ public class Mage : MonoBehaviour
         {
             TakeHit();
         }
-        if (collision.collider.CompareTag("Mineral"))
-        {
-            resources += 1;
-            Debug.Log("mage " + player_number + ": " + resources);
-        }
     }
 
     private void Refresh()
@@ -166,8 +166,8 @@ public class Mage : MonoBehaviour
     {
         if (casting_allowed)
         {
-            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref resources);
-            Debug.Log("mage " + player_number + ": " + resources);
+            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
+            Debug.Log("mage " + player_number + ": " + crystals);
             Debug.Log(result);
         }
             

@@ -17,19 +17,19 @@ public class SpellManager : MonoBehaviour
             Spell spell_instance = Instantiate(spell);
             spell_instance.transform.parent = transform;
 
-            spellcode_dict[spell.spellcode] = spell_instance;
+            spellcode_dict[spell_instance.spellcode] = spell_instance;
         }
     }
-    public SpellCastResult TryCast(Mage caster, string spellcode, ref int resources)
+    public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, ref int crystals)
     {
-        if (spellcode_dict.ContainsKey(spellcode))
+        if (spellcode_dict.ContainsKey(spellcode_uppercase))
         {
-            Spell spell = spellcode_dict[spellcode];
+            Spell spell = spellcode_dict[spellcode_uppercase];
             if (spell.OnCooldown()) return SpellCastResult.OnCooldown;
-            if (spell.GetCost() > resources) return SpellCastResult.NotEnoughResources;
+            if (spell.GetCost() > crystals) return SpellCastResult.NotEnoughResources;
 
 
-            resources -= spell.GetCost();
+            crystals -= spell.GetCost();
             spell.Cast(caster);
             return SpellCastResult.Cast;
         }

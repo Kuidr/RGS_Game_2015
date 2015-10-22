@@ -74,6 +74,12 @@ public abstract class Projectile : MonoBehaviour
         {
             // collided projectile defeats this projectile
             Destroy(gameObject);
+            return;
+        }
+
+        if (collision.collider.CompareTag("Crystal"))
+        {
+            caster.AddCrystals(1);
         }
     }
 

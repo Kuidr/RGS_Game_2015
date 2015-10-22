@@ -41,7 +41,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Iceflower
   spellcode: xxx
-  cooldown_time: 10
+  cost: 15
+  cooldown_time: 20
   effects:
   - {fileID: 11458688, guid: 58be200ece4fecc4e9ffe41cb11d6037, type: 2}
 --- !u!1001 &100100000
@@ -63,6 +64,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: spellcode
       value: xxx
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldown_time
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

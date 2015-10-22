@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5027254}
   m_Layer: 8
   m_Name: Crystal
-  m_TagString: Mineral
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29b43f6ae27af84aa2d6ee61454fd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
 --- !u!212 &21219416
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -183,12 +183,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_TagString
-      value: Mineral
+      value: Crystal
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 554cba93a75c13342ac8ef09f09f2ed1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108222}

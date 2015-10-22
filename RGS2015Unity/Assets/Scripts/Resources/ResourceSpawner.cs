@@ -36,23 +36,23 @@ public class ResourceSpawner : MonoBehaviour
 
     private void SpawnResource(ResourceType type)
     {
-        Resource m = Instantiate<Resource>(
+        Resource res = Instantiate<Resource>(
             type == ResourceType.Rock ? rock_prefab : crystal_prefab);
-        m.transform.parent = transform;
+        res.transform.parent = transform;
 
         if (root_resource == null)
         {
-            m.transform.position = transform.position;
-            root_resource = m;
+            res.transform.position = transform.position;
+            root_resource = res;
         }
         else
         {
             Stack<Resource> parent_chain = new Stack<Resource>();
             parent_chain.Push(root_resource);
-            PlaceResource(m, parent_chain);
+            PlaceResource(res, parent_chain);
         }
     }
-    private bool PlaceResource(Resource m, Stack<Resource> parent_chain)
+    private bool PlaceResource(Resource res, Stack<Resource> parent_chain)
     {
         // Check if there is a free spot or another resource in each horizontal direction
         Vector2[] dir_list = new Vector2[] { Vector2.right, -Vector2.right, Vector2.up, -Vector2.up };
@@ -71,7 +71,7 @@ public class ResourceSpawner : MonoBehaviour
                 else
                 {
                     // place resource here (base case)
-                    m.transform.position = point;
+                    res.transform.position = point;
                     return true;
                 }
             }
@@ -83,7 +83,7 @@ public class ResourceSpawner : MonoBehaviour
                 // try to place resource further down the chain
                 Stack<Resource> new_chain = new Stack<Resource>(parent_chain);
                 new_chain.Push(new_parent);
-                if (PlaceResource(m, new_chain)) return true; 
+                if (PlaceResource(res, new_chain)) return true; 
             }
         }
 
@@ -98,7 +98,7 @@ public class ResourceSpawner : MonoBehaviour
                 if (col == null)
                 {
                     // place resource here
-                    m.transform.position = point;
+                    res.transform.position = point;
                     return true;
                 }
             }
