@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Mineral : MonoBehaviour
-{
-    public Color[] colors;
-    private BackgroundLighting back_lighting;
 
+public enum ResourceType { Rock, Crystal };
+
+public class Resource : MonoBehaviour
+{
+    // General
+    public ResourceType type;
     public const float WidthHeight = 0.2828f;
+
+    // Visual
+    private BackgroundLighting back_lighting;
 
 
     public void Break()
@@ -19,9 +24,6 @@ public class Mineral : MonoBehaviour
 
     private void Start()
     {
-        Color c = colors[Random.Range(0, colors.Length)];
-        GetComponent<SpriteRenderer>().color = c;
-
         back_lighting = FindObjectOfType<BackgroundLighting>();
     }
     private void Update()

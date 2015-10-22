@@ -10,12 +10,12 @@ public class Ball : MonoBehaviour
     private const float ScalePerStone = 0.01f;
 
     // Breaking
-    public Mineral stone_prefab;
+    public Resource rock_prefab;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Mineral"))
+        if (collision.collider.CompareTag("Rock"))
         {
             float s = transform.localScale.x;
             s += ScalePerStone;
@@ -46,7 +46,7 @@ public class Ball : MonoBehaviour
             float a = Random.value * Mathf.PI * 2f;
             Vector2 pos = new Vector2(Mathf.Cos(a), Mathf.Sin(a)) * radius * Random.value;
 
-            Mineral stone = Instantiate<Mineral>(stone_prefab);
+            Resource stone = Instantiate<Resource>(rock_prefab);
             stone.transform.position = (Vector2)transform.position + pos;
             stone.GetComponent<Rigidbody2D>().AddForce(pos.normalized * Random.value * 3f, ForceMode2D.Impulse);
             stone.Break();

@@ -436,17 +436,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 497162, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
-      propertyPath: m_LocalScale.x
-      value: .199999988
-      objectReference: {fileID: 0}
-    - target: {fileID: 497162, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
-      propertyPath: m_LocalScale.y
-      value: .199999988
-      objectReference: {fileID: 0}
     - target: {fileID: 100898, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
       propertyPath: m_Name
-      value: Mineral Spawner (1)
+      value: Resource Spawner (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
@@ -1044,7 +1036,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100898, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
       propertyPath: m_Name
-      value: Mineral Spawner (3)
+      value: Resource Spawner (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
@@ -1235,7 +1227,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100898, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
       propertyPath: m_Name
-      value: Mineral Spawner (2)
+      value: Resource Spawner (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
@@ -1724,7 +1716,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100898, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
       propertyPath: m_Name
-      value: Mineral Spawner (5)
+      value: Resource Spawner (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
@@ -2024,7 +2016,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100898, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}
       propertyPath: m_Name
-      value: Mineral Spawner (4)
+      value: Resource Spawner (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 366e9d4b206fd3b4d8804e09c96a341d, type: 2}

@@ -8,7 +8,8 @@ TagManager:
   - Projectile
   - Mage
   - Wall
-  - Mineral
+  - Crystal
+  - Rock
   layers:
   - Default
   - TransparentFX

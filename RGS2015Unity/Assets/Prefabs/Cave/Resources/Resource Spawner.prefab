@@ -11,7 +11,7 @@ GameObject:
   - 114: {fileID: 11450254}
   - 212: {fileID: 21226450}
   m_Layer: 8
-  m_Name: Mineral Spawner
+  m_Name: Resource Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4217488da1885714d912e7dd2232619c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mineral_prefab: {fileID: 11467238, guid: 4835c2ac2e265ae498232a8dc22bfbb2, type: 2}
+  rock_prefab: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5, type: 2}
+  crystal_prefab: {fileID: 11467238, guid: 4835c2ac2e265ae498232a8dc22bfbb2, type: 2}
 --- !u!212 &21226450
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -98,6 +99,16 @@ Prefab:
       propertyPath: mineral_prefab
       value: 
       objectReference: {fileID: 11467238, guid: 4835c2ac2e265ae498232a8dc22bfbb2,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: crystal_prefab
+      value: 
+      objectReference: {fileID: 11467238, guid: 4835c2ac2e265ae498232a8dc22bfbb2,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: rock_prefab
+      value: 
+      objectReference: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
