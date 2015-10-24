@@ -13,7 +13,10 @@ public abstract class ControlledProjectile : Projectile
     protected float steering_force_factor = 1;
     protected float max_steering_force = 3;
     protected float max_speed = 3;
-   
+
+    // Visual
+    public ProjectileFlag flag_prefab;
+    private ProjectileFlag flag;
 
 
     // PUBLIC MODIFIERS
@@ -26,6 +29,11 @@ public abstract class ControlledProjectile : Projectile
             if (cp != null)
                 Physics2D.IgnoreCollision(collider, cp.GetCollider(), true);
         }
+
+        // Projectile Flag
+        flag = Instantiate(flag_prefab);
+        flag.Initialize(this, caster.player_color);
+
         base.Initialize(caster, pos);
     }
     public void SetManaSlot(ManaSlot slot)
@@ -51,6 +59,9 @@ public abstract class ControlledProjectile : Projectile
     {
         if (slot == null) Debug.LogError("ControlledProjectile mana slot not set.");
         slot.Empty(slot_cooldown);
+
+        Destroy(flag.gameObject);
+
         Destroy(gameObject);
     }
 

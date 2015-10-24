@@ -12,17 +12,12 @@ public abstract class Projectile : MonoBehaviour
     // Movement
     protected Rigidbody2D rb;
 
-    // Visual
-    public SpriteRenderer player_marker;
-
-
 
     // PUBLIC MODIFIERS
 
     public virtual void Initialize(Mage caster, Vector2 pos)
     {
         this.caster = caster;
-        player_marker.color = caster.player_color;
         transform.position = pos;
     }
 

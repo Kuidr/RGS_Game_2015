@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &117070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 470030}
-  - 212: {fileID: 21203366}
-  m_Layer: 0
-  m_Name: Player Marker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &126364
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +49,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421816}
-  - {fileID: 470030}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &421816
@@ -80,18 +63,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 404154}
   m_RootOrder: 0
---- !u!4 &470030
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .200000003, z: -0}
-  m_LocalScale: {x: .100000001, y: .100000001, z: .0500000007}
-  m_Children: []
-  m_Father: {fileID: 404154}
-  m_RootOrder: 1
 --- !u!50 &5077236
 Rigidbody2D:
   serializedVersion: 2
@@ -133,7 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  player_marker: {fileID: 21203366}
+  player_marker: {fileID: 0}
+  flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
   explosion_obj: {fileID: 11414262}
 --- !u!114 &11414262
 MonoBehaviour:
@@ -146,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b8f5fffc76bec488a1f27904bed1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 0}
 --- !u!198 &19802816
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2319,32 +2292,6 @@ ParticleSystemRenderer:
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
---- !u!212 &21203366
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 117070}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 771e6cc99191929489776de6df4ef484, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -2355,7 +2302,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: marker
       value: 
-      objectReference: {fileID: 21203366}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Material
       value: 
@@ -2375,11 +2322,16 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: player_marker
       value: 
-      objectReference: {fileID: 21203366}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: explosion_obj
       value: 
       objectReference: {fileID: 11414262}
+    - target: {fileID: 0}
+      propertyPath: flag_prefab
+      value: 
+      objectReference: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 126364}
