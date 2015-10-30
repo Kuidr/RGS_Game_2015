@@ -12,7 +12,7 @@ public class Resource : MonoBehaviour
 
     // Visual
     private BackgroundLighting back_lighting;
-
+    
 
     public void Break()
     {

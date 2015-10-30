@@ -20,6 +20,7 @@ public class SpellManager : MonoBehaviour
             spellcode_dict[spell_instance.spellcode] = spell_instance;
         }
     }
+
     public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, ref int crystals)
     {
         if (spellcode_dict.ContainsKey(spellcode_uppercase))

@@ -8,6 +8,7 @@ public class Spell : MonoBehaviour
     public string name;
     public string spellcode;
     public int cost;
+    public Sprite icon;
 
     // cooldown
     public float cooldown_time; // seconds

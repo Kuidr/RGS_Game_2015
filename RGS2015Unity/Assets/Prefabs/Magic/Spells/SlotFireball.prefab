@@ -42,6 +42,7 @@ MonoBehaviour:
   name: 
   spellcode: b
   cost: 0
+  icon: {fileID: 21300000, guid: 771e6cc99191929489776de6df4ef484, type: 3}
   cooldown_time: 0
   effects:
   - {fileID: 11436366, guid: 0eb3a5cb2f8476f48bc71763bda59503, type: 2}
@@ -73,6 +74,11 @@ Prefab:
       propertyPath: cost
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 771e6cc99191929489776de6df4ef484,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117220}
