@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum SpellCastResult { Cast, OnCooldown, NotEnoughResources, InvalidSpellCode };
+public enum SpellCastResult { Cast, OnCooldown, NotEnoughResources, InvalidSpellCode, NotEnoughFreeSlots };
 
 public class SpellManager : MonoBehaviour
 {
@@ -17,13 +17,14 @@ public class SpellManager : MonoBehaviour
 
     // PUBLIC MODIFIERS
 
-    public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, ref int crystals)
+    public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, int free_slots, ref int crystals)
     {
         if (spellcode_dict.ContainsKey(spellcode_uppercase))
         {
             Spell spell = spellcode_dict[spellcode_uppercase];
             if (spell.IsOnCooldown()) return SpellCastResult.OnCooldown;
             if (spell.cost > crystals) return SpellCastResult.NotEnoughResources;
+            if (spell.GetFreeSlotsRequired() > free_slots) return SpellCastResult.NotEnoughFreeSlots;
 
 
             crystals -= spell.cost;
@@ -58,7 +59,8 @@ public class SpellManager : MonoBehaviour
         foreach (Spell spell in spell_prefabs)
         {
             Spell spell_instance = Instantiate(spell);
-            spell_instance.transform.parent = transform;
+            spell_instance.transform.SetParent(transform);
+            spell_instance.Initialize(this);
 
             spells.Add(spell_instance);
             spellcode_dict[spell_instance.spellcode] = spell_instance;

@@ -235,7 +235,7 @@ public class Mage : MonoBehaviour
         if (casting_allowed)
         {
             int crystals_old = crystals;
-            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
+            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, NumFreeSlots(), ref crystals);
             
             // crystals spent
             if (crystals != crystals_old)
@@ -309,6 +309,19 @@ public class Mage : MonoBehaviour
         transform.rotation = Quaternion.identity;
         rb.isKinematic = false;
         hover.StartFadeIn();
+    }
+
+
+    // PRIVATE ACCESSORS HELPERS
+
+    public int NumFreeSlots()
+    {
+        int count = 0;
+        foreach (ManaSlot slot in mana_slots)
+        {
+            if (slot.IsAvailable()) count++;
+        }
+        return count;
     }
 
 

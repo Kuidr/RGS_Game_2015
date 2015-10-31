@@ -10,6 +10,7 @@ public class Spell : MonoBehaviour
     public string spellcode;
     public int cost;
     public Sprite icon_sprite;
+    private int free_slots_required;
 
     // cooldown
     public float cooldown_time; // seconds
@@ -25,6 +26,15 @@ public class Spell : MonoBehaviour
     public void Initialize(SpellManager manager)
     {
         this.manager = manager;
+
+        // calculate free slots required
+        free_slots_required = 0;
+        foreach (SpellEffect effect in effects)
+        {
+            free_slots_required += effect.FreeSlotsRequired;
+        }
+
+        Debug.Log(free_slots_required);
     }
     /// <summary>
     /// This will force the casting of the spell regardless of resource cost and cooldown.
@@ -50,6 +60,10 @@ public class Spell : MonoBehaviour
     public float GetCooldownPercent()
     {
         return (Time.time - last_cast_time) / cooldown_time;
+    }
+    public int GetFreeSlotsRequired()
+    {
+        return free_slots_required;
     }
 
     private void Awake()

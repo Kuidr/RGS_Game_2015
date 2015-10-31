@@ -3,6 +3,14 @@ using System.Collections;
 
 public class SESpawnProjectile : SpellEffect
 {
+    public override int FreeSlotsRequired
+    {
+        get
+        {
+            return 1;
+        }
+    }
+
     public Projectile projectile_prefab;
 
     public override void Do(Mage caster, Spell origin_spell)
