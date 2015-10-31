@@ -32,9 +32,6 @@ public class ManaSlot
     }
     public void Empty(ManaSlotCooldown cooldown)
     {
-        if (projectile != null)
-            projectile.Destroy(cooldown);
-
         fill_time = Time.time;
 
         cooldown_time = cooldown == ManaSlotCooldown.Normal ? CooldownNormal :

@@ -55,13 +55,9 @@ public abstract class ControlledProjectile : Projectile
         // Clip speed
         rb.velocity = Clip(rb.velocity, max_speed);
     }
-    public void Destroy(ManaSlotCooldown slot_cooldown)
+    public void Destroy()
     {
-        if (slot == null) Debug.LogError("ControlledProjectile mana slot not set.");
-        slot.Empty(slot_cooldown);
-
         Destroy(flag.gameObject);
-
         Destroy(gameObject);
     }
 
@@ -94,7 +90,8 @@ public abstract class ControlledProjectile : Projectile
         if (p != null && Defeats(p, this))
         {
             // collided projectile defeats this projectile
-            this.Destroy(ManaSlotCooldown.Long);
+            slot.Empty(ManaSlotCooldown.Long);
+            this.Destroy();
             return;
         }
 

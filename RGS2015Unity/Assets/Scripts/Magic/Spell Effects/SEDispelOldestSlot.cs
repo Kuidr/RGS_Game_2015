@@ -7,7 +7,8 @@ public class SEDispelOldestSlot : SpellEffect
     {
         ManaSlot slot = caster.GetOldestFilledManaSlot();
         if (slot.GetProjectile() == null) return;
-        slot.GetProjectile().Destroy(ManaSlotCooldown.Short);
+        slot.Empty(ManaSlotCooldown.Short);
+        slot.GetProjectile().Destroy();
         base.Do(caster, origin_spell);
     }
 }

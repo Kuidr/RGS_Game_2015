@@ -185,6 +185,7 @@ public class Mage : MonoBehaviour
         // dispel slot projectiles
         foreach (ManaSlot slot in mana_slots)
         {
+            if (slot.GetProjectile() != null) slot.GetProjectile().Destroy();
             slot.Empty(ManaSlotCooldown.Short);
         }
 
