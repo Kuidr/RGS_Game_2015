@@ -23,7 +23,7 @@ public class Mage : MonoBehaviour
     private const int StartingManaSlots = 4;
     private List<ManaSlot> mana_slots;
  
-    public SpellManager spellmanager;
+    private SpellManager spellmanager;
     public Transform cast_point;
     public TextMesh spell_code_text;
 
@@ -82,7 +82,6 @@ public class Mage : MonoBehaviour
     public void AddCrystals(int number)
     {
         crystals += number;
-        Debug.Log("mage " + player_number + ": " + crystals);
     }
 
 
@@ -114,6 +113,9 @@ public class Mage : MonoBehaviour
         sprite.color = player_color;
 
         // spells
+        spellmanager = FindObjectOfType<SpellManager>();
+        if (spellmanager == null) Debug.LogError("SpellManager not found");
+
         mana_slots = new List<ManaSlot>(StartingManaSlots);
         for (int i = 0; i < StartingManaSlots; ++i)
             mana_slots.Add(new ManaSlot());
@@ -182,8 +184,6 @@ public class Mage : MonoBehaviour
         if (casting_allowed)
         {
             SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
-            Debug.Log("mage " + player_number + ": " + crystals);
-            Debug.Log(result);
         }
             
     }

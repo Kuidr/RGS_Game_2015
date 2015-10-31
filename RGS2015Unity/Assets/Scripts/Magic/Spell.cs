@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Spell : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Spell : MonoBehaviour
     public string name;
     public string spellcode;
     public int cost;
-    public Sprite icon;
+    public Sprite icon_sprite;
 
     // cooldown
     public float cooldown_time; // seconds
@@ -41,19 +42,31 @@ public class Spell : MonoBehaviour
 
         return true;
     }
+
     public bool OnCooldown()
     {
         return Time.time - last_cast_time < cooldown_time;
     }
-    public int GetCost()
+    public float GetCooldownPercent()
     {
-        return cost;
+        return (Time.time - last_cast_time) / cooldown_time;
     }
-
 
     private void Awake()
     {
         spellcode = spellcode.ToUpper(); // insure uppercase spellcode 
     }
 
+}
+
+public class SpellComparer : IComparer<Spell>
+{
+    public int Compare(Spell x, Spell y)
+    {
+        int comp_cost = x.cost.CompareTo(y.cost);
+        if (comp_cost != 0) return comp_cost;
+
+        int comp_spellcode = x.spellcode.CompareTo(y.spellcode);
+        return comp_spellcode;
+    }
 }

@@ -7,19 +7,15 @@ public enum SpellCastResult { Cast, OnCooldown, NotEnoughResources, InvalidSpell
 public class SpellManager : MonoBehaviour
 {
     public List<Spell> spell_prefabs;
+    private List<Spell> spells = new List<Spell>();
     private Dictionary<string, Spell> spellcode_dict = new Dictionary<string, Spell>();
 
+    // events
+    public System.Action event_spelllist_populated;
+    public System.Action<Spell> event_spell_cast;
 
-    public void Start()
-    {
-        foreach (Spell spell in spell_prefabs)
-        {
-            Spell spell_instance = Instantiate(spell);
-            spell_instance.transform.parent = transform;
 
-            spellcode_dict[spell_instance.spellcode] = spell_instance;
-        }
-    }
+    // PUBLIC MODIFIERS
 
     public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, ref int crystals)
     {
@@ -27,16 +23,51 @@ public class SpellManager : MonoBehaviour
         {
             Spell spell = spellcode_dict[spellcode_uppercase];
             if (spell.OnCooldown()) return SpellCastResult.OnCooldown;
-            if (spell.GetCost() > crystals) return SpellCastResult.NotEnoughResources;
+            if (spell.cost > crystals) return SpellCastResult.NotEnoughResources;
 
 
-            crystals -= spell.GetCost();
+            crystals -= spell.cost;
             spell.Cast(caster);
+            if (event_spell_cast != null) event_spell_cast(spell);
             return SpellCastResult.Cast;
         }
         else
         {
             return SpellCastResult.InvalidSpellCode;
         }
+    }
+
+
+    // PUBLIC ACCESSORS
+
+    public List<Spell> GetSpells()
+    {
+        return spells;
+    } 
+
+
+    // PRIVATE MODIFIERS
+
+    private void Start()
+    {
+        PopulateSpellList();
+    }
+    private void PopulateSpellList()
+    {
+        // create spell instances (one for each spell prefab)
+        foreach (Spell spell in spell_prefabs)
+        {
+            Spell spell_instance = Instantiate(spell);
+            spell_instance.transform.parent = transform;
+
+            spells.Add(spell_instance);
+            spellcode_dict[spell_instance.spellcode] = spell_instance;
+        }
+
+        // sort spells list by spell cost
+        spells.Sort(new SpellComparer());
+
+        // send populate event
+        if (event_spelllist_populated != null) event_spelllist_populated();
     }
 }
