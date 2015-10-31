@@ -37,13 +37,13 @@ public class Spell : MonoBehaviour
 
         foreach (SpellEffect effect in effects)
         {
-            effect.Do(caster);
+            effect.Do(caster, this);
         }
 
         return true;
     }
 
-    public bool OnCooldown()
+    public bool IsOnCooldown()
     {
         return Time.time - last_cast_time < cooldown_time;
     }

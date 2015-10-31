@@ -29,7 +29,7 @@ public class CooldownIcon : MonoBehaviour
             cd = Mathf.Pow(1 - spell.GetCooldownPercent(), 2);
             transform.rotation = Quaternion.Euler(0, 0, cd*rev);
 
-            if (!spell.OnCooldown()) break;
+            if (!spell.IsOnCooldown()) break;
             yield return null;
         }
         icon.enabled = false;

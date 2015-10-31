@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class UISpellList : MonoBehaviour
 {
-    public VerticalLayoutGroup col_spell_codes;
-    public VerticalLayoutGroup col_spell_symbols;
-    public VerticalLayoutGroup col_spell_cd_icons;
+    private SpellManager spellmanager;
+
+    public LayoutGroup col_spell_codes;
+    public LayoutGroup col_spell_symbols;
+    public LayoutGroup col_spell_cd_icons;
 
     public Text prefab_spell_code;
     public Image prefab_spell_symbol;
     public CooldownIcon prefab_cooldown_icon;
 
     private Dictionary<Spell, SpellUIRow> rows = new Dictionary<Spell, SpellUIRow>();
-
-    private SpellManager spellmanager;
 
 
     private void Awake()
@@ -56,7 +56,7 @@ public class UISpellList : MonoBehaviour
     private void OnSpellCast(Spell spell)
     {
         // start cooldown icon
-        if (spell.OnCooldown())
+        if (spell.IsOnCooldown())
         {
             SpellUIRow row = rows[spell];
             if (row != null) row.cd_icon.Enable(spell);

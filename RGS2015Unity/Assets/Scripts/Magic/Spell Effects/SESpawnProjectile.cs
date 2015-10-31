@@ -5,7 +5,7 @@ public class SESpawnProjectile : SpellEffect
 {
     public Projectile projectile_prefab;
 
-    public override void Do(Mage caster)
+    public override void Do(Mage caster, Spell origin_spell)
     {
         if (projectile_prefab.GetComponent<ControlledProjectile>() != null
             && !caster.ManaSlotAvailable())
@@ -15,7 +15,7 @@ public class SESpawnProjectile : SpellEffect
         p.Initialize(caster, caster.cast_point.position);
 
         ControlledProjectile cp = p as ControlledProjectile;
-        if (cp != null) caster.FillManaSlot(cp);
+        if (cp != null) caster.FillManaSlot(cp, origin_spell);
 
         p.GetRigidbody().AddForce(GeneralHelpers.RandomDirection2D(), ForceMode2D.Impulse);
     }

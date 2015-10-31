@@ -22,7 +22,7 @@ public class SpellManager : MonoBehaviour
         if (spellcode_dict.ContainsKey(spellcode_uppercase))
         {
             Spell spell = spellcode_dict[spellcode_uppercase];
-            if (spell.OnCooldown()) return SpellCastResult.OnCooldown;
+            if (spell.IsOnCooldown()) return SpellCastResult.OnCooldown;
             if (spell.cost > crystals) return SpellCastResult.NotEnoughResources;
 
 

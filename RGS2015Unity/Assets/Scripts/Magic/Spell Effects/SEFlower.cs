@@ -5,7 +5,7 @@ public class SEFlower : SpellEffect
 {
     public Projectile projectile_prefab;
 
-    public override void Do(Mage caster)
+    public override void Do(Mage caster, Spell origin_spell)
     {
         for (int i = 0; i < 10; ++i)
         {

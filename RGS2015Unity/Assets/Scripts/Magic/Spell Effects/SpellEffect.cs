@@ -4,7 +4,7 @@ using System.Collections;
 public class SpellEffect : MonoBehaviour
 {
     
-    public virtual void Do(Mage caster)
+    public virtual void Do(Mage caster, Spell origin_spell)
     {
     }
 }

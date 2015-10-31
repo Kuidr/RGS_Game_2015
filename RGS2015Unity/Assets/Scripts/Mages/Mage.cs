@@ -28,9 +28,15 @@ public class Mage : MonoBehaviour
     public TextMesh spell_code_text;
 
     // State
+    private int hearts_max = 3;
     private int hearts = 3;
     private bool invincible = true;
     private bool casting_allowed = true;
+
+    // Events
+    public System.Action<ManaSlot> event_fill_slot;
+    public System.Action event_crystal_count_change;
+    public System.Action event_hearts_change;
 
 
     // PUBLIC MODIFIERS
@@ -43,17 +49,24 @@ public class Mage : MonoBehaviour
         }
         return false;
     }
-    public bool FillManaSlot(ControlledProjectile p)
+    public bool FillManaSlot(ControlledProjectile p, Spell origin_spell)
     {
         for (int i = 0; i < mana_slots.Count; ++i)
         {
             if (mana_slots[i].IsAvailable())
             {
-                mana_slots[i].Fill(p);
+                mana_slots[i].Fill(p, origin_spell);
+
+                if (event_fill_slot != null) event_fill_slot(mana_slots[i]);
                 return true;
             }
         }
         return false;
+    }
+    public void AddCrystals(int number)
+    {
+        crystals += number;
+        if (event_crystal_count_change != null) event_crystal_count_change();
     }
 
 
@@ -79,9 +92,21 @@ public class Mage : MonoBehaviour
 
         return oldest;
     }
-    public void AddCrystals(int number)
+    public int GetCrystalCount()
     {
-        crystals += number;
+        return crystals;
+    }
+    public int GetMaxHearts()
+    {
+        return hearts_max;
+    }
+    public int GetHearts()
+    {
+        return hearts;
+    }
+    public bool IsDead()
+    {
+        return hearts == 0;
     }
 
 
@@ -151,6 +176,8 @@ public class Mage : MonoBehaviour
     }
     private void TakeHit()
     {
+        if (IsDead() || invincible) return;
+
         // fall down
         rb.gravityScale = 1;
         casting_allowed = false;
@@ -158,12 +185,12 @@ public class Mage : MonoBehaviour
         // dispel slot projectiles
         foreach (ManaSlot slot in mana_slots)
         {
-            if (slot.GetProjectile() == null) continue;
-            slot.GetProjectile().Destroy(ManaSlotCooldown.Short);
+            slot.Empty(ManaSlotCooldown.Short);
         }
 
         // damage
         hearts -= 1;
+        if (event_hearts_change != null) event_hearts_change();
         if (hearts == 0)
         {
             Die();
@@ -183,7 +210,14 @@ public class Mage : MonoBehaviour
     {
         if (casting_allowed)
         {
+            int crystals_old = crystals;
             SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
+            
+            // crystals spent
+            if (crystals != crystals_old)
+            {
+                if (event_crystal_count_change != null) event_crystal_count_change();
+            }
         }
             
     }

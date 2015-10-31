@@ -3,12 +3,12 @@ using System.Collections;
 
 public class SESlowTime : SpellEffect
 {
-    public override void Do(Mage caster)
+    public override void Do(Mage caster, Spell origin_spell)
     {
         SESlowTime st = Instantiate(this);
         st.StartCoroutine(st.UpdateSlowTime());
 
-        base.Do(caster);
+        base.Do(caster, origin_spell);
     }
 
 
