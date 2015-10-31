@@ -32,7 +32,7 @@ public class InGameMenuPage : UIMenuPage
 
     private void Quit()
     {
-        Application.LoadLevel("Main Menu");
+        Application.LoadLevel("MainMenu");
     }
     private IEnumerator CheckForUnHideInput()
     {

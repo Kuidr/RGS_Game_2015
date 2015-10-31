@@ -10,7 +10,7 @@ public class PauseController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && match_manager.GetMatchState() == MatchState.InMatch)
         {
             if (Paused && pause_menu.IsTopPage() && !pause_menu.Hidden()) pause_menu.ButtonResume();
             else

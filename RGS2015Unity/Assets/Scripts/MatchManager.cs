@@ -6,15 +6,19 @@ public enum MatchState { PreMatch, InMatch, PostMatch }
 
 public class MatchManager : MonoBehaviour
 {
-    private MatchState state = MatchState.PreMatch;
-
     // General
     public Mage[] players;
     private List<Ball> balls = new List<Ball>();
     public Ball ball_prefab;
+    public GGPage gg_page;
+
+    // State and score
+    MatchState state = MatchState.PreMatch;
+    private int winner_player_num = -1;
 
     // Timers
     private float time_newball = 15f; // seconds
+    private float time_delay_ggpage = 3.5f;
 
 
 
@@ -27,11 +31,19 @@ public class MatchManager : MonoBehaviour
     }
 
 
-    // PUBLIC ACCESSORS
+    // PUBLIC ACCESSORS AND HELPERS
 
     public int GetWinnerPlayerNum()
     {
         return 1;
+    }
+    public static int GetOpponentNumber(int player_num)
+    {
+        return player_num == 1 ? 2 : 1; 
+    }
+    public MatchState GetMatchState()
+    {
+        return state;
     }
 
 
@@ -46,6 +58,11 @@ public class MatchManager : MonoBehaviour
 
         //-------------------------
 
+        // events
+        players[0].event_hearts_change += OnMageHeartsChange;
+        players[1].event_hearts_change += OnMageHeartsChange;
+
+        // begin
         StartMatch();
     }
     private void StartMatch()
@@ -57,10 +74,33 @@ public class MatchManager : MonoBehaviour
         balls.Remove(ball);
         if (balls.Count == 0) StartCoroutine(CreateNewBall());
     }
+    private void OnMageHeartsChange(Mage mage)
+    {
+        if (mage.GetHearts() == 0)
+        {
+            GG(GetOpponentNumber(mage.player_number));
+        }
+    }
+
+    private void GG(int winning_player_num)
+    {
+        state = MatchState.PostMatch;
+        //match_audio.PlayGameOver();
+        TimeScaleManager.Instance.AddMultiplier("GG_slow", 0.3f);
+        this.winner_player_num = winning_player_num;
+
+        StartCoroutine(TranInGGPage());
+    }
 
     private IEnumerator CreateNewBall()
     {
         yield return new WaitForSeconds(time_newball);
         Instantiate(ball_prefab);
     }
+    private IEnumerator TranInGGPage()
+    {
+        yield return new WaitForSeconds(time_delay_ggpage);
+        gg_page.TransitionIn();
+    }
+
 }

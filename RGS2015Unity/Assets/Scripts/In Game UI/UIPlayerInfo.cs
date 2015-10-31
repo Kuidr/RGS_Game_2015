@@ -59,7 +59,7 @@ public class UIPlayerInfo : MonoBehaviour
         crystals_text.text = mage.GetCrystalCount().ToString();
     }
 
-    private void OnHeartsChange()
+    private void OnHeartsChange(Mage mage)
     {
         if (hearts.Count != mage.GetMaxHearts()) Debug.LogError("No support now for changing max hearts");
 

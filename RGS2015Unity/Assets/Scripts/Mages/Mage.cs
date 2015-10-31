@@ -29,14 +29,14 @@ public class Mage : MonoBehaviour
 
     // State
     private int hearts_max = 3;
-    private int hearts = 3;
+    private int hearts;
     private bool invincible = true;
     private bool casting_allowed = true;
 
     // Events
     public System.Action<ManaSlot> event_fill_slot;
     public System.Action event_crystal_count_change;
-    public System.Action event_hearts_change;
+    public System.Action<Mage> event_hearts_change;
 
 
     // PUBLIC MODIFIERS
@@ -148,10 +148,8 @@ public class Mage : MonoBehaviour
     }
     private void Start()
     {
+        hearts = hearts_max;
         Refresh();
-
-        // TEST SPELL CREATION
-
     }
     private void Update()
     {
@@ -193,7 +191,7 @@ public class Mage : MonoBehaviour
 
         // damage
         hearts -= 1;
-        if (event_hearts_change != null) event_hearts_change();
+        if (event_hearts_change != null) event_hearts_change(this);
         if (hearts == 0)
         {
             Die();
