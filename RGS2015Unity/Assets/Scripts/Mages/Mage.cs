@@ -14,10 +14,10 @@ public class Mage : MonoBehaviour
     private Rigidbody2D rb;
     public SpriteRenderer sprite;
     public Transform floating_pos;
+    private Hover hover;
 
     // Resources
     private int crystals = 10;
-
 
     // Spells and Projectile
     private const int StartingManaSlots = 4;
@@ -133,6 +133,7 @@ public class Mage : MonoBehaviour
 
         // other references
         rb = GetComponent<Rigidbody2D>();
+        hover = GetComponent<Hover>();
 
         // color
         sprite.color = player_color;
@@ -179,6 +180,7 @@ public class Mage : MonoBehaviour
         if (IsDead() || invincible) return;
 
         // fall down
+        hover.StartFadeOut();
         rb.gravityScale = 1;
         casting_allowed = false;
 
@@ -285,6 +287,7 @@ public class Mage : MonoBehaviour
         transform.position = floating_pos.position;
         transform.rotation = Quaternion.identity;
         rb.isKinematic = false;
+        hover.StartFadeIn();
     }
 
 
