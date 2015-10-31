@@ -4,6 +4,7 @@ using System.Collections;
 public class Ball : MonoBehaviour
 {
     private static MatchManager matchmanager;
+    private CameraShake camshake;
 
     // Events
     public System.Action<Ball> event_ball_hit_mage;
@@ -23,10 +24,16 @@ public class Ball : MonoBehaviour
         matchmanager = FindObjectOfType<MatchManager>();
         if (matchmanager == null) Debug.LogError("MatchManager not found");
         matchmanager.RegisterBall(this);
+
+        camshake = Camera.main.GetComponent<CameraShake>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Rock"))
+        if (collision.collider.CompareTag("Wall"))
+        {
+            camshake.Shake(new CamShakeInstance(0.03f, 0.1f));
+        }
+        else if (collision.collider.CompareTag("Rock"))
         {
             float s = transform.localScale.x;
             s += ScalePerStone;
@@ -44,6 +51,7 @@ public class Ball : MonoBehaviour
         }
         else if (collision.collider.CompareTag("Mage"))
         {
+            camshake.Shake(new CamShakeInstance(0.15f, 1.5f));
             BreakApart();
             if (event_ball_hit_mage != null) event_ball_hit_mage(this);
         }
