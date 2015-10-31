@@ -18,7 +18,7 @@ public class MatchManager : MonoBehaviour
 
     // Timers
     private float time_newball = 15f; // seconds
-    private float time_delay_ggpage = 3.5f;
+    private float time_delay_ggpage = 2.5f;
 
 
 
@@ -49,15 +49,15 @@ public class MatchManager : MonoBehaviour
 
     // PRIVATE MODIFIERS
 
-    private void Start()
+    private void Awake()
     {
-        // DEBUG from game scene
-        //-------------------------
-        //GameSettings.Instance.SetPlayerControl(1, false, 1);
-        //GameSettings.Instance.SetPlayerControl(2, false, 2);
+        // players
+        players[0].Inititalize(1, this);
+        players[1].Inititalize(2, this);
 
-        //-------------------------
-
+    }
+    private void Start()
+    {   
         // events
         players[0].event_hearts_change += OnMageHeartsChange;
         players[1].event_hearts_change += OnMageHeartsChange;
@@ -78,7 +78,7 @@ public class MatchManager : MonoBehaviour
     {
         if (mage.GetHearts() == 0)
         {
-            GG(GetOpponentNumber(mage.player_number));
+            GG(GetOpponentNumber(mage.GetPlayerNumber()));
         }
     }
 

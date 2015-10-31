@@ -17,21 +17,21 @@ public class MatchSetupPage : UIMenuPage
 
     private void Update()
     {
-        //UpdatePlayerJoin();
+        UpdatePlayerJoin();
     }
     private void UpdatePlayerJoin()
     {
         bool input_start = false;
         int control_scheme = 0;
-        if (Input.GetButtonDown("Start2"))
+        if (Input.GetButtonDown("Start1"))
+        {
+            input_start = true;
+            control_scheme = 1;
+        }
+        else if (Input.GetButtonDown("Start2")) 
         {
             input_start = true;
             control_scheme = 2;
-        }
-        else if (Input.GetButtonDown("Start3")) 
-        {
-            input_start = true;
-            control_scheme = 3;
         }
 
 

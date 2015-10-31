@@ -9,7 +9,7 @@ public class AIPlayerController : PlayerController
     private Mage opponent;
     private Mage mage;
 
-    public void Initialize(Mage mage, Mage opponent)
+    public void Initialize(Mage mage, Mage opponent, MatchManager manager)
     {
         this.mage = mage;
         this.opponent = opponent;

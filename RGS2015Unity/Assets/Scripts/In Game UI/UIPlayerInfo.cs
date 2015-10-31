@@ -36,7 +36,7 @@ public class UIPlayerInfo : MonoBehaviour
     private void PopulateUIRow()
     {
         // name
-        //name_text = mage.plauer
+        name_text.text = mage.GetPlayerName();
 
         // hearts
         for (int i = 0; i < mage.GetMaxHearts(); ++i)

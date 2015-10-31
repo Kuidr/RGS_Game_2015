@@ -7,9 +7,10 @@ public class Mage : MonoBehaviour
     public Mage opponent;
 
     // General
-    public int player_number = 1;
-    public Color player_color = Color.red;
-    public bool ai = false;
+    private int player_num = 1;
+    private string player_name = "Player";
+    private Color player_color = Color.red;
+
     private PlayerController pc;
     private Rigidbody2D rb;
     public SpriteRenderer sprite;
@@ -72,6 +73,19 @@ public class Mage : MonoBehaviour
 
     // PUBLIC ACCESSORS
 
+    public string GetPlayerName()
+    {
+        return player_name;
+    }
+    public int GetPlayerNumber()
+    {
+        return player_num;
+    }
+    public Color GetPlayerColor()
+    {
+        return player_color;
+    }
+
     public List<ManaSlot> GetManaSlots()
     {
         return mana_slots;
@@ -108,22 +122,33 @@ public class Mage : MonoBehaviour
     {
         return hearts == 0;
     }
+    
 
 
     // PRIVATE MODIFIERS
 
-    private void Awake()
+    private void Start()
     {
+        hearts = hearts_max;
+        Refresh();
+    }
+    public void Inititalize(int number, MatchManager manager)
+    {
+        player_num = number;
+        player_name = GameSettings.Instance.player_name[number - 1];
+        player_color = GameSettings.Instance.GetPlayerColor(number);
+
         // Player controller
-        if (ai)
+        if (GameSettings.Instance.IsAIControlled(number))
         {
             gameObject.AddComponent<AIPlayerController>();
-            GetComponent<AIPlayerController>().Initialize(this, opponent);
+            GetComponent<AIPlayerController>().Initialize(this, opponent, manager);
         }
         else
         {
             gameObject.AddComponent<HumanPlayerController>();
-            GetComponent<HumanPlayerController>().Initialize(player_number);
+            GetComponent<HumanPlayerController>().Initialize(
+                GameSettings.Instance.GetHumanControlScheme(number));
         }
         this.pc = GetComponent<PlayerController>();
 
@@ -145,11 +170,6 @@ public class Mage : MonoBehaviour
         mana_slots = new List<ManaSlot>(StartingManaSlots);
         for (int i = 0; i < StartingManaSlots; ++i)
             mana_slots.Add(new ManaSlot());
-    }
-    private void Start()
-    {
-        hearts = hearts_max;
-        Refresh();
     }
     private void Update()
     {

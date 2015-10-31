@@ -37,7 +37,6 @@ public class GameSettings : MonoBehaviour
     public int[] player_color_ID = { 0, 0 };
 
 	// Match info
-    public int memorize_time_id = 2;
     public bool music_on = true;
 
     // Constant data  (perhaps load from file in future)
@@ -194,9 +193,5 @@ public class GameSettings : MonoBehaviour
     {
         return player_control_scheme[0] == control_scheme ? 1 :
             player_control_scheme[1] == control_scheme ? 2 : -1;
-    }
-    public int GetMemorizeTimeMins()
-    {
-        return memorize_times[memorize_time_id];
     }
 }

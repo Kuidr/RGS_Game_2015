@@ -32,7 +32,7 @@ public abstract class ControlledProjectile : Projectile
 
         // Projectile Flag
         flag = Instantiate(flag_prefab);
-        flag.Initialize(this, caster.player_color);
+        flag.Initialize(this, caster.GetPlayerColor());
 
         base.Initialize(caster, pos);
     }
