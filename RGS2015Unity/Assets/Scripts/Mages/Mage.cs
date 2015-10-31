@@ -69,7 +69,10 @@ public class Mage : MonoBehaviour
         crystals += number;
         if (event_crystal_count_change != null) event_crystal_count_change();
     }
-
+    public void Hit()
+    {
+        TakeHit();
+    }
 
     // PUBLIC ACCESSORS
 

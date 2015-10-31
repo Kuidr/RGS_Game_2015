@@ -8,6 +8,7 @@ public abstract class ControlledProjectile : Projectile
     // General
     protected ManaSlot slot;
     new private Collider2D collider;
+    public bool goes_through_shield = false;
 
     // Movement
     protected float steering_force_factor = 1;

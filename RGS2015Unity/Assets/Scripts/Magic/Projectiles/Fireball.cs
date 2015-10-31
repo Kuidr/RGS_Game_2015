@@ -6,6 +6,7 @@ public class Fireball : ControlledProjectile
     // Visual
     private static BackgroundLighting lighting;
     private ParticleSystem trail;
+    public Color glow_color;
 
     // Impact
     public Explosion explosion_obj;
@@ -27,7 +28,7 @@ public class Fireball : ControlledProjectile
 
 
         // Visual
-        lighting.Light(transform.position, new Color(1, 0.6f, 0) * 0.2f, true);
+        lighting.Light(transform.position, glow_color * 0.2f, true);
 
         base.Update();
     }

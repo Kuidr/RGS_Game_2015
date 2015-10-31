@@ -116,8 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  player_marker: {fileID: 0}
+  goes_through_shield: 0
   flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
+  glow_color: {r: .00675822422, g: .65484798, b: .91911763, a: 1}
   explosion_obj: {fileID: 11408136}
 --- !u!198 &19831990
 ParticleSystem:
@@ -2352,6 +2353,22 @@ Prefab:
       value: 
       objectReference: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: glow_color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: glow_color.r
+      value: .00675822422
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: glow_color.g
+      value: .65484798
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: glow_color.b
+      value: .91911763
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133278}

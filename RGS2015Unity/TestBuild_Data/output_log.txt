@@ -1,4 +1,4 @@
-Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+Initialize engine version: 5.1.0f3 (ec70b008569d)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
@@ -16,7 +16,7 @@ Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.223 seconds
+- Completed reload, in  0.075 seconds
 desktop: 1600x900 50Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -24,8 +24,14 @@ desktop: 1600x900 50Hz; virtual: 1600x900 at 0,0
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.394781 ms
+UnloadTime: 4.082991 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 821.
-Total: 0.720194 ms (FindLiveObjects: 0.056624 ms CreateObjectMapping: 0.045299 ms MarkObjects: 0.603406 ms  DeleteObjects: 0.014156 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 806.
+Total: 0.788144 ms (FindLiveObjects: 0.074319 ms CreateObjectMapping: 0.054501 ms MarkObjects: 0.644459 ms  DeleteObjects: 0.013802 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.084761 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 668.
+Total: 1.309799 ms (FindLiveObjects: 0.128821 ms CreateObjectMapping: 0.089537 ms MarkObjects: 1.074452 ms  DeleteObjects: 0.015571 ms)
 
