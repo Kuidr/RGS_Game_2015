@@ -1,0 +1,32 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Hover : MonoBehaviour
+{
+    public float intensity = 0.1f;
+    private float speed = 1f;
+
+    private Vector2 anchor_pos;
+    private Vector2 offset = new Vector2();
+    private float tx = 0, ty = 0;
+
+    private void Start()
+    {
+        anchor_pos = transform.position;
+        transform.position = (Vector2)transform.position + GeneralHelpers.RandomDirection2D() * intensity;
+        tx = Random.value * Mathf.PI * 2f;
+        ty = Random.value * Mathf.PI * 2f;
+    }
+
+    public void Update()
+    {
+        tx += Time.deltaTime * speed * 0.5f;
+        ty += Time.deltaTime * speed;
+
+        offset.x = Mathf.Sin(tx) * intensity * 0.3f;
+        offset.y = Mathf.Sin(ty) * intensity;
+
+        transform.position = anchor_pos + offset;
+    }
+
+}

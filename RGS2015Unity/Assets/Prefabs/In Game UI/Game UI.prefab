@@ -394,6 +394,8 @@ MonoBehaviour:
   prefab_slot_icon: {fileID: 11422018, guid: a0f812562f37c2f48ae51377bd8a1a1e, type: 2}
   sprite_slot_empty: {fileID: 21300000, guid: 7016baa71257b45468527ae04ecf285c, type: 3}
   sprite_slot_cd: {fileID: 21300000, guid: 6e757da73bbf9624298873b09e5101ca, type: 3}
+  sprite_heart_full: {fileID: 0}
+  sprite_heart_empty: {fileID: 0}
 --- !u!114 &11431362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,6 +436,8 @@ MonoBehaviour:
   prefab_slot_icon: {fileID: 11422018, guid: a0f812562f37c2f48ae51377bd8a1a1e, type: 2}
   sprite_slot_empty: {fileID: 21300000, guid: 7016baa71257b45468527ae04ecf285c, type: 3}
   sprite_slot_cd: {fileID: 21300000, guid: 6e757da73bbf9624298873b09e5101ca, type: 3}
+  sprite_heart_full: {fileID: 0}
+  sprite_heart_empty: {fileID: 0}
 --- !u!114 &11432176
 MonoBehaviour:
   m_ObjectHideFlags: 1

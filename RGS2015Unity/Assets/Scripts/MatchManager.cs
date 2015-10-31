@@ -27,6 +27,14 @@ public class MatchManager : MonoBehaviour
     }
 
 
+    // PUBLIC ACCESSORS
+
+    public int GetWinnerPlayerNum()
+    {
+        return 1;
+    }
+
+
     // PRIVATE MODIFIERS
 
     private void Start()
