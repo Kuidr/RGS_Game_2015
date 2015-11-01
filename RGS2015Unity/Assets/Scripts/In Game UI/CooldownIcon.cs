@@ -13,7 +13,14 @@ public class CooldownIcon : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(UpdateCoolingDown(spell));
     }
-
+    public void SetVisible(bool visible)
+    {
+        icon.enabled = visible;
+    }
+    public bool IsVisible()
+    {
+        return icon.enabled;
+    }
 
     private void Awake()
     {

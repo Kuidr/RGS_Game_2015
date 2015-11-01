@@ -22,6 +22,9 @@ public class UIPlayerInfo : MonoBehaviour
     private List<Image> hearts = new List<Image>();
     private Dictionary<ManaSlot, SpellSlotIcon> slot_icons = new Dictionary<ManaSlot, SpellSlotIcon>();
 
+    private IEnumerator flash_crystal_count;
+    private IEnumerator flash_slot_icons;
+
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class UIPlayerInfo : MonoBehaviour
         foreach (ManaSlot slot in mage.GetManaSlots()) slot.event_emptied += OnSlotEmptied;
         mage.event_crystal_count_change += OnCrystalCountChange;
         mage.event_hearts_change += OnHeartsChange;
+        mage.event_spell_cast += OnSpellCast;
     }
     private void PopulateUIRow()
     {
@@ -85,5 +89,49 @@ public class UIPlayerInfo : MonoBehaviour
     {
         SpellSlotIcon icon = slot_icons[slot];
         icon.SetCooldown(slot, sprite_slot_cd);
+    }
+    private void OnSpellCast(SpellCastResult result)
+    {
+        // not enough free slots alert
+        if (result.not_enough_free_slots)
+        {
+            if (flash_slot_icons != null) StopCoroutine(flash_slot_icons);
+            flash_slot_icons = FlashSlotIcons();
+            StartCoroutine(flash_slot_icons);
+        }
+
+        // not enough resources alert
+        if (result.not_enough_resources)
+        {
+            if (flash_crystal_count != null) StopCoroutine(flash_crystal_count);
+            flash_crystal_count = FlashCrystalCount();
+            StartCoroutine(flash_crystal_count);
+        }
+    }
+
+    private IEnumerator FlashCrystalCount()
+    {
+        crystals_text.enabled = true;
+        for (int i = 0; i < 12; ++i)
+        {
+            crystals_text.enabled = !crystals_text.enabled;
+            yield return new WaitForSeconds(0.075f);
+        }
+        crystals_text.enabled = true;
+    }
+    private IEnumerator FlashSlotIcons()
+    {
+        foreach (SpellSlotIcon icon in slot_icons.Values)
+            icon.SetVisible(true);
+
+        for (int i = 0; i < 12; ++i)
+        {
+            foreach (SpellSlotIcon icon in slot_icons.Values)
+                icon.SetVisible(!icon.IsVisible());
+            yield return new WaitForSeconds(0.075f);
+        }
+
+        foreach (SpellSlotIcon icon in slot_icons.Values)
+            icon.SetVisible(true);
     }
 }

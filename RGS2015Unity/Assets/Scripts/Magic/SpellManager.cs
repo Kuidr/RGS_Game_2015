@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum SpellCastResult { Cast, OnCooldown, NotEnoughResources, InvalidSpellCode, NotEnoughFreeSlots };
 
 public class SpellManager : MonoBehaviour
 {
@@ -12,30 +11,44 @@ public class SpellManager : MonoBehaviour
 
     // events
     public System.Action event_spelllist_populated;
-    public System.Action<Spell> event_spell_cast;
+    public System.Action<SpellCastResult> event_spell_cast;
 
 
     // PUBLIC MODIFIERS
 
-    public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, int free_slots, ref int crystals)
+    public SpellCastResult TryCast(Mage caster, string spellcode_uppercase, ref int crystals)
     {
+        SpellCastResult result = new SpellCastResult();
+        Spell spell = null;
+
         if (spellcode_dict.ContainsKey(spellcode_uppercase))
         {
-            Spell spell = spellcode_dict[spellcode_uppercase];
-            if (spell.IsOnCooldown()) return SpellCastResult.OnCooldown;
-            if (spell.cost > crystals) return SpellCastResult.NotEnoughResources;
-            if (spell.GetFreeSlotsRequired() > free_slots) return SpellCastResult.NotEnoughFreeSlots;
+            spell = spellcode_dict[spellcode_uppercase];
 
+            // check prerequisites
+            result.on_cooldown = spell.IsOnCooldown();
+            result.not_enough_resources = spell.cost > crystals;
+            result.not_enough_free_slots = spell.GetFreeSlotsRequired() > caster.NumFreeSlots();
 
-            crystals -= spell.cost;
-            spell.Cast(caster);
-            if (event_spell_cast != null) event_spell_cast(spell);
-            return SpellCastResult.Cast;
+            if (!result.on_cooldown && !result.not_enough_free_slots && !result.not_enough_resources)
+            {
+                // successful cast
+                crystals -= spell.cost;
+                spell.Cast(caster);
+                result.success = true;
+            } 
         }
         else
         {
-            return SpellCastResult.InvalidSpellCode;
+            // bad spell code
+            result.invalid_spell_code = true;
         }
+
+
+        // return and events
+        result.spell = spell;
+        if (event_spell_cast != null) event_spell_cast(result);
+        return result;
     }
 
 
@@ -72,4 +85,14 @@ public class SpellManager : MonoBehaviour
         // send populate event
         if (event_spelllist_populated != null) event_spelllist_populated();
     }
+}
+
+public class SpellCastResult
+{
+    public Spell spell;
+    public bool success = false;
+    public bool invalid_spell_code = false;
+    public bool on_cooldown = false;
+    public bool not_enough_resources = false;
+    public bool not_enough_free_slots = false;
 }

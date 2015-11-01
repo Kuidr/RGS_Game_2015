@@ -33,8 +33,6 @@ public class Spell : MonoBehaviour
         {
             free_slots_required += effect.FreeSlotsRequired;
         }
-
-        Debug.Log(free_slots_required);
     }
     /// <summary>
     /// This will force the casting of the spell regardless of resource cost and cooldown.

@@ -53,14 +53,32 @@ public class UISpellList : MonoBehaviour
             rows.Add(spell, row);
         }
     }
-    private void OnSpellCast(Spell spell)
+    private void OnSpellCast(SpellCastResult result)
     {
         // start cooldown icon
-        if (spell.IsOnCooldown())
+        if (result.success && result.spell.IsOnCooldown())
         {
-            SpellUIRow row = rows[spell];
-            if (row != null) row.cd_icon.Enable(spell);
+            SpellUIRow row = rows[result.spell];
+            if (row != null) row.cd_icon.Enable(result.spell);
         }
+        else if (result.on_cooldown)
+        {
+            SpellUIRow row = rows[result.spell];
+            if (row.flash_cd_icon != null) StopCoroutine(row.flash_cd_icon);
+            row.flash_cd_icon = FlashCDIcon(row.cd_icon);
+            StartCoroutine(row.flash_cd_icon);
+        }
+    }
+
+    private IEnumerator FlashCDIcon(CooldownIcon icon)
+    {
+        icon.SetVisible(true);
+        for (int i = 0; i < 12; ++i)
+        {
+            icon.SetVisible(!icon.IsVisible());
+            yield return new WaitForSeconds(0.075f);
+        }
+        icon.SetVisible(true);
     }
 
     private class SpellUIRow
@@ -68,6 +86,6 @@ public class UISpellList : MonoBehaviour
         public Text code;
         public Image symbol;
         public CooldownIcon cd_icon;
+        public IEnumerator flash_cd_icon;
     }
-
 }

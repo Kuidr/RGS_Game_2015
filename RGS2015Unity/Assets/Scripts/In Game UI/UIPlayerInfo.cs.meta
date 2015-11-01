@@ -1,10 +1,22 @@
 fileFormatVersion: 2
 guid: 5759b869231300a4391a2d851d0f05b0
-timeCreated: 1446256430
+timeCreated: 1446398166
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mage: {instanceID: 0}
+  - name_text: {instanceID: 0}
+  - row_hearts: {instanceID: 0}
+  - row_slots: {instanceID: 0}
+  - crystals_text: {instanceID: 0}
+  - prefab_heart: {instanceID: 0}
+  - prefab_slot_icon: {instanceID: 0}
+  - sprite_slot_empty: {fileID: 21300000, guid: cea3f7b52855d0344b1874aa4c778490,
+      type: 3}
+  - sprite_slot_cd: {instanceID: 0}
+  - sprite_heart_full: {instanceID: 0}
+  - sprite_heart_empty: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

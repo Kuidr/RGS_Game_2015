@@ -38,6 +38,7 @@ public class Mage : MonoBehaviour
     public System.Action<ManaSlot> event_fill_slot;
     public System.Action event_crystal_count_change;
     public System.Action<Mage> event_hearts_change;
+    public System.Action<SpellCastResult> event_spell_cast;
 
 
     // PUBLIC MODIFIERS
@@ -235,13 +236,16 @@ public class Mage : MonoBehaviour
         if (casting_allowed)
         {
             int crystals_old = crystals;
-            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, NumFreeSlots(), ref crystals);
+            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
             
             // crystals spent
             if (crystals != crystals_old)
             {
                 if (event_crystal_count_change != null) event_crystal_count_change();
             }
+
+            // event
+            if (event_spell_cast != null) event_spell_cast(result);
         }
             
     }

@@ -17,6 +17,14 @@ public class SpellSlotIcon : MonoBehaviour
     {
         icon.sprite = sprite;
     }
+    public void SetVisible(bool visible)
+    {
+        icon.enabled = visible;
+    }
+    public bool IsVisible()
+    {
+        return icon.enabled;
+    }
 
     private IEnumerator UpdateCoolingDown(ManaSlot slot)
     {
