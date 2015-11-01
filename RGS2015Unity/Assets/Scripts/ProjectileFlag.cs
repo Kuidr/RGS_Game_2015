@@ -6,10 +6,10 @@ public class ProjectileFlag : MonoBehaviour
     private Projectile projectile;
     private const float Height = 0.2f;
 
-    public void Initialize(Projectile projectile, Color color)
+    public void Initialize(Projectile projectile, Vector2 pos, Color color)
     {
         this.projectile = projectile;
-        transform.position = (Vector2)projectile.transform.position + Vector2.up * 2f;
+        transform.position = pos;
         GetComponent<SpriteRenderer>().color = color;
     }
 	private void Update()

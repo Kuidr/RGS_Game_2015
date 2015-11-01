@@ -38,9 +38,12 @@ public class Iceball : ControlledProjectile
         explosion_obj.Explode();
 
         // push target
-        Vector2 to_target = target.transform.position - transform.position;
-        Vector2 force = to_target.normalized * Mathf.Max(0, (3f - to_target.magnitude));
-        target.AddForceAtPosition(force, transform.position, ForceMode2D.Impulse);
+        if (target != null)
+        {
+            Vector2 to_target = target.transform.position - transform.position;
+            Vector2 force = to_target.normalized * Mathf.Max(0, (3f - to_target.magnitude));
+            target.AddForceAtPosition(force, transform.position, ForceMode2D.Impulse);
+        }
 
         // particles
         trail.Clear();
