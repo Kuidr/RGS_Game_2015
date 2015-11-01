@@ -8,13 +8,14 @@ public class Explosion : MonoBehaviour
     private void Awake()
     {
         ps = GetComponent<ParticleSystem>();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
 	public void Explode(float radius, float max_force)
     {
         gameObject.SetActive(true);
         ps.Clear();
+        ps.time = 0;
         ps.Play();
 
         // Apply force in radius (exponentially decreasing with distance)
