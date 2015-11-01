@@ -14,10 +14,15 @@ public class ResourceSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(UpdateSpawning());
         GetComponent<SpriteRenderer>().enabled = false;
+        StartCoroutine(StartSpawningAfterDelay());
     }
 
+    private IEnumerator StartSpawningAfterDelay()
+    {
+        yield return new WaitForSeconds(0.75f);
+        StartCoroutine(UpdateSpawning());
+    }
     private IEnumerator UpdateSpawning()
     {
         while (true)

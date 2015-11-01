@@ -492,7 +492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181034
 GameObject:
   m_ObjectHideFlags: 1
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   default_seconds: 2
-  default_delay_seconds: 0
+  default_delay_seconds: 2
   transition_out_on_start: 0
   on_start_transition_delay: 0
 --- !u!114 &11420018
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   default_seconds: .5
   default_delay_seconds: 0
-  transition_out_on_start: 1
+  transition_out_on_start: 0
   on_start_transition_delay: 0
 --- !u!114 &11429044
 MonoBehaviour:
@@ -2188,7 +2188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .0823529437, g: .0666666701, b: .0627451017, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2496,7 +2496,7 @@ MonoBehaviour:
   default_seconds: .5
   default_delay_seconds: 0
   transition_out_on_start: 0
-  on_start_transition_delay: 3.5
+  on_start_transition_delay: 0
   fade_page: {fileID: 11428180}
   hideable: {fileID: 22483328}
   heading: {fileID: 11416974}

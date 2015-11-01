@@ -18,7 +18,7 @@ public class Mage : MonoBehaviour
     private Hover hover;
 
     // Resources
-    private int crystals = 10;
+    private int crystals = 5;
 
     // Spells and Projectile
     private const int StartingManaSlots = 4;
