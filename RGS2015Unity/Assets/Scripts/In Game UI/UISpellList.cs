@@ -73,7 +73,7 @@ public class UISpellList : MonoBehaviour
     private IEnumerator FlashCDIcon(CooldownIcon icon)
     {
         icon.SetVisible(true);
-        for (int i = 0; i < 12; ++i)
+        for (int i = 0; i < 6; ++i)
         {
             icon.SetVisible(!icon.IsVisible());
             yield return new WaitForSeconds(0.075f);

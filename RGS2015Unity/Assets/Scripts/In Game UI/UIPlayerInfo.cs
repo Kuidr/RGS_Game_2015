@@ -112,7 +112,7 @@ public class UIPlayerInfo : MonoBehaviour
     private IEnumerator FlashCrystalCount()
     {
         crystals_text.enabled = true;
-        for (int i = 0; i < 12; ++i)
+        for (int i = 0; i < 6; ++i)
         {
             crystals_text.enabled = !crystals_text.enabled;
             yield return new WaitForSeconds(0.075f);
@@ -124,7 +124,7 @@ public class UIPlayerInfo : MonoBehaviour
         foreach (SpellSlotIcon icon in slot_icons.Values)
             icon.SetVisible(true);
 
-        for (int i = 0; i < 12; ++i)
+        for (int i = 0; i < 6; ++i)
         {
             foreach (SpellSlotIcon icon in slot_icons.Values)
                 icon.SetVisible(!icon.IsVisible());
