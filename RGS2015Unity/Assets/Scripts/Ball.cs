@@ -6,6 +6,8 @@ public class Ball : MonoBehaviour
     private static MatchManager matchmanager;
     private CameraShake camshake;
 
+    private static Vector2? start_pos;
+
     // Events
     public System.Action<Ball> event_ball_hit_mage;
 
@@ -24,6 +26,10 @@ public class Ball : MonoBehaviour
         matchmanager = FindObjectOfType<MatchManager>();
         if (matchmanager == null) Debug.LogError("MatchManager not found");
         matchmanager.RegisterBall(this);
+
+        // start pos (set by first ball)
+        if (start_pos == null) start_pos = transform.position;
+        else transform.position = (Vector2)start_pos;
 
         camshake = Camera.main.GetComponent<CameraShake>();
     }
