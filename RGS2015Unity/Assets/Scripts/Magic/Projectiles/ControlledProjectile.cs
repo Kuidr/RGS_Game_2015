@@ -11,6 +11,7 @@ public abstract class ControlledProjectile : Projectile
     public bool goes_through_shield = false;
 
     // Movement
+    protected Vector2 input_direction = new Vector2();
     protected float steering_force_factor = 1;
     protected float max_steering_force = 3;
     protected float max_speed = 3;
@@ -43,10 +44,10 @@ public abstract class ControlledProjectile : Projectile
     }
     public void UpdateConmtrolledMovement(Vector2 input_move)
     {
-        Vector2 direction = new Vector2(input_move.x, input_move.y);
-        if (direction.magnitude > 0.3f)
+        input_direction = new Vector2(input_move.x, input_move.y);
+        if (input_direction.magnitude > 0.3f)
         {
-            Vector2 desired_velocity = direction * max_speed;
+            Vector2 desired_velocity = input_direction * max_speed;
 
             // Steering force
             Vector2 steering_force = Clip(desired_velocity - rb.velocity, max_steering_force * steering_force_factor);

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿  using UnityEngine;
 using System.Collections;
 
 public class Fireball : ControlledProjectile
@@ -35,6 +35,7 @@ public class Fireball : ControlledProjectile
 
     private void Explode()
     {
+        explosion_obj.gameObject.SetActive(true);
         explosion_obj.Explode(2, 5);
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
@@ -52,6 +53,7 @@ public class Fireball : ControlledProjectile
         rb.velocity = GeneralHelpers.RandomDirection2D() * max_speed / 2f;
         transform.GetComponent<Collider2D>().enabled = true;
 
+        explosion_obj.gameObject.SetActive(false);
         trail.Play();
         trail.enableEmission = true;
 
