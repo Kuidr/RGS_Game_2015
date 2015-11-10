@@ -32,7 +32,7 @@ public class GameSettings : MonoBehaviour
 
     // Player info
     public int[] player_control_scheme = { -1, -1 }; // -1 is ai...
-    public int[] player_ai_type = { 1, 1 }; // -1 is human controlled
+    public int[] player_ai_type = { 0, 0 }; // -1 is human controlled
     public string[] player_name = { "Player 1", "Player 2" };
     public int[] player_color_ID = { 0, 0 };
 
@@ -48,7 +48,7 @@ public class GameSettings : MonoBehaviour
     private string[] hex_colors = { "ffffff", "ff0000", "ff00c6", "8949ff", "4c6eff",
            "4cc2ff", "09ff49", "a5ff09", "f8ff38", "ff9a38", "6f1a4a" };
     [System.NonSerialized]
-    public string[] ai_names = { "Easy AI", "Medium AI", "Hard AI" };
+    public string[] ai_names = { "hard AI", "harder AI" };
     [System.NonSerialized]
     public int[] memorize_times = { 0, 1, 2, 3, 4, 5, 6 }; // minutes
 
@@ -181,7 +181,7 @@ public class GameSettings : MonoBehaviour
     }
     public string GetControlTypeName(int player_number)
     {
-        if (!IsAIControlled(player_number)) return "Human";
+        if (!IsAIControlled(player_number)) return "human";
         return ai_names[player_ai_type[player_number - 1]];
     }
     /// <summary>

@@ -51,10 +51,6 @@ public class MatchManager : MonoBehaviour
 
     private void Awake()
     {
-        // DEBUG
-        GameSettings.Instance.SetPlayerControl(1, false, 1);
-        GameSettings.Instance.SetPlayerControl(2, false, 2);
-
         // players
         players[0].Inititalize(1, this);
         players[1].Inititalize(2, this);
