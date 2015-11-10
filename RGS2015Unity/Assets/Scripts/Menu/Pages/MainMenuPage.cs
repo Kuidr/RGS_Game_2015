@@ -6,7 +6,6 @@ public class MainMenuPage : UIMenuPage
     public MatchSetupPage page_match_setup;
     public SettingsPage page_settings;
 
-
     new public void Start()
     {
         base.Start();
