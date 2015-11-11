@@ -6,16 +6,19 @@ public class SESlowTime : SpellEffect
     public override void Do(Mage caster, Spell origin_spell)
     {
         SESlowTime st = Instantiate(this);
-        st.StartCoroutine(st.UpdateSlowTime());
+        st.StartCoroutine(st.UpdateSlowTime(caster));
 
         base.Do(caster, origin_spell);
     }
 
 
-    public IEnumerator UpdateSlowTime()
+    public IEnumerator UpdateSlowTime(Mage caster)
     {
-        float t = 0;
+        //float t = 0;
+        TimeScaleManager.Instance.AddMultiplier("SEslowtime", 0.1f, true);
+        yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(5f));
 
+        /*
         while (true)
         {
             t += Time.unscaledDeltaTime / 10f;
@@ -25,6 +28,7 @@ public class SESlowTime : SpellEffect
 
             yield return null;
         }
+        */
         TimeScaleManager.Instance.RemoveMultiplier("SEslowtime", true);
 
         Destroy(gameObject);

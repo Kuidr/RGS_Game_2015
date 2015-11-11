@@ -37,6 +37,10 @@ public class MatchManager : MonoBehaviour
     {
         return 1;
     }
+    public Mage GetOpponent(Mage mage)
+    {
+        return players[GetOpponentNumber(mage.GetPlayerNumber()) - 1];
+    }
     public static int GetOpponentNumber(int player_num)
     {
         return player_num == 1 ? 2 : 1; 

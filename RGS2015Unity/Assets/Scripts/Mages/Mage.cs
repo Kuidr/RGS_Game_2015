@@ -78,6 +78,11 @@ public class Mage : MonoBehaviour
     {
         TakeHit();
     }
+    public void Silence(float duration)
+    {
+        spell_code_text.text = "";
+        StartCoroutine(UpdateSilence(duration));
+    }
 
     // PUBLIC ACCESSORS
 
@@ -92,6 +97,10 @@ public class Mage : MonoBehaviour
     public Color GetPlayerColor()
     {
         return player_color;
+    }
+    public Mage GetOpponent()
+    {
+        return opponent;
     }
 
     public List<ManaSlot> GetManaSlots()
@@ -418,6 +427,12 @@ public class Mage : MonoBehaviour
         spell_code_text.color = spell_code_initial_color;
         spell_code_text.text = "";
 
+        casting_allowed = true;
+    }
+    private IEnumerator UpdateSilence(float duration)
+    {
+        casting_allowed = false;
+        yield return new WaitForSeconds(duration);
         casting_allowed = true;
     }
 
