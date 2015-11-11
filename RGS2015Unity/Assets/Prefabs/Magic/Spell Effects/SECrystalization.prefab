@@ -1,53 +1,45 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &130498
+--- !u!1 &162094
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 409270}
-  - 114: {fileID: 11414860}
+  - 4: {fileID: 448114}
+  - 114: {fileID: 11427604}
   m_Layer: 0
-  m_Name: SpellManager
+  m_Name: SECrystalization
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &409270
+--- !u!4 &448114
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130498}
+  m_GameObject: {fileID: 162094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11414860
+--- !u!114 &11427604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130498}
+  m_GameObject: {fileID: 162094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c34f1c14bfc8a354d9fad46fe2a58e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: c0b86ca3b08d83544990870283d15cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spell_prefabs:
-  - {fileID: 11454012, guid: b20bc9704e1f3ec4391c5b28b2facdb0, type: 2}
-  - {fileID: 11427662, guid: 6c0307a1425429e4e8a88253db4b29b3, type: 2}
-  - {fileID: 11440214, guid: 14437fa293d42624c8369a1f8077a3a0, type: 2}
-  - {fileID: 11446378, guid: 2e7e40506b8e94f46b5623f3da1b3810, type: 2}
-  - {fileID: 11499214, guid: 5362c75f04c4b43458ad9f5f2df79e5d, type: 2}
-  - {fileID: 11492030, guid: 99fb53ca65269c24bad2c660e7712cb6, type: 2}
-  - {fileID: 11465472, guid: c736efb0936bdf74d95fd7ce1991d383, type: 2}
-  - {fileID: 11454442, guid: 30d4f18c809686b42b5acfa6255ca1fc, type: 2}
+  num: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -57,5 +49,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 130498}
+  m_RootGameObject: {fileID: 162094}
   m_IsPrefabParent: 1
