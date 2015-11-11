@@ -8,28 +8,20 @@ public class PlayerController : MonoBehaviour
     private float auto_cast_timer = 0;
 
     public Vector2 InputMove { get; protected set; }
-    private string input_spell_code;
-    public string InputSpellCode
-    {
-        get
-        {
-            return input_spell_code;
-        }
-        protected set
-        {
-            input_spell_code = value;
-            if (value != "") auto_cast_timer = AutoCastTime; // start auto cast
-            if (InputSpellCodeChange != null) InputSpellCodeChange();
-        }
-    }
-    public Action InputSpellCodeChange { get; set; }
+    public Action InputSpellCodeA { get; set; }
+    public Action InputSpellCodeB { get; set; }
+    public Action InputSpellCodeX { get; set; }
+    public Action InputSpellCodeY { get; set; }
     public Action InputCast { get; set; }
 
+    protected void StartAutoCast()
+    {
+        auto_cast_timer = AutoCastTime;
+    }
 
     protected void Start()
     {
         InputMove = Vector2.zero;
-        InputSpellCode = "";
     }
     protected void Update()
     {
@@ -41,7 +33,6 @@ public class PlayerController : MonoBehaviour
             {
                 // cast
                 InputCast();
-                InputSpellCode = "";
             }
         }
     }

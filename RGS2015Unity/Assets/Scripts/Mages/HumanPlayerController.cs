@@ -21,16 +21,15 @@ public class HumanPlayerController : PlayerController
         InputMove = new Vector2(h, v);
 
         // Spell code
-        if (ADown()) InputSpellCode += "A";
-        else if (BDown()) InputSpellCode += "B";
-        else if (XDown()) InputSpellCode += "X";
-        else if (YDown()) InputSpellCode += "Y";
+        if (ADown() && InputSpellCodeA != null) { InputSpellCodeA(); StartAutoCast(); }
+        else if (BDown() && InputSpellCodeB != null) { InputSpellCodeB(); StartAutoCast(); }
+        else if (XDown() && InputSpellCodeX != null) { InputSpellCodeX(); StartAutoCast(); }
+        else if (YDown() && InputSpellCodeY != null) { InputSpellCodeY(); StartAutoCast(); }
 
         // Casting (explicit)
-        if (Input.GetAxis("Cast" + control_scheme) > 0 && InputSpellCode != "")
+        if (Input.GetAxis("Cast" + control_scheme) > 0 && InputCast != null)
         {
             InputCast();
-            InputSpellCode = "";
         }
 
         base.Update();

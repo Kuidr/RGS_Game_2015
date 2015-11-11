@@ -26,7 +26,11 @@ public class Mage : MonoBehaviour
  
     private SpellManager spellmanager;
     public Transform cast_point;
+
+    // Spell Code Visuals
     public TextMesh spell_code_text;
+    private Color spell_code_initial_color;
+
 
     // State
     private int hearts_max = 3;
@@ -131,6 +135,10 @@ public class Mage : MonoBehaviour
 
     // PRIVATE MODIFIERS
 
+    private void Awake()
+    {
+        spell_code_initial_color = spell_code_text.color;
+    }
     private void Start()
     {
         hearts = hearts_max;
@@ -158,7 +166,10 @@ public class Mage : MonoBehaviour
 
         // input events
         pc.InputCast += OnCastSpell;
-        pc.InputSpellCodeChange += OnSpellCodeChange;
+        pc.InputSpellCodeA += OnSpellCodeA;
+        pc.InputSpellCodeB += OnSpellCodeB;
+        pc.InputSpellCodeX += OnSpellCodeX;
+        pc.InputSpellCodeY += OnSpellCodeY;
 
         // other references
         rb = GetComponent<Rigidbody2D>();
@@ -194,6 +205,7 @@ public class Mage : MonoBehaviour
 
     private void Refresh()
     {
+        spell_code_text.text = "";
         StopAllCoroutines();
         StartCoroutine(FloatUp());
     }
@@ -233,10 +245,10 @@ public class Mage : MonoBehaviour
 
     private void OnCastSpell()
     {
-        if (casting_allowed)
+        if (casting_allowed && spell_code_text.text != "")
         {
             int crystals_old = crystals;
-            SpellCastResult result = spellmanager.TryCast(this, pc.InputSpellCode, ref crystals);
+            SpellCastResult result = spellmanager.TryCast(this, spell_code_text.text, ref crystals);
             
             // crystals spent
             if (crystals != crystals_old)
@@ -246,14 +258,47 @@ public class Mage : MonoBehaviour
 
             // event
             if (event_spell_cast != null) event_spell_cast(result);
-        }
-            
-    }
-    private void OnSpellCodeChange()
-    {
-        spell_code_text.text = pc.InputSpellCode;
-    }
 
+            // bad cast
+            if (!result.success)
+            {
+                if (result.invalid_spell_code)
+                {
+                    StartCoroutine(FlashSpellCodeText());
+                }
+                else
+                {
+                    StartCoroutine(MakeRedSpellCodeText());
+                }
+            }
+
+            // good cast
+            else
+            {
+                spell_code_text.text = "";
+            }
+        }   
+    }
+    private void OnSpellCodeA()
+    {
+        if (!casting_allowed) return;
+        spell_code_text.text += "A";
+    }
+    private void OnSpellCodeB()
+    {
+        if (!casting_allowed) return;
+        spell_code_text.text += "B";
+    }
+    private void OnSpellCodeX()
+    {
+        if (!casting_allowed) return;
+        spell_code_text.text += "X";
+    }
+    private void OnSpellCodeY()
+    {
+        if (!casting_allowed) return;
+        spell_code_text.text += "Y";
+    }
 
     private IEnumerator RefreshAfterWait()
     {
@@ -313,6 +358,33 @@ public class Mage : MonoBehaviour
         transform.rotation = Quaternion.identity;
         rb.isKinematic = false;
         hover.StartFadeIn();
+    }
+    private IEnumerator FlashSpellCodeText()
+    {
+        casting_allowed = false;
+        Color[] colors = new Color[] { Color.clear, Color.red };
+
+        for (int i = 0; i < 6; ++i)
+        {
+            spell_code_text.color = colors[i%2];
+            yield return new WaitForSeconds(0.075f);
+        }
+        spell_code_text.color = spell_code_initial_color;
+        spell_code_text.text = "";
+
+        casting_allowed = true;
+    }
+    private IEnumerator MakeRedSpellCodeText()
+    {
+        casting_allowed = false;
+        Color[] colors = new Color[] { Color.clear, Color.red };
+
+        spell_code_text.color = Color.red;
+        yield return new WaitForSeconds(0.25f);
+        spell_code_text.color = spell_code_initial_color;
+        spell_code_text.text = "";
+
+        casting_allowed = true;
     }
 
 
