@@ -10,6 +10,7 @@ public class BackgroundLighting : MonoBehaviour
 
     private void Start()
     {
+        return;
         width -= 3;
         float start_x = -width / 2f;
         float start_y = -height / 2f;
@@ -32,6 +33,7 @@ public class BackgroundLighting : MonoBehaviour
 
     public void Update()
     {
+        return;
         // reset
         for (int x = 0; x < cols; ++x)
         {
@@ -43,6 +45,8 @@ public class BackgroundLighting : MonoBehaviour
     }
     public void Light(Vector2 pos, Color color, bool raycast=false)
     {
+        return;
+
         float mult = 1;
 
         for (int x = 0; x < cols; ++x)
