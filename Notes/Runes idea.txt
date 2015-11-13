@@ -1,0 +1,26 @@
+spellcodes -> runecodes
+
+- Use crystals to craft runes. 
+- You have a collection of up to 8 runes, mapped
+  to right joystick directions. 
+- Using a rune costs nothing.
+- If a rune creates a projectile, the rune remains in the collection
+  until the projectile is destroyed.
+- Can break runes in one's collection (to free up space) by pointing with 
+  the right joystick and pressing a button. It takes a couple seconds for a
+  rune to break, preventing easy denying of projectiles. Replaces dispel spell.
+- The rune list shows which runes can currently be crafted in the cave. When a player
+  crafts a rune, the rune is removed from the list, and a new rune replaces it from the 
+  'shelf' above.
+- Runes that have remained in the rune list for too long are replaced.
+
+
+Advantages
+- thematic: slots are no longer just ui elements, crystals create stones (makes sense)
+- strategy: must commit to a spell (spend resources) before using it, allows opponent to 
+            counter, can deny opponent from using certain spells by taking the corresponding runes before them but not needing to immediatly use them.
+			Can see what runes will be available next and plan ahead.
+			game
+- gameplay: more spells (because of the changing rune list), better spells later in the
+			
+See future_ui_concept
