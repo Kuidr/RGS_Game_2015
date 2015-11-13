@@ -78,7 +78,7 @@ GameObject:
   - 61: {fileID: 6182878}
   - 50: {fileID: 5064140}
   - 114: {fileID: 11470686}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Mage
   m_TagString: Mage
   m_Icon: {fileID: 0}
@@ -260,12 +260,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
-  player_number: 1
-  player_color: {r: .926470578, g: .277999997, b: .497000009, a: 1}
-  ai: 0
   sprite: {fileID: 21271552}
   floating_pos: {fileID: 0}
-  spellmanager: {fileID: 0}
   cast_point: {fileID: 479282}
   spell_code_text: {fileID: 10206658}
 --- !u!114 &11490162
@@ -357,7 +353,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic

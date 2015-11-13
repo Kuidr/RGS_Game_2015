@@ -42,7 +42,7 @@ MonoBehaviour:
   name: 
   spellcode: x
   cost: 1
-  icon_sprite: {fileID: 21300000, guid: 239118db8230cd7409f94f25e0dee995, type: 3}
+  icon_sprite: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4, type: 3}
   cooldown_time: 0
   effects:
   - {fileID: 11405860, guid: 48e07fb8113e0d4409db360535b7c8b2, type: 2}
@@ -77,7 +77,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: icon_sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 239118db8230cd7409f94f25e0dee995,
+      objectReference: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4,
         type: 3}
     - target: {fileID: 0}
       propertyPath: cooldown_time

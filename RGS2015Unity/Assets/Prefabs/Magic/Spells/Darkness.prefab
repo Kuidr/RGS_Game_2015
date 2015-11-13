@@ -42,7 +42,7 @@ MonoBehaviour:
   name: Darkness
   spellcode: axb
   cost: 5
-  icon_sprite: {fileID: 21300000, guid: a50521eee81d3204e97fb8ba30eb6395, type: 3}
+  icon_sprite: {fileID: 21300000, guid: 466ad4777d47ee14496dcd782ed094e7, type: 3}
   cooldown_time: 30
   effects:
   - {fileID: 11431928, guid: 078125c3df4b54b43b4fbfe45617614c, type: 2}
@@ -70,6 +70,11 @@ Prefab:
       value: 
       objectReference: {fileID: 11431928, guid: 078125c3df4b54b43b4fbfe45617614c,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: icon_sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 466ad4777d47ee14496dcd782ed094e7,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 174018}

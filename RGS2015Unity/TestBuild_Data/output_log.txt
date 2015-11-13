@@ -16,16 +16,10 @@ Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.100 seconds
+- Completed reload, in  0.057 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.308661 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 861.
-Total: 0.526611 ms (FindLiveObjects: 0.071488 ms CreateObjectMapping: 0.025481 ms MarkObjects: 0.417962 ms  DeleteObjects: 0.010617 ms)
-
