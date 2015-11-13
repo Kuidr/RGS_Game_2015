@@ -35,7 +35,8 @@ public class MatchManager : MonoBehaviour
 
     public int GetWinnerPlayerNum()
     {
-        return 1;
+        return players[0].GetHearts() > players[1].GetHearts() ? 1 :
+               players[1].GetHearts() > players[0].GetHearts() ? 2 : 0;
     }
     public Mage GetOpponent(Mage mage)
     {

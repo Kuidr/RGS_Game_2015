@@ -16,7 +16,7 @@ Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert Wild\Keep\Personal\Game Development\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+- Completed reload, in  0.048 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
