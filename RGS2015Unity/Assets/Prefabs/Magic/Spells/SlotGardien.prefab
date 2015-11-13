@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Gardien
   spellcode: yyy
-  cost: 9
+  cost: 5
   icon_sprite: {fileID: 21300000, guid: 239118db8230cd7409f94f25e0dee995, type: 3}
   cooldown_time: 0
   effects:
@@ -64,7 +64,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 9
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: name
