@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ResourceSpawner : MonoBehaviour
 {
+    private const int RESOURCE_CAP = 35;
+
     // General
     public Resource rock_prefab, crystal_prefab;
     private Resource root_resource = null;
@@ -36,15 +38,17 @@ public class ResourceSpawner : MonoBehaviour
     {
         while (true)
         {
-            // grow resources
-            for (int i = 0; i < Random.Range(10, 20); ++i)
+            if (transform.childCount < RESOURCE_CAP)
             {
-                ResourceType type = Random.value < chance_crystal ? ResourceType.Crystal : ResourceType.Rock;
-                SpawnResource(type);
-                yield return new WaitForSeconds(0.1f);
+                // grow resources
+                for (int i = 0; i < Random.Range(10, 20); ++i)
+                {
+                    ResourceType type = Random.value < chance_crystal ? ResourceType.Crystal : ResourceType.Rock;
+                    SpawnResource(type);
+                    yield return new WaitForSeconds(0.1f);
+                }
             }
-
-            yield return new WaitForSeconds(Random.Range(15f, 20f));
+            yield return new WaitForSeconds(Random.Range(10, 15f));
         }
     }
 

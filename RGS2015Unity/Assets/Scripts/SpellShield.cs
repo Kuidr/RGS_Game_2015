@@ -5,7 +5,7 @@ public class SpellShield : MonoBehaviour
 {
     private Circle circle;
     private float radius = 0.5f;
-    private const float Force = 5f;
+    private const float Force = 20f;
 
     private void Start()
     {
@@ -16,6 +16,21 @@ public class SpellShield : MonoBehaviour
     {
         Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
         ControlledProjectile cp = collider.GetComponent<ControlledProjectile>();
+
+        if (rb != null && !(cp != null && cp.goes_through_shield))
+        {
+            Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
+            rb.AddForce(dir * Force, ForceMode2D.Impulse);
+
+            StopAllCoroutines();
+            StartCoroutine(ActivateShieldVisual());
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
+        ControlledProjectile cp = collision.collider.GetComponent<ControlledProjectile>();
 
         if (rb != null && !(cp != null && cp.goes_through_shield))
         {

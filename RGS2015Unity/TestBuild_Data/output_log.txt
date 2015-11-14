@@ -15,8 +15,7 @@ Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEng
 Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.039 seconds
+- Completed reload, in  0.043 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-<RI> Initialized touch support.
