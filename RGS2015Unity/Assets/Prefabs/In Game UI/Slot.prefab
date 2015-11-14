@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 11493492}
-  empty_slot: {fileID: 21300000, guid: 7016baa71257b45468527ae04ecf285c, type: 3}
+  empty_slot: {fileID: 21300000, guid: 1db96d7db947d224c950698425e8ab49, type: 3}
 --- !u!114 &11433990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +103,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1db96d7db947d224c950698425e8ab49,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: empty_slot
       value: 
       objectReference: {fileID: 21300000, guid: 1db96d7db947d224c950698425e8ab49,
         type: 3}

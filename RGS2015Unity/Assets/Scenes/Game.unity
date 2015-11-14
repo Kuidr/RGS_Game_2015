@@ -210,11 +210,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.80999994
+      value: 3.61999989
       objectReference: {fileID: 0}
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.45000005
+      value: -1.57000005
       objectReference: {fileID: 0}
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.z
@@ -803,6 +803,26 @@ Prefab:
       propertyPath: sprite_heart_empty
       value: 
       objectReference: {fileID: 21300000, guid: e1a279f8456ec9e4d9f3c2793bb7d30c,
+        type: 3}
+    - target: {fileID: 11422892, guid: 50189f1b1083d3949a29f5deba749fcf, type: 2}
+      propertyPath: sprite_slot_empty
+      value: 
+      objectReference: {fileID: 21300000, guid: 1db96d7db947d224c950698425e8ab49,
+        type: 3}
+    - target: {fileID: 11431480, guid: 50189f1b1083d3949a29f5deba749fcf, type: 2}
+      propertyPath: sprite_slot_empty
+      value: 
+      objectReference: {fileID: 21300000, guid: 1db96d7db947d224c950698425e8ab49,
+        type: 3}
+    - target: {fileID: 11422892, guid: 50189f1b1083d3949a29f5deba749fcf, type: 2}
+      propertyPath: sprite_slot_cd
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a25f77971a22f0479d2ce0d0f4f117e,
+        type: 3}
+    - target: {fileID: 11431480, guid: 50189f1b1083d3949a29f5deba749fcf, type: 2}
+      propertyPath: sprite_slot_cd
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a25f77971a22f0479d2ce0d0f4f117e,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50189f1b1083d3949a29f5deba749fcf, type: 2}
@@ -1620,11 +1640,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.36000013
+      value: -4.44000006
       objectReference: {fileID: 0}
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.88999999
+      value: 1.79999995
       objectReference: {fileID: 0}
     - target: {fileID: 449700, guid: ca8af176ccb14de48834de161b678c90, type: 2}
       propertyPath: m_LocalPosition.z
