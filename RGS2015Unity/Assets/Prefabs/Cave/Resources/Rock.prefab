@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11430344}
   - 61: {fileID: 6129136}
   - 50: {fileID: 5054500}
+  - 114: {fileID: 11441908}
   m_Layer: 8
   m_Name: Rock
   m_TagString: Rock
@@ -72,6 +73,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &11441908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60747f768b2a5a439681c3a26497dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  break_sound_prefab: {fileID: 11429292, guid: cbc8ca53baec6264ba74f2c6342cd54f, type: 2}
 --- !u!212 &21280266
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -109,6 +122,11 @@ Prefab:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: break_sound_prefab
+      value: 
+      objectReference: {fileID: 11429292, guid: cbc8ca53baec6264ba74f2c6342cd54f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 102664}

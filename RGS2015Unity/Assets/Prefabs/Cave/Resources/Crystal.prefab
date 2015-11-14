@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11467238}
   - 61: {fileID: 6159934}
   - 50: {fileID: 5027254}
+  - 114: {fileID: 11496238}
   m_Layer: 8
   m_Name: Crystal
   m_TagString: Crystal
@@ -72,6 +73,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &11496238
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60747f768b2a5a439681c3a26497dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  break_sound_prefab: {fileID: 11471766, guid: 23f83a49de6a63e48a31cad7b3985483, type: 2}
 --- !u!212 &21219416
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -205,6 +218,11 @@ Prefab:
       propertyPath: m_Color.b
       value: .16911763
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: break_sound_prefab
+      value: 
+      objectReference: {fileID: 11471766, guid: 23f83a49de6a63e48a31cad7b3985483,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108222}

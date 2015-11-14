@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &152678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 413980}
+  - 114: {fileID: 11467090}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &185370
 GameObject:
   m_ObjectHideFlags: 0
@@ -19,6 +35,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &413980
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 415244}
+  m_RootOrder: 0
 --- !u!4 &415244
 Transform:
   m_ObjectHideFlags: 1
@@ -26,9 +54,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .291000009, y: -2.28800011, z: 0}
+  m_LocalPosition: {x: -.75999999, y: .349999994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 413980}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5037096
@@ -73,6 +102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball_prefab: {fileID: 11414720}
   rock_prefab: {fileID: 11430344, guid: 2ea4e14768a75df439365088d468b3e5, type: 2}
+--- !u!114 &11467090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4b27256fa82e69488de0ba3bcb07c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bump_sound_prefab: {fileID: 11426260, guid: b882fb546b5b1a74cbac53b36db3351e, type: 2}
+  bump_sound_pool_buffer: 2
 --- !u!212 &21219842
 SpriteRenderer:
   m_ObjectHideFlags: 1

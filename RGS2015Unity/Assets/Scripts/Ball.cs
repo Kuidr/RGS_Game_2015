@@ -5,6 +5,7 @@ public class Ball : MonoBehaviour
 {
     private static MatchManager matchmanager;
     private CameraShake camshake;
+    private BallAudio ball_audio;
 
     private static Vector2? start_pos;
 
@@ -31,12 +32,15 @@ public class Ball : MonoBehaviour
         if (start_pos == null) start_pos = transform.position;
         else transform.position = (Vector2)start_pos;
 
+        // other
         camshake = Camera.main.GetComponent<CameraShake>();
+        ball_audio = GetComponentInChildren<BallAudio>();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Wall"))
         {
+            ball_audio.PlayBump(collision.relativeVelocity.magnitude / 5f);
             camshake.Shake(new CamShakeInstance(0.03f, 0.1f));
         }
         else if (collision.collider.CompareTag("Rock"))

@@ -9,6 +9,7 @@ public class Resource : MonoBehaviour
     // General
     public ResourceType type;
     public const float WidthHeight = 0.2828f;
+    private ResourceAudio resource_audio;
 
     // Visual
     private BackgroundLighting back_lighting;
@@ -20,11 +21,13 @@ public class Resource : MonoBehaviour
         rb.gravityScale = 0.5f;
         GetComponent<Collider2D>().enabled = false;
         StartCoroutine(Shrink());
+        resource_audio.PlayBreak();
     }
 
-    private void Start()
+    private void Awake()
     {
         back_lighting = FindObjectOfType<BackgroundLighting>();
+        resource_audio = GetComponent<ResourceAudio>();
     }
     private void Update()
     {

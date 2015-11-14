@@ -16,6 +16,7 @@ public class Mage : MonoBehaviour
     public SpriteRenderer sprite;
     public Transform floating_pos;
     private Hover hover;
+    private MageAudio mage_audio;
 
     // Resources
     private int crystals = 5;
@@ -76,7 +77,7 @@ public class Mage : MonoBehaviour
     }
     public void Hit()
     {
-        TakeHit();
+        TakeHit(1);
     }
     public void Silence(float duration)
     {
@@ -147,6 +148,7 @@ public class Mage : MonoBehaviour
     private void Awake()
     {
         spell_code_initial_color = spell_code_text.color;
+        mage_audio = GetComponentInChildren<MageAudio>();
     }
     private void Start()
     {
@@ -205,10 +207,13 @@ public class Mage : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (invincible) return;
-        if (collision.collider.CompareTag("Ball"))
+        if (!invincible && collision.collider.CompareTag("Ball"))
         {
-            TakeHit();
+            TakeHit(collision.relativeVelocity.magnitude / 1f);
+        }
+        else if (collision.collider.CompareTag("Wall"))
+        {
+            mage_audio.PlayBump(collision.relativeVelocity.magnitude / 5f);
         }
     }
 
@@ -218,9 +223,12 @@ public class Mage : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(FloatUp());
     }
-    private void TakeHit()
+    private void TakeHit(float force)
     {
         if (IsDead() || invincible) return;
+
+        // sound
+        mage_audio.PlayBump(force);
 
         // fall down
         hover.StartFadeOut();

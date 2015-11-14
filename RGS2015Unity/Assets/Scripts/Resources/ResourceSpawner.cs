@@ -11,7 +11,16 @@ public class ResourceSpawner : MonoBehaviour
     // Resource spawn probabilities
     private float chance_crystal = 0.2f;
 
+    // Sound
+    public WorldSound rock_break_sound_prefab;
+    public WorldSound crystal_break_sound_prefab;
 
+
+    private void Awake()
+    {
+        if (rock_break_sound_prefab != null) ObjectPool.Instance.RequestObjects(rock_break_sound_prefab, 5, true);
+        if (crystal_break_sound_prefab != null) ObjectPool.Instance.RequestObjects(crystal_break_sound_prefab, 5, true);
+    }
     private void Start()
     {
         GetComponent<SpriteRenderer>().enabled = false;
