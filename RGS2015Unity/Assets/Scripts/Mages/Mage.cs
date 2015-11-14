@@ -19,7 +19,7 @@ public class Mage : MonoBehaviour
     private MageAudio mage_audio;
 
     // Resources
-    private int crystals = 5;
+    private int crystals = 2;
 
     // Spells and Projectile
     private const int StartingManaSlots = 4;

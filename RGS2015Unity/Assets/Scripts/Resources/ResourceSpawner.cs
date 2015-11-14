@@ -44,7 +44,7 @@ public class ResourceSpawner : MonoBehaviour
                 yield return new WaitForSeconds(0.1f);
             }
 
-            yield return new WaitForSeconds(Random.Range(30f, 40f));
+            yield return new WaitForSeconds(Random.Range(15f, 20f));
         }
     }
 

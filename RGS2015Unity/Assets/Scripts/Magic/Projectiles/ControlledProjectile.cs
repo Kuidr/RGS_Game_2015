@@ -5,6 +5,8 @@ using System.Collections;
 
 public abstract class ControlledProjectile : Projectile
 {
+    private const int CRYSTALS_ON_DESTROY = 5;
+
     // General
     protected ManaSlot slot;
     new private Collider2D collider;
@@ -93,6 +95,7 @@ public abstract class ControlledProjectile : Projectile
         {
             // collided projectile defeats this projectile
             slot.Empty(ManaSlotCooldown.Long);
+            caster.opponent.AddCrystals(CRYSTALS_ON_DESTROY);
             this.Destroy();
             return;
         }

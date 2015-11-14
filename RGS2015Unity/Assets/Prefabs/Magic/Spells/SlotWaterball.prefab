@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   spellcode: a
-  cost: 1
+  cost: 2
   icon_sprite: {fileID: 21300000, guid: b8f49355f78085049b6a202ae1c749fa, type: 3}
   cooldown_time: 0
   effects:
@@ -67,7 +67,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: icon_sprite

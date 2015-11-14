@@ -41,7 +41,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: SlowTime
   spellcode: ya
-  cost: 5
+  cost: 2
   icon_sprite: {fileID: 21300000, guid: 2c1d3e2a73e64904ba19f83d5b0356aa, type: 3}
   cooldown_time: 10
   effects:
@@ -67,7 +67,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cost
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: icon_sprite

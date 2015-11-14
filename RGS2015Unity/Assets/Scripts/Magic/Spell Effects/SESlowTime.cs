@@ -15,7 +15,7 @@ public class SESlowTime : SpellEffect
     public IEnumerator UpdateSlowTime(Mage caster)
     {
         //float t = 0;
-        TimeScaleManager.Instance.AddMultiplier("SEslowtime", 0.1f, true);
+        TimeScaleManager.Instance.AddMultiplier("SEslowtime", 0.4f, true);
         yield return StartCoroutine(CoroutineUtil.WaitForRealSeconds(5f));
 
         /*
