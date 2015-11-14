@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum ProjectileType { Fire, Ice, Water, Fragile }
+public enum ProjectileType { Fire, Ice, Water, Fragile, Tree }
 
 public abstract class Projectile : MonoBehaviour
 {
@@ -33,7 +33,8 @@ public abstract class Projectile : MonoBehaviour
         return type2 == ProjectileType.Fragile ||
             type1 == ProjectileType.Fire && type2 == ProjectileType.Ice ||
             type1 == ProjectileType.Ice && type2 == ProjectileType.Water ||
-            type1 == ProjectileType.Water && type2 == ProjectileType.Fire;
+            type1 == ProjectileType.Water && type2 == ProjectileType.Fire ||
+            type1 == ProjectileType.Fire && type2 == ProjectileType.Tree;
     }
     public static bool Defeats(Projectile p1, Projectile p2)
     {
