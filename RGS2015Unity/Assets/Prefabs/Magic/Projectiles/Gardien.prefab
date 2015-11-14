@@ -14,7 +14,7 @@ GameObject:
   - 58: {fileID: 5855986}
   - 120: {fileID: 12043104}
   - 114: {fileID: 11403318}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Gardien
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -1362,6 +1362,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ColorModule.gradient.maxGradient.key0.rgba
       value: 4287496189
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

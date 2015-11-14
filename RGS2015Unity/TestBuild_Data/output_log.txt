@@ -1,97 +1,32 @@
-Initialize engine version: 5.1.1f1 (2046fc06d4d8)
+Initialize engine version: 5.2.2f1 (3757309da7e7)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Renderer: NVIDIA GeForce GTX 970M   (ID=0x13d8)
     Vendor:   NVIDIA
     VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.105 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 24f0 -> priority: 1 
+  Thread -> id: 2910 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.276063 ms
+UnloadTime: 5.386340 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1178.
-Total: 0.390224 ms (FindLiveObjects: 0.034543 ms CreateObjectMapping: 0.020199 ms MarkObjects: 0.328163 ms  DeleteObjects: 0.006440 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.512008 ms
-
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 811.
-Total: 0.571431 ms (FindLiveObjects: 0.041569 ms CreateObjectMapping: 0.023419 ms MarkObjects: 0.478339 ms  DeleteObjects: 0.028103 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.549182 ms
-
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1178.
-Total: 0.503807 ms (FindLiveObjects: 0.070257 ms CreateObjectMapping: 0.025761 ms MarkObjects: 0.399884 ms  DeleteObjects: 0.007025 ms)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.717220 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1178.
-Total: 0.462531 ms (FindLiveObjects: 0.045667 ms CreateObjectMapping: 0.022541 ms MarkObjects: 0.390224 ms  DeleteObjects: 0.004098 ms)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException
-  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
-  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1186.
+Total: 1.073573 ms (FindLiveObjects: 0.091140 ms CreateObjectMapping: 0.058297 ms MarkObjects: 0.908534 ms  DeleteObjects: 0.015190 ms)
 

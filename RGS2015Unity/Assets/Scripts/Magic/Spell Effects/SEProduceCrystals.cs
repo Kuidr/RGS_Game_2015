@@ -7,6 +7,7 @@ public class SEProduceCrystals : SpellEffect
 
     public override void Do(Mage caster, Spell origin_spell)
     {
-        caster.AddCrystals(num);
+        if (caster.GetCrystalCount() < 6) caster.AddCrystals(6 - caster.GetCrystalCount());
+        else caster.AddCrystals(num);
     }
 }
