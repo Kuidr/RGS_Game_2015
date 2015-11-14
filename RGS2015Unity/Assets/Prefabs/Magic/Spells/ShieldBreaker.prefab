@@ -43,7 +43,7 @@ MonoBehaviour:
   spellcode: bbbxxx
   cost: 20
   icon_sprite: {fileID: 21300000, guid: 466ad4777d47ee14496dcd782ed094e7, type: 3}
-  cooldown_time: 30
+  cooldown_time: 5
   effects:
   - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
 --- !u!1001 &100100000
@@ -80,7 +80,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown_time
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: icon_sprite

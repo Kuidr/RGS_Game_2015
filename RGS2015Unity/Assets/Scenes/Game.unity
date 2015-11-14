@@ -138,6 +138,14 @@ Prefab:
       propertyPath: m_Name
       value: Mage 2
       objectReference: {fileID: 0}
+    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.959999979
+      objectReference: {fileID: 0}
+    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .670000017
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
   m_IsPrefabParent: 0
@@ -395,6 +403,14 @@ Prefab:
     - target: {fileID: 197334, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
       propertyPath: m_Name
       value: Mage 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .829999983
+      objectReference: {fileID: 0}
+    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .540000021
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

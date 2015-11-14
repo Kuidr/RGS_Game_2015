@@ -4,11 +4,13 @@ using System.Collections;
 public class Explosion : MonoBehaviour
 {
     public ParticleSystem ps;
+    private CameraShake camshake;
 
     private void Awake()
     {
         ps = GetComponent<ParticleSystem>();
         //gameObject.SetActive(false);
+        camshake = Camera.main.GetComponent<CameraShake>();
     }
 
 	public void Explode(float radius, float max_force)
@@ -18,7 +20,9 @@ public class Explosion : MonoBehaviour
         ps.time = 0;
         ps.Play();
 
-        
+        camshake.Shake(new CamShakeInstance(0.05f, 0.1f));
+
+
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D col in cols)
         {   

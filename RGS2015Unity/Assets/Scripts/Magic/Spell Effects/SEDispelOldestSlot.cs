@@ -4,7 +4,7 @@ using System.Collections;
 public class SEDispelOldestSlot : SpellEffect
 {
     private float max_circle_scale = 0.35f;
-    private float delay = 2f;
+    private float delay = 1f;
 
     public override void Do(Mage caster, Spell origin_spell)
     {
