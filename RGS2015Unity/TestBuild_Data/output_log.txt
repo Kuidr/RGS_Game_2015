@@ -16,7 +16,7 @@ Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Ga
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.108 seconds
+- Completed reload, in  0.057 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -24,20 +24,74 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.118568 ms
+UnloadTime: 2.276063 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1175.
-Total: 0.404861 ms (FindLiveObjects: 0.044789 ms CreateObjectMapping: 0.020199 ms MarkObjects: 0.333432 ms  DeleteObjects: 0.006147 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1178.
+Total: 0.390224 ms (FindLiveObjects: 0.034543 ms CreateObjectMapping: 0.020199 ms MarkObjects: 0.328163 ms  DeleteObjects: 0.006440 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.589877 ms
+UnloadTime: 1.512008 ms
 
-Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 808.
-Total: 0.597484 ms (FindLiveObjects: 0.040691 ms CreateObjectMapping: 0.023712 ms MarkObjects: 0.496196 ms  DeleteObjects: 0.036592 ms)
+Unloading 25 unused Assets to reduce memory usage. Loaded Objects now: 811.
+Total: 0.571431 ms (FindLiveObjects: 0.041569 ms CreateObjectMapping: 0.023419 ms MarkObjects: 0.478339 ms  DeleteObjects: 0.028103 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.586946 ms
+UnloadTime: 0.549182 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1175.
-Total: 0.498538 ms (FindLiveObjects: 0.055620 ms CreateObjectMapping: 0.025468 ms MarkObjects: 0.408959 ms  DeleteObjects: 0.007904 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1178.
+Total: 0.503807 ms (FindLiveObjects: 0.070257 ms CreateObjectMapping: 0.025761 ms MarkObjects: 0.399884 ms  DeleteObjects: 0.007025 ms)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.717220 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 1178.
+Total: 0.462531 ms (FindLiveObjects: 0.045667 ms CreateObjectMapping: 0.022541 ms MarkObjects: 0.390224 ms  DeleteObjects: 0.004098 ms)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Component:get_transform ()
+  at SEDispelOldestSlot+<UpdateDispel>c__Iterator13.MoveNext () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 

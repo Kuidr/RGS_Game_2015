@@ -10,22 +10,38 @@ public class SEDispelOldestSlot : SpellEffect
     {
         SEDispelOldestSlot dispel = Instantiate(this);
         dispel.StartCoroutine(dispel.UpdateDispel(caster));
-
         
         base.Do(caster, origin_spell);
     }
 
     public IEnumerator UpdateDispel(Mage caster)
     {
-        ManaSlot slot = caster.GetOldestFilledManaSlot();
-        ControlledProjectile p = slot.GetProjectile();
-        if (p != null)
+        // find a good projectile to dispel
+        ManaSlot slot = null;
+        ControlledProjectile p = null;
+        foreach (ManaSlot s in caster.GetManaSlots())
+        {
+            if (!s.dispelling)
+            {
+                p = s.GetProjectile();
+                if (p != null)
+                {
+                    slot = s;
+                    s.dispelling = true;
+                    break;
+                }
+            }
+        }
+
+        // dispel
+        if (slot != null)
         {
             // effect and delay
             SpriteRenderer circle = GetComponentInChildren<SpriteRenderer>();
             float t = 0;
             while (t < 1)
             {
+                if (p == null) break;
                 t += Time.deltaTime / (delay + 0.0001f);
                 circle.transform.localScale = new Vector3(t, t, t) * max_circle_scale;
                 circle.transform.position = p.transform.position;

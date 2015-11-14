@@ -13,6 +13,7 @@ public class ManaSlot
     private ControlledProjectile projectile = null;
     private float cooldown_time = 0;
     private float fill_time = -1000; // Time.time when filled
+    public bool dispelling = false;
 
     // events
     public System.Action<ManaSlot> event_emptied;
@@ -39,6 +40,8 @@ public class ManaSlot
                         CooldownLong;
 
         if (event_emptied != null) event_emptied(this);
+
+        dispelling = false;
     }
 
     public bool IsAvailable()
