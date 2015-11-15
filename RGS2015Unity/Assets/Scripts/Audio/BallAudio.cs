@@ -3,23 +3,23 @@ using System.Collections;
 
 public class BallAudio : MonoBehaviour
 {
-    public WorldSound bump_sound_prefab;
-    public int bump_sound_pool_buffer = 2;
+    public WorldSound break_sound;
+    public WorldSound bump_sound;
 
-    public void Awake()
-    {
-        if (bump_sound_prefab != null) ObjectPool.Instance.RequestObjects(bump_sound_prefab, bump_sound_pool_buffer, true);
-    }
 
     public void PlayBump(float force)
     {
-        if (bump_sound_prefab == null) return;
-        WorldSound s = ObjectPool.Instance.GetObject(bump_sound_prefab, false);
-
-        s.transform.position = transform.position;
-        s.base_volume = force;
-        s.SetPitchOffset(Random.Range(-0.05f, 0.05f));
-        s.Play();
+        bump_sound.transform.position = transform.position;
+        bump_sound.base_volume = force;
+        bump_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+        bump_sound.Play();
+    }
+    public void PlayBreak()
+    {
+        break_sound.transform.position = transform.position;
+        break_sound.base_volume = 1;
+        break_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+        break_sound.Play();
     }
 	
 }

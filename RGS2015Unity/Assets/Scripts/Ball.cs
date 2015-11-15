@@ -40,7 +40,7 @@ public class Ball : MonoBehaviour
     {
         if (collision.collider.CompareTag("Wall"))
         {
-            ball_audio.PlayBump(collision.relativeVelocity.magnitude / 5f);
+            ball_audio.PlayBump(collision.relativeVelocity.magnitude);
             camshake.Shake(new CamShakeInstance(0.03f, 0.1f));
         }
         else if (collision.collider.CompareTag("Rock"))
@@ -51,6 +51,7 @@ public class Ball : MonoBehaviour
             if (s >= MaxScale)
             {
                 // Split in two
+                ball_audio.PlayBreak();
                 Ball new_ball = Instantiate(ball_prefab);
                 new_ball.transform.position = transform.position;
                 new_ball.transform.localScale = Vector3.one;
@@ -69,6 +70,7 @@ public class Ball : MonoBehaviour
 
     private void BreakApart()
     {
+        ball_audio.PlayBreak();
         float radius = GetComponent<CircleCollider2D>().radius * transform.localScale.x;
 
         for (int i = 0; i < 50f * radius; ++i)
