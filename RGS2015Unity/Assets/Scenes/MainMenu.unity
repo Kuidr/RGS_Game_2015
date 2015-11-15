@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -139,6 +141,23 @@ Prefab:
     - target: {fileID: 187708, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6b4f1896ac1f220419e676d2aa3ba223,
+        type: 3}
+    - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
@@ -427,11 +446,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 481412, guid: bcc855fde048b3e42956d79198df77ee, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.32000017
+      value: 9.63000011
       objectReference: {fileID: 0}
     - target: {fileID: 481412, guid: bcc855fde048b3e42956d79198df77ee, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 16.3899994
+      value: 17.2199993
       objectReference: {fileID: 0}
     - target: {fileID: 450112, guid: bcc855fde048b3e42956d79198df77ee, type: 2}
       propertyPath: m_LocalPosition.x
@@ -636,6 +655,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: -7
       objectReference: {fileID: 0}
+    - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4162f7bb5c497e40a86877bc27f825f,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
   m_IsPrefabParent: 0
@@ -701,7 +725,7 @@ Prefab:
     - target: {fileID: 21283576, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 62d439e2286404a4dac871a987e56c35,
+      objectReference: {fileID: 21300000, guid: 29827b0cafb3c7a428e68ffd750295d4,
         type: 3}
     - target: {fileID: 131204, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
       propertyPath: m_Name
