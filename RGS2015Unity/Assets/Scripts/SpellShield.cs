@@ -6,6 +6,7 @@ public class SpellShield : MonoBehaviour
     private Circle circle;
     private float radius = 0.5f;
     private const float Force = 20f;
+    public WorldSound hit_sound;
 
     private void Start()
     {
@@ -24,6 +25,10 @@ public class SpellShield : MonoBehaviour
 
             StopAllCoroutines();
             StartCoroutine(ActivateShieldVisual());
+
+            hit_sound.base_volume = 1;
+            hit_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            hit_sound.Play();
         }
     }
 
@@ -39,6 +44,10 @@ public class SpellShield : MonoBehaviour
 
             StopAllCoroutines();
             StartCoroutine(ActivateShieldVisual());
+
+            hit_sound.base_volume = 1;
+            hit_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            hit_sound.Play();
         }
     }
 
