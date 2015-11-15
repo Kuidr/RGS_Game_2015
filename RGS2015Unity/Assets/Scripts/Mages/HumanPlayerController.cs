@@ -38,22 +38,26 @@ public class HumanPlayerController : PlayerController
     private bool ADown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button0) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button0) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button0) : 
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.S) : false;
     }
     private bool BDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button1) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button1) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button1) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.D) : false;
     }
     private bool XDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button2) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button2) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button2) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.A) : false;
     }
     private bool YDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button3) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button3) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button3) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.W) : false;
     }
 
 }
