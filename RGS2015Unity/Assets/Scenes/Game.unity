@@ -1643,7 +1643,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11439714, guid: 08431262b96c11446a1fe7528755a57c, type: 2}
       propertyPath: player_control_scheme.Array.data[1]
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 11439714, guid: 08431262b96c11446a1fe7528755a57c, type: 2}
       propertyPath: player_name.Array.data[0]

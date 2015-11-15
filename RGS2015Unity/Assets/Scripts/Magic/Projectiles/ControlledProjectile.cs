@@ -23,21 +23,14 @@ public abstract class ControlledProjectile : Projectile
     private ProjectileFlag flag;
 
     // Sound
-    public WorldSound destroyed_sound;
+    public WorldSound destroyed_sound_prefab;
 
 
     // PUBLIC MODIFIERS
 
     public override void Initialize(Mage caster, Vector2 pos)
     {
-        /*
-        foreach (ManaSlot slot in caster.GetManaSlots())
-        {
-            ControlledProjectile cp = slot.GetProjectile();
-            if (cp != null)
-                Physics2D.IgnoreCollision(collider, cp.GetCollider(), true);
-        }
-        */
+        if (destroyed_sound_prefab != null) ObjectPool.Instance.RequestObjects(destroyed_sound_prefab, 3, false);
 
         // Projectile Flag
         flag = Instantiate(flag_prefab);
@@ -70,11 +63,7 @@ public abstract class ControlledProjectile : Projectile
         Destroy(gameObject);
 
         // sound
-        if (destroyed_sound != null)
-        {
-            destroyed_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
-            destroyed_sound.Play();
-        }
+        PlayDestroySound();
     }
 
 
@@ -133,7 +122,16 @@ public abstract class ControlledProjectile : Projectile
         }
         steering_force_factor = 1;
     }
+    private void PlayDestroySound()
+    {
+        if (destroyed_sound_prefab == null) return;
+        WorldSound s = ObjectPool.Instance.GetObject(destroyed_sound_prefab, false);
 
+        s.transform.position = transform.position;
+        s.base_volume = 1;
+        s.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+        s.Play(Random.value * 0.1f);
+    }
 
     // PRIVATE / PROTECTED ACCESSORS AND HELPERS
 

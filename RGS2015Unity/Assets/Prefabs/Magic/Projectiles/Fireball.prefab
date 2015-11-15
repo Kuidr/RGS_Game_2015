@@ -17,23 +17,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &130276
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 495576}
-  - 82: {fileID: 8239060}
-  - 114: {fileID: 11418998}
-  m_Layer: 9
-  m_Name: Destroyed Sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &168844
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +67,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 474450}
-  - {fileID: 495576}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &474450
@@ -112,18 +94,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 474450}
   m_RootOrder: 0
---- !u!4 &495576
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 444294}
-  m_RootOrder: 1
 --- !u!50 &5008424
 Rigidbody2D:
   serializedVersion: 2
@@ -153,75 +123,6 @@ CircleCollider2D:
   m_Offset: {x: -.0017907545, y: -.0118729025}
   serializedVersion: 2
   m_Radius: .100000001
---- !u!82 &8239060
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130276}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 486b9620c255da643ae746761f9ad00a, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!82 &8242016
 AudioSource:
   m_ObjectHideFlags: 1
@@ -291,20 +192,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11418998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b815c4920985ae1489b058576dc2bdc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timescaled_pitch: 1
-  base_volume: 1
-  base_pitch: 1
 --- !u!114 &11426662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -319,7 +206,8 @@ MonoBehaviour:
   type: 0
   goes_through_shield: 0
   flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
-  destroyed_sound: {fileID: 11418998}
+  destroyed_sound_prefab: {fileID: 11403402, guid: 43ba96d05448d9e4a9bf432f982ed47e,
+    type: 2}
   glow_color: {r: 1, g: .451115638, b: .0294117928, a: 1}
   explosion_obj: {fileID: 11499348}
 --- !u!114 &11464658
@@ -2884,6 +2772,11 @@ Prefab:
       propertyPath: InitialModule.startLifetime.minCurve.m_Curve.Array.data[0].value
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyed_sound_prefab
+      value: 
+      objectReference: {fileID: 11403402, guid: 43ba96d05448d9e4a9bf432f982ed47e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 199774}

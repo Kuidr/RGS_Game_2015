@@ -232,7 +232,8 @@ MonoBehaviour:
   type: 3
   goes_through_shield: 1
   flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
-  destroyed_sound: {fileID: 0}
+  destroyed_sound_prefab: {fileID: 11455388, guid: 462eca1ec2fc9454c9b52edf8ed5bb69,
+    type: 2}
   glow_color: {r: 1, g: 0, b: .186206818, a: 1}
   explosion_obj: {fileID: 11408368}
 --- !u!198 &19808188
@@ -2492,6 +2493,11 @@ Prefab:
       propertyPath: ColorModule.gradient.maxGradient.m_NumColorKeys
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: destroyed_sound_prefab
+      value: 
+      objectReference: {fileID: 11455388, guid: 462eca1ec2fc9454c9b52edf8ed5bb69,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117514}
