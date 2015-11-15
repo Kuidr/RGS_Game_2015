@@ -12,6 +12,7 @@ public class Fireball : ControlledProjectile
     public Explosion explosion_obj;
     private bool exploded = false;
 
+    
 
     protected override void Awake()
     {

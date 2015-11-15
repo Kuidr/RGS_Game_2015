@@ -6,6 +6,9 @@ public class Explosion : MonoBehaviour
     public ParticleSystem ps;
     private CameraShake camshake;
 
+    public WorldSound explode_sound; 
+
+
     private void Awake()
     {
         ps = GetComponent<ParticleSystem>();
@@ -20,9 +23,14 @@ public class Explosion : MonoBehaviour
         ps.time = 0;
         ps.Play();
 
+        // visual
         camshake.Shake(new CamShakeInstance(0.05f, 0.1f));
 
+        // sound
+        explode_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+        explode_sound.Play();
 
+        // force
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D col in cols)
         {   

@@ -10,6 +10,7 @@ public class Spell : MonoBehaviour
     public string spellcode;
     public int cost;
     public Sprite icon_sprite;
+    public WorldSound cast_sound_prefab;
     private int free_slots_required;
 
     // cooldown
@@ -33,6 +34,9 @@ public class Spell : MonoBehaviour
         {
             free_slots_required += effect.FreeSlotsRequired;
         }
+
+        // sounds
+        if (cast_sound_prefab != null) ObjectPool.Instance.RequestObjects(cast_sound_prefab, 3, true);
     }
     /// <summary>
     /// This will force the casting of the spell regardless of resource cost and cooldown.
@@ -42,6 +46,8 @@ public class Spell : MonoBehaviour
     public bool Cast(Mage caster)
     {
         last_cast_time = Time.time;
+
+        PlayCastSound();
 
         foreach (SpellEffect effect in effects)
         {
@@ -64,9 +70,20 @@ public class Spell : MonoBehaviour
         return free_slots_required;
     }
 
+
     private void Awake()
     {
         spellcode = spellcode.ToUpper(); // insure uppercase spellcode 
+    }
+    private void PlayCastSound()
+    {
+        if (cast_sound_prefab == null) return;
+        WorldSound s = ObjectPool.Instance.GetObject(cast_sound_prefab, false);
+
+        s.transform.position = transform.position;
+        s.base_volume = 1;
+        s.SetPitchOffset(UnityEngine.Random.Range(-0.05f, 0.05f));
+        s.Play();
     }
 
 }

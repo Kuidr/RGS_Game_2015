@@ -43,6 +43,7 @@ MonoBehaviour:
   spellcode: b
   cost: 6
   icon_sprite: {fileID: 21300000, guid: d1883d414bec8224fabdf8ad92c82048, type: 3}
+  cast_sound_prefab: {fileID: 11450280, guid: eed1f2bc3d9eae149b96745c91ea1333, type: 2}
   cooldown_time: 0
   effects:
   - {fileID: 11436366, guid: 0eb3a5cb2f8476f48bc71763bda59503, type: 2}
@@ -88,6 +89,11 @@ Prefab:
       propertyPath: cooldown_time
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cast_sound_prefab
+      value: 
+      objectReference: {fileID: 11450280, guid: eed1f2bc3d9eae149b96745c91ea1333,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117220}

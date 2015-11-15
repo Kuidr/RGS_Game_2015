@@ -22,6 +22,9 @@ public abstract class ControlledProjectile : Projectile
     public ProjectileFlag flag_prefab;
     private ProjectileFlag flag;
 
+    // Sound
+    public WorldSound destroyed_sound;
+
 
     // PUBLIC MODIFIERS
 
@@ -61,10 +64,17 @@ public abstract class ControlledProjectile : Projectile
         // Clip speed
         rb.velocity = Clip(rb.velocity, max_speed);
     }
-    public void Destroy()
+    public virtual void Destroy()
     {
         Destroy(flag.gameObject);
         Destroy(gameObject);
+
+        // sound
+        if (destroyed_sound != null)
+        {
+            destroyed_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            destroyed_sound.Play();
+        }
     }
 
 

@@ -43,6 +43,7 @@ MonoBehaviour:
   spellcode: xxyxx
   cost: 0
   icon_sprite: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9, type: 3}
+  cast_sound_prefab: {fileID: 11471426, guid: 5815bfc69d4d9934bb60a1bbcaef0f4c, type: 2}
   cooldown_time: 8
   effects:
   - {fileID: 11427604, guid: 537ddc6d457a9b446a55f32625a0b962, type: 2}
@@ -71,6 +72,11 @@ Prefab:
       propertyPath: cooldown_time
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cast_sound_prefab
+      value: 
+      objectReference: {fileID: 11471426, guid: 5815bfc69d4d9934bb60a1bbcaef0f4c,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115896}

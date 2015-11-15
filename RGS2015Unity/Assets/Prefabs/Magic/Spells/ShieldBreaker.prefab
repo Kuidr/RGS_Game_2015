@@ -43,6 +43,7 @@ MonoBehaviour:
   spellcode: bbbxxx
   cost: 20
   icon_sprite: {fileID: 21300000, guid: ff25a80ff6b91e84a85c3d18c6d344cf, type: 3}
+  cast_sound_prefab: {fileID: 11470714, guid: 90f5e96bde628d94fa30d4738a0512bb, type: 2}
   cooldown_time: 15
   effects:
   - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
@@ -87,6 +88,11 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ff25a80ff6b91e84a85c3d18c6d344cf,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: cast_sound_prefab
+      value: 
+      objectReference: {fileID: 11470714, guid: 90f5e96bde628d94fa30d4738a0512bb,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108422}

@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 497888}
   - 82: {fileID: 8260318}
   - 114: {fileID: 11429874}
-  - 114: {fileID: 11459938}
   - 168: {fileID: 16805226}
   m_Layer: 0
   m_Name: BallBump
@@ -64,7 +63,6 @@ GameObject:
   - 4: {fileID: 451004}
   - 82: {fileID: 8279544}
   - 114: {fileID: 11422760}
-  - 114: {fileID: 11407628}
   - 168: {fileID: 16876910}
   m_Layer: 0
   m_Name: BallBreak
@@ -291,17 +289,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!114 &11407628
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec9c182d56b93c4faac99d734b47e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11414720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -343,17 +330,6 @@ MonoBehaviour:
   timescaled_pitch: 1
   base_volume: 1
   base_pitch: 1
---- !u!114 &11459938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec9c182d56b93c4faac99d734b47e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11467090
 MonoBehaviour:
   m_ObjectHideFlags: 1
