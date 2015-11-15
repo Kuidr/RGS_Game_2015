@@ -111,7 +111,6 @@ GameObject:
   - 61: {fileID: 6182878}
   - 50: {fileID: 5064140}
   - 114: {fileID: 11470686}
-  - 114: {fileID: 11436970}
   - 114: {fileID: 11480862}
   m_Layer: 0
   m_Name: Mage
@@ -366,18 +365,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &11436970
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 197334}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f6b81abb33c8342bf8395ab685d231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  intensity: .100000001
 --- !u!114 &11450526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -543,6 +530,10 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: f60e17087da231d46b311d40e9d154b1, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197334}

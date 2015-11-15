@@ -42,7 +42,7 @@ MonoBehaviour:
   name: 
   spellcode: yaa
   cost: 8
-  icon_sprite: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4, type: 3}
+  icon_sprite: {fileID: 21300000, guid: 3ad9fde5d212ba342ad2eef3c6b30ab0, type: 3}
   cooldown_time: 0
   effects:
   - {fileID: 11475456, guid: 5c69b6e3365b71d4c9744737f275d1d5, type: 2}
@@ -52,7 +52,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: icon_sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ad9fde5d212ba342ad2eef3c6b30ab0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123652}

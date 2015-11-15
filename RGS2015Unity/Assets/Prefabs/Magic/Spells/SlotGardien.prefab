@@ -42,7 +42,7 @@ MonoBehaviour:
   name: Gardien
   spellcode: yyy
   cost: 5
-  icon_sprite: {fileID: 21300000, guid: d1fa256a2b9fa8c44a97f47282fdc4a1, type: 3}
+  icon_sprite: {fileID: 21300000, guid: 168f9f29de897fd4da4059e65ef55f2e, type: 3}
   cooldown_time: 0
   effects:
   - {fileID: 11443120, guid: 06b9be5a5bf5aa145a24023c90658aaf, type: 2}
@@ -56,7 +56,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: icon_sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1fa256a2b9fa8c44a97f47282fdc4a1,
+      objectReference: {fileID: 21300000, guid: 168f9f29de897fd4da4059e65ef55f2e,
         type: 3}
     - target: {fileID: 0}
       propertyPath: spellcode

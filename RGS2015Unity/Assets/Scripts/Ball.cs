@@ -14,9 +14,9 @@ public class Ball : MonoBehaviour
 
     // Growth
     public Ball ball_prefab;
-    private const float MaxScale = 2f;
-    private const float MinScale = 1f;
-    private const float ScalePerStone = 0.01f;
+    private const float MaxScale = 1.5f;
+    private const float MinScale = 0.75f;
+    private const float ScalePerStone = 0.05f;
 
     // Breaking
     public Resource rock_prefab;

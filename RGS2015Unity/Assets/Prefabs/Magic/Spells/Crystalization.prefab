@@ -42,7 +42,7 @@ MonoBehaviour:
   name: Crystalization
   spellcode: xxyxx
   cost: 0
-  icon_sprite: {fileID: 21300000, guid: 239118db8230cd7409f94f25e0dee995, type: 3}
+  icon_sprite: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9, type: 3}
   cooldown_time: 8
   effects:
   - {fileID: 11427604, guid: 537ddc6d457a9b446a55f32625a0b962, type: 2}
@@ -61,7 +61,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: icon_sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 239118db8230cd7409f94f25e0dee995,
+      objectReference: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9,
         type: 3}
     - target: {fileID: 0}
       propertyPath: name

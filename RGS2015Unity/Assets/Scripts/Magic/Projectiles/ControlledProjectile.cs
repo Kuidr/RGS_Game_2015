@@ -27,12 +27,14 @@ public abstract class ControlledProjectile : Projectile
 
     public override void Initialize(Mage caster, Vector2 pos)
     {
+        /*
         foreach (ManaSlot slot in caster.GetManaSlots())
         {
             ControlledProjectile cp = slot.GetProjectile();
             if (cp != null)
                 Physics2D.IgnoreCollision(collider, cp.GetCollider(), true);
         }
+        */
 
         // Projectile Flag
         flag = Instantiate(flag_prefab);
