@@ -37,7 +37,7 @@ public class UISpellList : MonoBehaviour
 
             // Code
             row.code = Instantiate(prefab_spell_code);
-            row.code.text = spell.spellcode + "." + spell.cost;
+            row.code.text = spell.GetSpellCodeCostText();
             row.code.transform.SetParent(col_spell_codes.transform, false);
 
             // Symbol

@@ -9,9 +9,14 @@ public class Spell : MonoBehaviour
     public string name;
     public string spellcode;
     public int cost;
+
     public Sprite icon_sprite;
+    public Sprite info_screenshot;
+    public String info_text;
+
     public WorldSound cast_sound_prefab;
     private int free_slots_required;
+
 
     // cooldown
     public float cooldown_time; // seconds
@@ -69,7 +74,10 @@ public class Spell : MonoBehaviour
     {
         return free_slots_required;
     }
-
+    public string GetSpellCodeCostText()
+    {
+        return spellcode + "." + cost;
+    }
 
     private void Awake()
     {

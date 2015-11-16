@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: SlowTime
+  name: Slow Time
   spellcode: ya
   cost: 2
   icon_sprite: {fileID: 21300000, guid: 2c1d3e2a73e64904ba19f83d5b0356aa, type: 3}
+  info_screenshot: {fileID: 21300000, guid: 4759fa56227bcb842bc32c1711f960ae, type: 3}
+  info_text: Slows time for 5 seconds
   cast_sound_prefab: {fileID: 11475618, guid: d8a8c3ff9461e3f4bb5d6e984730c00b, type: 2}
   cooldown_time: 10
   effects:
@@ -80,6 +82,19 @@ Prefab:
       value: 
       objectReference: {fileID: 11475618, guid: d8a8c3ff9461e3f4bb5d6e984730c00b,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: 4759fa56227bcb842bc32c1711f960ae,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Slows time for 5 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Slow Time
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 190050}

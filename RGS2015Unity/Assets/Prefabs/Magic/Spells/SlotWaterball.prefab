@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Waterball
   spellcode: a
   cost: 6
   icon_sprite: {fileID: 21300000, guid: b8f49355f78085049b6a202ae1c749fa, type: 3}
+  info_screenshot: {fileID: 21300000, guid: a312c74410ae2134caa0268d8da3d2d5, type: 3}
+  info_text: Destroys fire
   cast_sound_prefab: {fileID: 11414236, guid: eb830e884e05d6f49981e6bb72491edd, type: 2}
   cooldown_time: 0
   effects:
@@ -84,6 +86,19 @@ Prefab:
       value: 
       objectReference: {fileID: 11414236, guid: eb830e884e05d6f49981e6bb72491edd,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: a312c74410ae2134caa0268d8da3d2d5,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Destroys fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Waterball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170438}

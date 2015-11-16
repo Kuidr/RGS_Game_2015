@@ -43,6 +43,8 @@ MonoBehaviour:
   spellcode: yyy
   cost: 4
   icon_sprite: {fileID: 21300000, guid: 168f9f29de897fd4da4059e65ef55f2e, type: 3}
+  info_screenshot: {fileID: 21300000, guid: cf83707538e82f74d9459df526e6adf1, type: 3}
+  info_text: Repels projectiles, lasts 20 seconds
   cast_sound_prefab: {fileID: 11437484, guid: 385d6305d4072b649a55e5c36bcd7ff1, type: 2}
   cooldown_time: 0
   effects:
@@ -81,6 +83,15 @@ Prefab:
       value: 
       objectReference: {fileID: 11437484, guid: 385d6305d4072b649a55e5c36bcd7ff1,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: cf83707538e82f74d9459df526e6adf1,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Repels projectiles, lasts 20 seconds
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148264}

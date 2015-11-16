@@ -1,21 +1,49 @@
-Initialize engine version: 5.2.2f1 (3757309da7e7)
+Initialize engine version: 5.1.1f1 (2046fc06d4d8)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 970M   (ID=0x13d8)
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
     Vendor:   NVIDIA
     VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\R2RGS 2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.043 seconds
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.111 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.622961 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1404.
+Total: 0.586067 ms (FindLiveObjects: 0.059133 ms CreateObjectMapping: 0.043911 ms MarkObjects: 0.472191 ms  DeleteObjects: 0.009953 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.670678 ms
+
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 977.
+Total: 0.784839 ms (FindLiveObjects: 0.080211 ms CreateObjectMapping: 0.032201 ms MarkObjects: 0.615927 ms  DeleteObjects: 0.055620 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.731560 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1404.
+Total: 0.604510 ms (FindLiveObjects: 0.082553 ms CreateObjectMapping: 0.043032 ms MarkObjects: 0.468678 ms  DeleteObjects: 0.009660 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.054165 ms
+
+Unloading 59 unused Assets to reduce memory usage. Loaded Objects now: 977.
+Total: 0.707555 ms (FindLiveObjects: 0.056791 ms CreateObjectMapping: 0.031323 ms MarkObjects: 0.582262 ms  DeleteObjects: 0.036592 ms)
+

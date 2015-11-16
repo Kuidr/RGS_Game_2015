@@ -1,0 +1,11 @@
+Fireball |   Destroys ice and trees
+Iceball | Destroys water
+Waterball | Destroys fire
+Silence | Prevents opponent from casting for 8 seconds
+Gardien | Repels projectiles, lasts 20 seconds
+Tree | Pine, conifer tree in Pinus genus
+Shieldbreaker | Damages any mage (1 heart) on contact, destroyed by any projectile on contact
+Slow time | Slows time for 5 seconds
+Dispel | Dispels the friendly projectile in the leftmost slot after a short delay, the slot cooldown is short
+Crystalization | instantly gives whichever is greater: 2 crystals or 6 - current crystals
+Darkness | Makes it hard to see...

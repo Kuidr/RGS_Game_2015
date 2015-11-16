@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Tree
   spellcode: yaa
   cost: 8
   icon_sprite: {fileID: 21300000, guid: 3ad9fde5d212ba342ad2eef3c6b30ab0, type: 3}
+  info_screenshot: {fileID: 21300000, guid: 57fba3455a6f84a4e8041df5a622aedc, type: 3}
+  info_text: Pine, conifer tree in Pinus genus
   cast_sound_prefab: {fileID: 11411954, guid: dddf188d88f545242ae51ec968465129, type: 2}
   cooldown_time: 0
   effects:
@@ -64,6 +66,19 @@ Prefab:
       value: 
       objectReference: {fileID: 11411954, guid: dddf188d88f545242ae51ec968465129,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: 57fba3455a6f84a4e8041df5a622aedc,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Pine, conifer tree in Pinus genus
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Tree
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 123652}

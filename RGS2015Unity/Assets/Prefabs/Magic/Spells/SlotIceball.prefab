@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Iceball
   spellcode: x
   cost: 6
   icon_sprite: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4, type: 3}
+  info_screenshot: {fileID: 21300000, guid: 8ea9d2165a1fd7941b779e7de887e9e3, type: 3}
+  info_text: Destroys water
   cast_sound_prefab: {fileID: 11478680, guid: b0d4a6169b2e018449ee65f4e98a8bad, type: 2}
   cooldown_time: 0
   effects:
@@ -89,6 +91,19 @@ Prefab:
       value: 
       objectReference: {fileID: 11478680, guid: b0d4a6169b2e018449ee65f4e98a8bad,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ea9d2165a1fd7941b779e7de887e9e3,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Destroys water
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Iceball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 147210}

@@ -43,6 +43,8 @@ MonoBehaviour:
   spellcode: xxyxx
   cost: 0
   icon_sprite: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9, type: 3}
+  info_screenshot: {fileID: 21300000, guid: f61be0b6374227841bf3ff6e4a16ed14, type: 3}
+  info_text: 'Instantly gives whichever is greater: 2 crystals or 6 - current crystals'
   cast_sound_prefab: {fileID: 11471426, guid: 5815bfc69d4d9934bb60a1bbcaef0f4c, type: 2}
   cooldown_time: 8
   effects:
@@ -77,6 +79,15 @@ Prefab:
       value: 
       objectReference: {fileID: 11471426, guid: 5815bfc69d4d9934bb60a1bbcaef0f4c,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: f61be0b6374227841bf3ff6e4a16ed14,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: 'Instantly gives whichever is greater: 2 crystals or 6 - current crystals'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115896}
