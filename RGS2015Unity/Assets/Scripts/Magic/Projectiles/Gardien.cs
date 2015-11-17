@@ -46,7 +46,7 @@ public class Gardien : ControlledProjectile
             yield return null;
         }
         slot.Empty(ManaSlotCooldown.Normal);
-        this.Destroy();
+        this.Kill();
     }
     private IEnumerator Blink()
     {

@@ -12,6 +12,7 @@ public class Iceball : ControlledProjectile
     public IceExplosion explosion_obj;
     private bool frozen = false;
     private bool exploded = false;
+    public WorldSound freeze_sound;
 
 
     protected override void Awake()
@@ -69,8 +70,15 @@ public class Iceball : ControlledProjectile
         Ball ball = collision.collider.GetComponent<Ball>();
         if (ball != null && !frozen)
         {
+            // Freeze
             Rigidbody2D ball_rb = ball.GetComponent<Rigidbody2D>();
             ball_rb.velocity = Vector2.zero;
+
+            // sound
+            freeze_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            freeze_sound.Play();
+
+            // delay before explosion
             StartCoroutine(FreezeThenExplode(ball_rb));
             return;
         }

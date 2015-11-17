@@ -89,7 +89,6 @@ public class Spell : MonoBehaviour
         WorldSound s = ObjectPool.Instance.GetObject(cast_sound_prefab, false);
 
         s.transform.position = transform.position;
-        s.base_volume = 1;
         s.SetPitchOffset(UnityEngine.Random.Range(-0.05f, 0.05f));
         s.Play();
     }

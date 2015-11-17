@@ -20,7 +20,7 @@ public abstract class ControlledProjectile : Projectile
 
     // Visual
     public ProjectileFlag flag_prefab;
-    private ProjectileFlag flag;
+    protected ProjectileFlag flag;
 
     // Sound
     public WorldSound destroyed_sound_prefab;
@@ -57,13 +57,13 @@ public abstract class ControlledProjectile : Projectile
         // Clip speed
         rb.velocity = Clip(rb.velocity, max_speed);
     }
-    public virtual void Destroy()
+    public virtual void Kill(bool silent = false)
     {
         Destroy(flag.gameObject);
         Destroy(gameObject);
 
         // sound
-        PlayDestroySound();
+        if (!silent) PlayDestroySound();
     }
 
 
@@ -97,7 +97,7 @@ public abstract class ControlledProjectile : Projectile
             // collided projectile defeats this projectile
             slot.Empty(ManaSlotCooldown.Long);
             caster.opponent.AddCrystals(CRYSTALS_ON_DESTROY);
-            this.Destroy();
+            this.Kill();
             return;
         }
 
@@ -128,7 +128,6 @@ public abstract class ControlledProjectile : Projectile
         WorldSound s = ObjectPool.Instance.GetObject(destroyed_sound_prefab, false);
 
         s.transform.position = transform.position;
-        s.base_volume = 1;
         s.SetPitchOffset(Random.Range(-0.05f, 0.05f));
         s.Play(Random.value * 0.1f);
     }

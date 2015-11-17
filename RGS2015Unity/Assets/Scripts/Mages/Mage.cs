@@ -19,7 +19,7 @@ public class Mage : MonoBehaviour
     private MageAudio mage_audio;
 
     // Resources
-    private int crystals = 6;
+    private int crystals = 600;
 
     // Spells and Projectile
     private const int StartingManaSlots = 4;
@@ -238,7 +238,7 @@ public class Mage : MonoBehaviour
         // dispel slot projectiles
         foreach (ManaSlot slot in mana_slots)
         {
-            if (slot.GetProjectile() != null) slot.GetProjectile().Destroy();
+            if (slot.GetProjectile() != null) slot.GetProjectile().Kill();
             slot.Empty(ManaSlotCooldown.Short);
         }
 

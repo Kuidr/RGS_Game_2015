@@ -47,5 +47,10 @@ public class WorldSound : MonoBehaviour
     {
         pitch_offset = offset;
     }
+
+    public bool IsPlaying()
+    {
+        return source.isPlaying;
+    }
 	
 }

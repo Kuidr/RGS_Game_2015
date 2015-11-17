@@ -26,7 +26,7 @@ public class ShieldBreaker : ControlledProjectile
             if (!explosion_obj.IsExploding())
             {
                 // life over
-                this.Destroy();
+                this.Kill(true);
                 slot.Empty(ManaSlotCooldown.Normal);
             }
         }

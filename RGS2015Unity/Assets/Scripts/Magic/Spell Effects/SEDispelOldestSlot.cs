@@ -53,7 +53,7 @@ public class SEDispelOldestSlot : SpellEffect
             if (p != null)
             {
                 slot.Empty(ManaSlotCooldown.Short);
-                p.Destroy();
+                p.Kill();
             }
         }
 

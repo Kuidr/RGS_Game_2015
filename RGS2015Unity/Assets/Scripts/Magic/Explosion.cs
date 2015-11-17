@@ -63,7 +63,7 @@ public class Explosion : MonoBehaviour
     }
     public void Update()
     {
-        if (!ps.isPlaying)
+        if (!IsExploding())
         {
             ps.Clear();
             gameObject.SetActive(false);
@@ -72,7 +72,7 @@ public class Explosion : MonoBehaviour
 
     public bool IsExploding()
     {
-        return ps.isPlaying;
+        return ps.isPlaying || explode_sound.IsPlaying();
     }
 
 }

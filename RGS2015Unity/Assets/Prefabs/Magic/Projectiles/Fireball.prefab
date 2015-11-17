@@ -132,7 +132,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c8f1d973fc573aa4a9f3f95af0dee747, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 17256c05e298b734cb14e1f8881bdcc6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescaled_pitch: 1
-  base_volume: 1
+  base_volume: .5
   base_pitch: 1
 --- !u!114 &11499348
 MonoBehaviour:
