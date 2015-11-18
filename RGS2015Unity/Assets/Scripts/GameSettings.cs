@@ -43,10 +43,10 @@ public class GameSettings : MonoBehaviour
     [System.NonSerialized]
     public Color[] player_colors; // set in initialize
     [System.NonSerialized]
-    public string[] player_color_names = { "random color", "red", "pink", "purple", "blue",
-           "teal", "green", "lime", "yellow", "orange", "maroon" };
-    private string[] hex_colors = { "ffffff", "ff0000", "ff00c6", "8949ff", "4c6eff",
-           "4cc2ff", "09ff49", "a5ff09", "f8ff38", "ff9a38", "6f1a4a" };
+    public string[] player_color_names = { "random color", "red", "orange", "yellow", "light green",
+           "dark green", "teal", "blue", "violet", "maroon", "grey", "dark" };
+    private string[] hex_colors = { "ffffff", "CE3C3CFF", "E2623CFF", "D7C850FF", "50A65CFF",
+           "4B7942FF", "367B85FF", "4761AEFF", "55508CFF", "872B44FF", "727272FF", "1D1D1DFF" };
     [System.NonSerialized]
     public string[] ai_names = { "hard AI", "harder AI" };
     [System.NonSerialized]
