@@ -381,22 +381,15 @@ public class Mage : MonoBehaviour
     {
         float start_time = Time.time;
         float duration = 2f;
-        Color c;
 
         while (true)
         {
-            c = sprite.color;
-            c.a = 1 - c.a;
-            sprite.color = c;
-
+            sprite.color = Color.white;
             yield return new WaitForSeconds(0.025f);
-
+            sprite.color = player_color;
+            yield return new WaitForSeconds(0.025f);
             if (Time.time - start_time >= duration) break;
         }
-
-        c = sprite.color;
-        c.a = 1;
-        sprite.color = c;
 
         invincible = false;
     }

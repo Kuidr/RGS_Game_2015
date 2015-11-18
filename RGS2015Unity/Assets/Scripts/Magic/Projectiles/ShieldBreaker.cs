@@ -58,6 +58,7 @@ public class ShieldBreaker : ControlledProjectile
         if (m != null)
         {
             m.Hit();
+            m.GetComponent<Rigidbody2D>().AddForceAtPosition(collision.relativeVelocity * 10f, collision.contacts[0].point, ForceMode2D.Impulse);
             Explode();
         }
 
