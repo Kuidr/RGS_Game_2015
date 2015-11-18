@@ -18,7 +18,7 @@ public class SpellShield : MonoBehaviour
         Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
         ControlledProjectile cp = collider.GetComponent<ControlledProjectile>();
 
-        if (rb != null && !(cp != null && cp.goes_through_shield))
+        if (rb != null)
         {
             Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
             rb.AddForce(dir * Force, ForceMode2D.Impulse);
@@ -37,7 +37,7 @@ public class SpellShield : MonoBehaviour
         Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
         ControlledProjectile cp = collision.collider.GetComponent<ControlledProjectile>();
 
-        if (rb != null && !(cp != null && cp.goes_through_shield))
+        if (rb != null)
         {
             Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
             rb.AddForce(dir * Force, ForceMode2D.Impulse);

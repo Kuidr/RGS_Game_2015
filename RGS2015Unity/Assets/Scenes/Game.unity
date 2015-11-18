@@ -1194,16 +1194,6 @@ Prefab:
       propertyPath: floating_pos
       value: 
       objectReference: {fileID: 1891531439}
-    - target: {fileID: 21212104, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7200a3644408e5f44acf0c7668c722f1,
-        type: 3}
-    - target: {fileID: 21233676, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 50b9edc2af37bf44c93540e5bbcb862a,
-        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
   m_IsPrefabParent: 0
@@ -1986,6 +1976,10 @@ Prefab:
     - target: {fileID: 11439714, guid: 08431262b96c11446a1fe7528755a57c, type: 2}
       propertyPath: player_name.Array.data[0]
       value: Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439714, guid: 08431262b96c11446a1fe7528755a57c, type: 2}
+      propertyPath: crystals_choice
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 08431262b96c11446a1fe7528755a57c, type: 2}

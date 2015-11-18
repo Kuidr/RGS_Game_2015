@@ -13,7 +13,7 @@ GameObject:
   - 50: {fileID: 5073864}
   - 58: {fileID: 5863656}
   - 114: {fileID: 11459410}
-  m_Layer: 9
+  m_Layer: 14
   m_Name: Shieldbreaker
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -216,8 +216,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescaled_pitch: 1
+  play_when_paused: 1
   base_volume: .5
   base_pitch: 1
+  source: {fileID: 0}
 --- !u!114 &11459410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2418,7 +2420,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_Layer
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: proj_type

@@ -38,6 +38,9 @@ public class GameSettings : MonoBehaviour
 
 	// Match info
     public bool music_on = true;
+    public int hearts_choice = 0;
+    public int slots_choice = 0;
+    public int crystals_choice = 0;
 
     // Constant data  (perhaps load from file in future)
     [System.NonSerialized]
@@ -50,7 +53,11 @@ public class GameSettings : MonoBehaviour
     [System.NonSerialized]
     public string[] ai_names = { "hard AI", "harder AI" };
     [System.NonSerialized]
-    public int[] memorize_times = { 0, 1, 2, 3, 4, 5, 6 }; // minutes
+    public int[] hearts_choices = { 3, 4, 5, 6 };
+    [System.NonSerialized]
+    public int[] slots_choices = { 4, 5, 6, 8, 1 };
+    [System.NonSerialized]
+    public int[] crystals_choices = { 6, 500 };
 
 
     // PUBLIC MODIFIERS
@@ -193,5 +200,18 @@ public class GameSettings : MonoBehaviour
     {
         return player_control_scheme[0] == control_scheme ? 1 :
             player_control_scheme[1] == control_scheme ? 2 : -1;
+    }
+
+    public int GetNumHearts()
+    {
+        return hearts_choices[hearts_choice];
+    }
+    public int GetNumSlots()
+    {
+        return slots_choices[slots_choice];
+    }
+    public int GetNumCrystals()
+    {
+        return crystals_choices[crystals_choice];
     }
 }

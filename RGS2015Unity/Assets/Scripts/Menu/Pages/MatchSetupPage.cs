@@ -8,6 +8,7 @@ public class MatchSetupPage : UIMenuPage
     public StartPopupPage start_popup_page;
 
     public Text[] txt_control, txt_color, txt_name;
+    public Text txt_hearts, txt_slots, txt_crystals;
     public InputField[] inputfield_name;
     public Text press_start_footer;
     public Text same_colors_footer;
@@ -135,10 +136,6 @@ public class MatchSetupPage : UIMenuPage
         // update button text
         txt_control[player_num - 1].text = GS.GetControlTypeName(player_num);
     }
-    public void OnButtonWeapon(int player_num)
-    {
-
-    }
     public void OnButtonColor(int player_num)
     {
         // change color
@@ -165,6 +162,40 @@ public class MatchSetupPage : UIMenuPage
 
         // Footer
         UpdatePressStartFooter();
+    }
+
+    public void OnButtonHearts()
+    {
+        // change number of hearts
+        int n = GS.hearts_choices.Length;
+        int i = GS.hearts_choice;
+        i = (i + 1) % n;
+        GS.hearts_choice = i;
+
+        // update button text
+        txt_hearts.text = "hearts : " + GS.GetNumHearts();
+    }
+    public void OnButtonSlots()
+    {
+        // change number of hearts
+        int n = GS.slots_choices.Length;
+        int i = GS.slots_choice;
+        i = (i + 1) % n;
+        GS.slots_choice = i;
+
+        // update button text
+        txt_slots.text = "slots : " + GS.GetNumSlots();
+    }
+    public void OnButtonCrystals()
+    {
+        // change number of hearts
+        int n = GS.crystals_choices.Length;
+        int i = GS.crystals_choice;
+        i = (i + 1) % n;
+        GS.crystals_choice = i;
+
+        // update button text
+        txt_crystals.text = "crystals : " + GS.GetNumCrystals();
     }
 
     public void OnButtonStart()

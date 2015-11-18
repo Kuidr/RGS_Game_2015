@@ -24,10 +24,9 @@ public class Mage : MonoBehaviour
 
 
     // Resources
-    private int crystals = 600;
+    private int crystals;
 
     // Spells and Projectile
-    private const int StartingManaSlots = 4;
     private List<ManaSlot> mana_slots;
  
     private SpellManager spellmanager;
@@ -38,7 +37,6 @@ public class Mage : MonoBehaviour
     private Color spell_code_initial_color;
 
     // State
-    private int hearts_max = 3;
     private int hearts;
     private bool invincible = true;
     private bool casting_allowed = true;
@@ -116,6 +114,10 @@ public class Mage : MonoBehaviour
     {
         return opponent;
     }
+    public Collider2D GetHitCollider()
+    {
+        return GetComponent<Collider2D>();
+    }
 
     public List<ManaSlot> GetManaSlots()
     {
@@ -143,7 +145,7 @@ public class Mage : MonoBehaviour
     }
     public int GetMaxHearts()
     {
-        return hearts_max;
+        return GameSettings.Instance.GetNumHearts();
     }
     public int GetHearts()
     {
@@ -165,14 +167,18 @@ public class Mage : MonoBehaviour
     }
     private void Start()
     {
-        hearts = hearts_max;
         Refresh();
     }
     public void Inititalize(int number, MatchManager manager)
     {
+        // player info
         player_num = number;
         player_name = GameSettings.Instance.player_name[number - 1];
         player_color = GameSettings.Instance.GetPlayerColor(number);
+
+        // player_state
+        hearts = GameSettings.Instance.GetNumHearts();
+        crystals = GameSettings.Instance.GetNumCrystals();
 
         // Player controller
         if (GameSettings.Instance.IsAIControlled(number))
@@ -207,8 +213,8 @@ public class Mage : MonoBehaviour
         spellmanager = FindObjectOfType<SpellManager>();
         if (spellmanager == null) Debug.LogError("SpellManager not found");
 
-        mana_slots = new List<ManaSlot>(StartingManaSlots);
-        for (int i = 0; i < StartingManaSlots; ++i)
+        mana_slots = new List<ManaSlot>(GameSettings.Instance.GetNumSlots());
+        for (int i = 0; i < GameSettings.Instance.GetNumSlots(); ++i)
             mana_slots.Add(new ManaSlot());
     }
     private void Update()

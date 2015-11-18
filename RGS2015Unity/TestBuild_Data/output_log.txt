@@ -16,7 +16,7 @@ Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Ga
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.036 seconds
+- Completed reload, in  0.100 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -24,8 +24,14 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.256742 ms
+UnloadTime: 2.127643 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1466.
-Total: 0.503514 ms (FindLiveObjects: 0.052400 ms CreateObjectMapping: 0.047716 ms MarkObjects: 0.393736 ms  DeleteObjects: 0.008782 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1484.
+Total: 0.536009 ms (FindLiveObjects: 0.072307 ms CreateObjectMapping: 0.035421 ms MarkObjects: 0.418327 ms  DeleteObjects: 0.009367 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.670385 ms
+
+Unloading 57 unused Assets to reduce memory usage. Loaded Objects now: 1006.
+Total: 0.805916 ms (FindLiveObjects: 0.070843 ms CreateObjectMapping: 0.035128 ms MarkObjects: 0.672426 ms  DeleteObjects: 0.026346 ms)
 
