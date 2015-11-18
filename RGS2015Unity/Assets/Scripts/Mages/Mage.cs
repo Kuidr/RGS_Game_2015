@@ -13,10 +13,15 @@ public class Mage : MonoBehaviour
 
     private PlayerController pc;
     private Rigidbody2D rb;
-    public SpriteRenderer sprite;
     public Transform floating_pos;
     private Hover hover;
     private MageAudio mage_audio;
+
+    // Sprites
+    public SpriteRenderer spriterenderer_body, spriterenderer_highlights;
+    public Sprite[] body_sprites;
+    public Sprite[] highlights_sprites; // the sprites to be colored
+
 
     // Resources
     private int crystals = 600;
@@ -194,8 +199,9 @@ public class Mage : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         hover = GetComponent<Hover>();
 
-        // color
-        sprite.color = player_color;
+        // sprites
+        SetGraphicsNormal();
+        spriterenderer_highlights.color = player_color;
 
         // spells
         spellmanager = FindObjectOfType<SpellManager>();
@@ -227,6 +233,7 @@ public class Mage : MonoBehaviour
 
     private void Refresh()
     {
+        SetGraphicsNormal();
         spell_code_text.text = "";
         StopAllCoroutines();
         StartCoroutine(FloatUp());
@@ -234,6 +241,9 @@ public class Mage : MonoBehaviour
     private void TakeHit(float force)
     {
         if (IsDead() || invincible) return;
+
+        // sprites
+        SetGraphicsHit();
 
         // sound
         mage_audio.PlayBump(force);
@@ -384,9 +394,9 @@ public class Mage : MonoBehaviour
 
         while (true)
         {
-            sprite.color = Color.white;
+            spriterenderer_highlights.color = Color.white;
             yield return new WaitForSeconds(0.025f);
-            sprite.color = player_color;
+            spriterenderer_highlights.color = player_color;
             yield return new WaitForSeconds(0.025f);
             if (Time.time - start_time >= duration) break;
         }
@@ -456,6 +466,17 @@ public class Mage : MonoBehaviour
         casting_allowed = false;
         yield return new WaitForSeconds(duration);
         casting_allowed = true;
+    }
+
+    private void SetGraphicsHit()
+    {
+        spriterenderer_body.sprite = body_sprites[1];
+        spriterenderer_highlights.sprite = highlights_sprites[1];
+    }
+    private void SetGraphicsNormal()
+    {
+        spriterenderer_body.sprite = body_sprites[0];
+        spriterenderer_highlights.sprite = highlights_sprites[0];
     }
 
 

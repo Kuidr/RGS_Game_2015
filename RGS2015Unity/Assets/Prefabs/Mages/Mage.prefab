@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 445686}
   - 212: {fileID: 21233676}
   m_Layer: 0
-  m_Name: Mage_Details_0
+  m_Name: Body Main
   m_TagString: Mage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ GameObject:
   - 212: {fileID: 21212104}
   - 60: {fileID: 6042830}
   m_Layer: 12
-  m_Name: Mage_base_0
+  m_Name: Highlights
   m_TagString: Mage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 197334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.37699986, y: -3.0539999, z: .00054693222}
+  m_LocalPosition: {x: -4.17600012, y: -3.03600001, z: .00054693222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414812}
@@ -303,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 196680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427026}
   - {fileID: 445686}
@@ -579,7 +579,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -.0599999987, y: .0799999982}
+  m_Offset: {x: .0599999987, y: .0799999982}
   serializedVersion: 2
   m_Size: {x: .280000001, y: .600000024}
 --- !u!82 &8206420
@@ -1208,8 +1208,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opponent: {fileID: 0}
-  sprite: {fileID: 21212104}
   floating_pos: {fileID: 0}
+  spriterenderer_body: {fileID: 21233676}
+  spriterenderer_highlights: {fileID: 21212104}
+  body_sprites:
+  - {fileID: 21300000, guid: 50b9edc2af37bf44c93540e5bbcb862a, type: 3}
+  - {fileID: 21300002, guid: 50b9edc2af37bf44c93540e5bbcb862a, type: 3}
+  highlights_sprites:
+  - {fileID: 21300000, guid: 7200a3644408e5f44acf0c7668c722f1, type: 3}
+  - {fileID: 21300002, guid: 7200a3644408e5f44acf0c7668c722f1, type: 3}
   cast_point: {fileID: 479282}
   spell_code_text: {fileID: 10206658}
 --- !u!114 &11475340
@@ -1328,7 +1335,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7200a3644408e5f44acf0c7668c722f1, type: 3}
-  m_Color: {r: .808823526, g: .23788926, b: .23788926, a: 1}
+  m_Color: {r: .529411793, g: .171280295, b: .267605394, a: 1}
 --- !u!212 &21233676
 SpriteRenderer:
   m_ObjectHideFlags: 1
