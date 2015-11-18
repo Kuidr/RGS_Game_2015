@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 445686}
   - 212: {fileID: 21233676}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body Main
   m_TagString: Mage
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - 4: {fileID: 427026}
   - 212: {fileID: 21212104}
   - 60: {fileID: 6042830}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Highlights
   m_TagString: Mage
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 421694}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Body
   m_TagString: Mage
   m_Icon: {fileID: 0}

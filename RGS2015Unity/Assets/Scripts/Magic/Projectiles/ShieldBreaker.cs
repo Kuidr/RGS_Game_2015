@@ -51,12 +51,17 @@ public class ShieldBreaker : ControlledProjectile
 
         exploded = true;
     }
-
+    public override void Kill(bool silent = false)
+    {
+        if (!silent) return; // prevent friendly mage killing this projectile before it finishes exploding
+        base.Kill(silent);
+    }
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         Mage m = collision.collider.GetComponent<Mage>();
         if (m != null)
         {
+            Debug.Log("SB explode");
             m.Hit();
             m.GetComponent<Rigidbody2D>().AddForceAtPosition(collision.relativeVelocity * 10f, collision.contacts[0].point, ForceMode2D.Impulse);
             Explode();

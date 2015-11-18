@@ -137,7 +137,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
-  Priority: 128
+  Priority: 23
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -219,7 +219,7 @@ MonoBehaviour:
   play_when_paused: 1
   base_volume: .5
   base_pitch: 1
-  source: {fileID: 0}
+  source: {fileID: 8227668}
 --- !u!114 &11459410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  goes_through_shield: 1
   flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
   destroyed_sound_prefab: {fileID: 11455388, guid: 462eca1ec2fc9454c9b52edf8ed5bb69,
     type: 2}

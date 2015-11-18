@@ -165,7 +165,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: .5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ps: {fileID: 19843062}
-  explode_sound: {fileID: 11458088}
 --- !u!114 &11458088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,8 +215,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescaled_pitch: 1
+  play_when_paused: 1
   base_volume: 1
   base_pitch: 1
+  source: {fileID: 0}
 --- !u!114 &11479602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  goes_through_shield: 0
   flag_prefab: {fileID: 11471302, guid: 07bffe3d65c8477499c29ae8c8de7687, type: 2}
   destroyed_sound_prefab: {fileID: 11412882, guid: e3bf452312aaebf42a4557c6deae2784,
     type: 2}
