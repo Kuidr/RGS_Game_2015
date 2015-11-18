@@ -27,7 +27,7 @@ public class Explosion : MonoBehaviour
         camshake.Shake(new CamShakeInstance(0.05f, 0.1f));
 
         // sound
-        explode_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+        //explode_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
         explode_sound.Play();
 
         // force

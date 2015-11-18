@@ -32,7 +32,6 @@ public class Mage : MonoBehaviour
     public TextMesh spell_code_text;
     private Color spell_code_initial_color;
 
-
     // State
     private int hearts_max = 3;
     private int hearts;
@@ -44,6 +43,15 @@ public class Mage : MonoBehaviour
     public System.Action event_crystal_count_change;
     public System.Action<Mage> event_hearts_change;
     public System.Action<SpellCastResult> event_spell_cast;
+
+    // Exclamation 
+    private Dictionary<string, int> exclamation_codes = new Dictionary<string, int>()
+    {
+        { "XXA", 0 },
+        { "XXX", 1 },
+        { "XXY", 2 },
+        { "XXB", 3 }
+    };
 
 
     // PUBLIC MODIFIERS
@@ -229,6 +237,7 @@ public class Mage : MonoBehaviour
 
         // sound
         mage_audio.PlayBump(force);
+        mage_audio.PlayGrunt();
 
         // fall down
         hover.StartFadeOut();
@@ -298,6 +307,18 @@ public class Mage : MonoBehaviour
     {
         if (casting_allowed && spell_code_text.text != "")
         {
+            // Exclamation
+            int exclamation_num;
+            if (exclamation_codes.TryGetValue(spell_code_text.text, out exclamation_num))
+            {
+                Debug.Log("exclaim");
+                mage_audio.PlayExclamation(exclamation_num);
+                spell_code_text.text = "";
+                return;
+            }
+
+
+            // Spell
             int crystals_old = crystals;
             SpellCastResult result = spellmanager.TryCast(this, spell_code_text.text, ref crystals);
             
@@ -309,6 +330,7 @@ public class Mage : MonoBehaviour
 
             // event
             if (event_spell_cast != null) event_spell_cast(result);
+
 
             // bad cast
             if (!result.success)
@@ -322,7 +344,6 @@ public class Mage : MonoBehaviour
                     StartCoroutine(MakeRedSpellCodeText());
                 }
             }
-
             // good cast
             else
             {

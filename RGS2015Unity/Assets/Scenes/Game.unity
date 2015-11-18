@@ -281,6 +281,30 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 475466, guid: 921ce245b84e80e419c202d6f17247be, type: 2}
   m_PrefabInternal: {fileID: 2006970990}
+--- !u!1 &201763503 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 130484, guid: 174f87a19b80ac54d98807de2e3a91b6, type: 2}
+  m_PrefabInternal: {fileID: 1160014677}
+--- !u!82 &201763504 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 8225830, guid: 174f87a19b80ac54d98807de2e3a91b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1160014677}
+--- !u!114 &201763505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 201763503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b815c4920985ae1489b058576dc2bdc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timescaled_pitch: 1
+  base_volume: 1
+  base_pitch: 1
+  source: {fileID: 201763504}
 --- !u!1 &282532385
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +414,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 197334, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
+      propertyPath: m_Name
+      value: Mage 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11470686, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
       propertyPath: opponent
       value: 
@@ -398,20 +426,7 @@ Prefab:
       propertyPath: floating_pos
       value: 
       objectReference: {fileID: 1891531439}
-    - target: {fileID: 197334, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
-      propertyPath: m_Name
-      value: Mage 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: .829999983
-      objectReference: {fileID: 0}
-    - target: {fileID: 479282, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .540000021
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98523439679206d4da0bb69e5279e1f8, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &295785382 stripped

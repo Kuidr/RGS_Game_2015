@@ -6,11 +6,12 @@ using System.Collections;
 public class WorldSound : MonoBehaviour
 {
     public bool timescaled_pitch = true;
+    public bool play_when_paused = true;
     public float base_volume = 1;
     public float base_pitch = 1;
     private float pitch_offset = 0;
 
-    private AudioSource source;
+    public AudioSource source;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class WorldSound : MonoBehaviour
         // pitch
         source.pitch = Mathf.Max(base_pitch + pitch_offset, 0);
         if (timescaled_pitch) source.pitch *= Time.timeScale;
+        if (play_when_paused && Time.timeScale == 0) source.pitch = 1;
 
         // disable when finished
         if (!source.isPlaying) gameObject.SetActive(false);
