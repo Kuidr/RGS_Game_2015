@@ -17,6 +17,10 @@ public abstract class ControlledProjectile : Projectile
     protected float max_steering_force = 3;
     protected float max_speed = 3;
 
+    // Time lock
+    private Vector2 velocity_time_locked;
+    protected bool time_locked = false;
+
     // Visual
     public ProjectileFlag flag_prefab;
     protected ProjectileFlag flag;
@@ -43,6 +47,8 @@ public abstract class ControlledProjectile : Projectile
     }
     public void UpdateConmtrolledMovement(Vector2 input_move)
     {
+        if (time_locked) return;
+
         input_direction = new Vector2(input_move.x, input_move.y);
         if (input_direction.magnitude > 0.3f)
         {
@@ -64,7 +70,27 @@ public abstract class ControlledProjectile : Projectile
         // sound
         if (!silent) PlayDestroySound();
     }
-
+    public void TimeLock()
+    {
+        time_locked = true;
+        velocity_time_locked = rb.velocity;
+        rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
+        foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            ps.Pause();
+        }
+    }
+    public void UnTimeLock()
+    {
+        time_locked = false;
+        rb.isKinematic = false;
+        rb.velocity = velocity_time_locked;
+        foreach (ParticleSystem ps in GetComponentsInChildren<ParticleSystem>())
+        {
+            ps.Play();
+        }
+    }
 
     // PUBLIC ACCESSORS
 

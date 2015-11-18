@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 495240}
   - 114: {fileID: 11479250}
   m_Layer: 0
-  m_Name: SESlowTime
+  m_Name: SETimeLock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

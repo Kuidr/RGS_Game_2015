@@ -45,9 +45,9 @@ InputManager:
     positiveButton: right
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: .0199999996
-    sensitivity: 1
+    gravity: 1000
+    dead: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
@@ -93,11 +93,11 @@ InputManager:
     positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: .0199999996
-    sensitivity: 1
+    gravity: 1000
+    dead: 0
+    sensitivity: 1000
     snap: 0
-    invert: 1
+    invert: 0
     type: 0
     axis: 1
     joyNum: 0
@@ -189,14 +189,14 @@ InputManager:
     positiveButton: space
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
-    dead: .100000001
-    sensitivity: 1
+    gravity: 1000
+    dead: 0
+    sensitivity: 1000
     snap: 0
-    invert: 1
-    type: 2
+    invert: 0
+    type: 0
     axis: 2
-    joyNum: 2
+    joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
     descriptiveName: 
