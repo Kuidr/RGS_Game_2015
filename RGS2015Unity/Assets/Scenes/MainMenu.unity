@@ -988,6 +988,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: f4162f7bb5c497e40a86877bc27f825f,
         type: 3}
+    - target: {fileID: 19895682, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4294159044
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
   m_IsPrefabParent: 0
@@ -1082,6 +1086,10 @@ Prefab:
     - target: {fileID: 187708, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19895682, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 2854519807
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d07ee4ddce0ccbd49b3f89956ca4e2d1, type: 2}
