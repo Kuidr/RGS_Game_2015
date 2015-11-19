@@ -47,7 +47,7 @@ MonoBehaviour:
   info_text: Damages any mage (1 heart) on contact, destroyed by any projectile on
     contact
   cast_sound_prefab: {fileID: 11470714, guid: 90f5e96bde628d94fa30d4738a0512bb, type: 2}
-  cooldown_time: 15
+  cooldown_time: 20
   effects:
   - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
 --- !u!1001 &100100000
@@ -84,7 +84,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: cooldown_time
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: icon_sprite

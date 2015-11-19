@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class ResourceSpawner : MonoBehaviour
 {
     private const int RESOURCE_CAP = 35;
+    private const float CHECK_DIST = 0.3f;
 
     // General
     public Resource rock_prefab, crystal_prefab;
@@ -67,12 +68,15 @@ public class ResourceSpawner : MonoBehaviour
         {
             Stack<Resource> parent_chain = new Stack<Resource>();
             parent_chain.Push(root_resource);
-            PlaceResource(res, parent_chain);
+            if (!PlaceResource(res, parent_chain))
+            {
+                Destroy(res.gameObject);
+            }
         }
     }
     private bool PlaceResource(Resource res, Stack<Resource> parent_chain)
     {
-        // Check if there is a free spot or another resource in each horizontal direction
+        // Check if there is a free spot or another resource in each orthogonal direction
         Vector2[] dir_list = new Vector2[] { Vector2.right, -Vector2.right, Vector2.up, -Vector2.up };
         dir_list = GeneralHelpers.ShuffleArray(dir_list);
 
@@ -81,7 +85,7 @@ public class ResourceSpawner : MonoBehaviour
 
         for (int i = 0; i < 4; ++i)
         {
-            Vector2 point = (Vector2)parent_chain.Peek().transform.position + dir_list[i] * Resource.WidthHeight;
+            Vector2 point = (Vector2)parent_chain.Peek().transform.position + dir_list[i] * CHECK_DIST;
             Collider2D col = Physics2D.OverlapPoint(point);
             if (col == null)
             {
@@ -111,7 +115,7 @@ public class ResourceSpawner : MonoBehaviour
         {
             for (int i = 0; i < 4; ++i)
             {
-                Vector2 point = (Vector2)parent_chain.Peek().transform.position + dir_list[i] * Resource.WidthHeight;
+                Vector2 point = (Vector2)parent_chain.Peek().transform.position + dir_list[i] * CHECK_DIST;
                 Collider2D col = Physics2D.OverlapPoint(point);
                 if (col == null)
                 {

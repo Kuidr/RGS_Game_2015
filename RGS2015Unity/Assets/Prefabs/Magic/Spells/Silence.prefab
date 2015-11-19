@@ -46,7 +46,7 @@ MonoBehaviour:
   info_screenshot: {fileID: 21300000, guid: d32e49a718239684cb039bd5e743a65a, type: 3}
   info_text: Prevents opponent from casting for 8 seconds
   cast_sound_prefab: {fileID: 11416640, guid: d0a88c1e8d89fdc48977caf8f69631c2, type: 2}
-  cooldown_time: 15
+  cooldown_time: 25
   effects:
   - {fileID: 11428992, guid: 9b9118e3bf3d1dd4399f3b27dadbc695, type: 2}
 --- !u!1001 &100100000
@@ -78,6 +78,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: info_text
       value: Prevents opponent from casting for 8 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldown_time
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

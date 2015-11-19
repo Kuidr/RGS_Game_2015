@@ -314,8 +314,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescaled_pitch: 1
+  play_when_paused: 1
   base_volume: 1
   base_pitch: 1
+  source: {fileID: 0}
 --- !u!114 &11429874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -328,8 +330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timescaled_pitch: 1
+  play_when_paused: 1
   base_volume: 1
   base_pitch: 1
+  source: {fileID: 0}
 --- !u!114 &11467090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,10 +391,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1096040931
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0e2cf75abe9d88a48910e1d9a3e9d019, type: 3}
-  m_Color: {r: .0823529437, g: .0666666701, b: .0627451017, a: 1}
+  m_Color: {r: .0627451017, g: .0431372561, b: .0431372561, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

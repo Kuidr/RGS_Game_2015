@@ -8,7 +8,6 @@ public class Resource : MonoBehaviour
 {
     // General
     public ResourceType type;
-    public const float WidthHeight = 0.2828f;
     private ResourceAudio resource_audio;
 
     // Visual
@@ -28,12 +27,13 @@ public class Resource : MonoBehaviour
     {
         back_lighting = FindObjectOfType<BackgroundLighting>();
         resource_audio = GetComponent<ResourceAudio>();
+        transform.Rotate(0, 0, Random.value * 360);
     }
     private void Update()
     {
-        Color c = GetComponent<SpriteRenderer>().color;
+        Color c = GetComponentInChildren<SpriteRenderer>().color;
         if (c.r + c.g + c.b > 0.5f)
-            back_lighting.Light(transform.position, c * 0.1f * (transform.lossyScale.x / 0.2f));
+            back_lighting.Light(transform.position, c * 0.02f * (transform.lossyScale.x / 0.2f));
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
