@@ -16,7 +16,32 @@ Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Ga
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.050 seconds
+- Completed reload, in  0.113 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\TestBuild_Data\Managed\System.dll (this message is harmless)
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.067630 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1489.
+Total: 0.570845 ms (FindLiveObjects: 0.060890 ms CreateObjectMapping: 0.037763 ms MarkObjects: 0.461359 ms  DeleteObjects: 0.010245 ms)
+
+exclaim
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+SB explode
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+exclaim
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
+SB explode
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 65)
+
