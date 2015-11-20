@@ -42,7 +42,7 @@ MonoBehaviour:
   name: Crystallization
   spellcode: xxyxx
   cost: 0
-  icon_sprite: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9, type: 3}
+  icon_sprite: {fileID: 21300000, guid: d8300ee40789a174f9c0c54c73fae294, type: 3}
   info_screenshot: {fileID: 21300000, guid: 881547e6ec1ed52428e773312dd61fe2, type: 3}
   info_text: 'Instantly gives whichever is greater: 2 crystals or 6 - current crystals'
   cast_sound_prefab: {fileID: 11471426, guid: 5815bfc69d4d9934bb60a1bbcaef0f4c, type: 2}
@@ -64,7 +64,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: icon_sprite
       value: 
-      objectReference: {fileID: 21300000, guid: abdb495190434e644afe2d1df1ae19a9,
+      objectReference: {fileID: 21300000, guid: d8300ee40789a174f9c0c54c73fae294,
         type: 3}
     - target: {fileID: 0}
       propertyPath: name
