@@ -53,7 +53,7 @@ public class ShieldBreaker : ControlledProjectile
     }
     public override void Kill(bool silent = false)
     {
-        if (!silent) return; // prevent friendly mage killing this projectile before it finishes exploding
+        //if (!silent) return; // prevent friendly mage killing this projectile before it finishes exploding
         base.Kill(silent);
     }
     protected override void OnCollisionEnter2D(Collision2D collision)

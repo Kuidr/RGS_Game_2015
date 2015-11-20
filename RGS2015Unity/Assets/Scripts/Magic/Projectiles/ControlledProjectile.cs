@@ -66,6 +66,7 @@ public abstract class ControlledProjectile : Projectile
     {
         Destroy(flag.gameObject);
         Destroy(gameObject);
+        Debug.Log(name);
 
         // sound
         if (!silent) PlayDestroySound();
@@ -117,12 +118,15 @@ public abstract class ControlledProjectile : Projectile
     protected override void OnCollisionEnter2D(Collision2D collision)
     {
         Projectile p = collision.collider.GetComponent<Projectile>();
+
+
         if (p != null && Defeats(p, this))
         {
             // collided projectile defeats this projectile
             slot.Empty(ManaSlotCooldown.Long);
             caster.opponent.AddCrystals(CRYSTALS_ON_DESTROY);
             this.Kill();
+
             return;
         }
 
