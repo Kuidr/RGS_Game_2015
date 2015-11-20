@@ -21,17 +21,15 @@ public class HumanPlayerController : PlayerController
         InputMove = new Vector2(h, v);
 
         // Spell code
-        if (ADown()) InputSpellCode += "A";
-        else if (BDown()) InputSpellCode += "B";
-        else if (XDown()) InputSpellCode += "X";
-        else if (YDown()) InputSpellCode += "Y";
+        if (ADown() && InputSpellCodeA != null) { InputSpellCodeA(); StartAutoCast(); }
+        else if (BDown() && InputSpellCodeB != null) { InputSpellCodeB(); StartAutoCast(); }
+        else if (XDown() && InputSpellCodeX != null) { InputSpellCodeX(); StartAutoCast(); }
+        else if (YDown() && InputSpellCodeY != null) { InputSpellCodeY(); StartAutoCast(); }
 
         // Casting (explicit)
-        if (Input.GetAxis("Cast" + control_scheme) > 0)
+        if (Input.GetAxis("Cast" + control_scheme) > 0 && InputCast != null)
         {
             InputCast();
-            InputSpellCode = "";
-            Debug.Log("Cast");
         }
 
         base.Update();
@@ -40,22 +38,26 @@ public class HumanPlayerController : PlayerController
     private bool ADown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button0) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button0) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button0) : 
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.S) : false;
     }
     private bool BDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button1) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button1) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button1) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.D) : false;
     }
     private bool XDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button2) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button2) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button2) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.A) : false;
     }
     private bool YDown()
     {
         return control_scheme == 1 ? Input.GetKeyDown(KeyCode.Joystick1Button3) :
-               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button3) : false;
+               control_scheme == 2 ? Input.GetKeyDown(KeyCode.Joystick2Button3) :
+               control_scheme == 10 ? Input.GetKeyDown(KeyCode.W) : false;
     }
 
 }

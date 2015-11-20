@@ -5,6 +5,8 @@ public class SpellShield : MonoBehaviour
 {
     private Circle circle;
     private float radius = 0.5f;
+    private const float Force = 20f;
+    public WorldSound hit_sound;
 
     private void Start()
     {
@@ -14,14 +16,38 @@ public class SpellShield : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
-        Projectile p = collider.GetComponent<Projectile>();
-        if (rb != null && !(p != null && p.proj_type == ProjectileType.Curse))
+        ControlledProjectile cp = collider.GetComponent<ControlledProjectile>();
+
+        if (rb != null)
         {
             Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
-            rb.AddForce(dir * 5f, ForceMode2D.Impulse);
+            rb.AddForce(dir * Force, ForceMode2D.Impulse);
 
             StopAllCoroutines();
             StartCoroutine(ActivateShieldVisual());
+
+            hit_sound.base_volume = 1;
+            hit_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            hit_sound.Play();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
+        ControlledProjectile cp = collision.collider.GetComponent<ControlledProjectile>();
+
+        if (rb != null)
+        {
+            Vector2 dir = (rb.position - (Vector2)transform.position).normalized;
+            rb.AddForce(dir * Force, ForceMode2D.Impulse);
+
+            StopAllCoroutines();
+            StartCoroutine(ActivateShieldVisual());
+
+            hit_sound.base_volume = 1;
+            hit_sound.SetPitchOffset(Random.Range(-0.05f, 0.05f));
+            hit_sound.Play();
         }
     }
 

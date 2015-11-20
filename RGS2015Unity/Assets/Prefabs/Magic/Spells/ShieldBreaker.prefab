@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &108422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 471820}
+  - 114: {fileID: 11492030}
+  m_Layer: 0
+  m_Name: ShieldBreaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &471820
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108422}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .187580854, y: .0760989562, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11492030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Shield Breaker
+  spellcode: bbbxxx
+  cost: 20
+  icon_sprite: {fileID: 21300000, guid: ff25a80ff6b91e84a85c3d18c6d344cf, type: 3}
+  info_screenshot: {fileID: 21300000, guid: bcde27f6fdcb47949b595868474bdf0c, type: 3}
+  info_text: Damages any mage (1 heart) on contact, destroyed by any projectile on
+    contact
+  cast_sound_prefab: {fileID: 11470714, guid: 90f5e96bde628d94fa30d4738a0512bb, type: 2}
+  cooldown_time: 20
+  effects:
+  - {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: cost_b
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellcode
+      value: bbbxxx
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11491670, guid: b6b15826a5920ae41a3e931bc44e613d,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cooldown_time
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: icon_sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff25a80ff6b91e84a85c3d18c6d344cf,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cast_sound_prefab
+      value: 
+      objectReference: {fileID: 11470714, guid: 90f5e96bde628d94fa30d4738a0512bb,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: bcde27f6fdcb47949b595868474bdf0c,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Damages any mage (1 heart) on contact, destroyed by any projectile on
+        contact
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Shield Breaker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 108422}
+  m_IsPrefabParent: 1

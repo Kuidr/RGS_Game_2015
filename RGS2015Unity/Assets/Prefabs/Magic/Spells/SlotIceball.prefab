@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &147210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 433208}
+  - 114: {fileID: 11427662}
+  m_Layer: 0
+  m_Name: SlotIceball
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &433208
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11427662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0b262215050e84eb2a3bccef6e38ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Iceball
+  spellcode: x
+  cost: 6
+  icon_sprite: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4, type: 3}
+  info_screenshot: {fileID: 21300000, guid: 8ea9d2165a1fd7941b779e7de887e9e3, type: 3}
+  info_text: Destroys water
+  cast_sound_prefab: {fileID: 11478680, guid: b0d4a6169b2e018449ee65f4e98a8bad, type: 2}
+  cooldown_time: 0
+  effects:
+  - {fileID: 11405860, guid: 48e07fb8113e0d4409db360535b7c8b2, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11405860, guid: 48e07fb8113e0d4409db360535b7c8b2,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: cost_b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost_x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spellcode
+      value: x
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cost
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: icon_sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 253c386d92301c04f984c44858c01cc4,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: cooldown_time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: cast_sound_prefab
+      value: 
+      objectReference: {fileID: 11478680, guid: b0d4a6169b2e018449ee65f4e98a8bad,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: info_screenshot
+      value: 
+      objectReference: {fileID: 21300000, guid: 8ea9d2165a1fd7941b779e7de887e9e3,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: info_text
+      value: Destroys water
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Iceball
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 147210}
+  m_IsPrefabParent: 1

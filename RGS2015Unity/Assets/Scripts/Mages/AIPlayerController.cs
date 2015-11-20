@@ -9,7 +9,7 @@ public class AIPlayerController : PlayerController
     private Mage opponent;
     private Mage mage;
 
-    public void Initialize(Mage mage, Mage opponent)
+    public void Initialize(Mage mage, Mage opponent, MatchManager manager)
     {
         this.mage = mage;
         this.opponent = opponent;
@@ -26,23 +26,27 @@ public class AIPlayerController : PlayerController
     {
         while (true)
         {
-            List<Projectile> g1 = mage.GetProjectiles();
-            List<Projectile> g2 = opponent.GetProjectiles();
+            List<ManaSlot> g1 = mage.GetManaSlots();
+            List<ManaSlot> g2 = opponent.GetManaSlots();
 
             List<Vector2> dirs = new List<Vector2>();
             List<float> scores = new List<float>();
 
-            foreach (Projectile p1 in g1)
+            foreach (ManaSlot m1 in g1)
             {
-                foreach (Projectile p2 in g2)
+                Projectile p1 = m1.GetProjectile();
+                if (p1 == null) continue;
+
+                foreach (ManaSlot m2 in g2)
                 {
+                    Projectile p2 = m2.GetProjectile();
+                    if (p2 == null) continue;
+
                     Vector2 v = p2.transform.position - p1.transform.position;
                     dirs.Add(v.normalized);
 
                     float score = 0;
-                    if (p1.proj_type == ProjectileType.Fire && p2.proj_type == ProjectileType.Ice ||
-                        p1.proj_type == ProjectileType.Ice && p2.proj_type == ProjectileType.Water ||
-                        p1.proj_type == ProjectileType.Water && p2.proj_type == ProjectileType.Fire)
+                    if (Projectile.Defeats(p1, p2))
                         score += 100;
                     score -= v.magnitude / 100f;
 
