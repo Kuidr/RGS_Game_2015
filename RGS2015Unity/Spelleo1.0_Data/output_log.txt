@@ -2,36 +2,48 @@ Initialize engine version: 5.1.1f1 (2046fc06d4d8)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
-    Vendor:   NVIDIA
-    VRAM:     3072 MB
+    Renderer: Intel(R) HD Graphics 4000 (ID=0x166)
+    Vendor:   Intel
+    VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
-Loading C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.098 seconds
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.052 seconds
+desktop: 1600x900 50Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Robert\Keep\Personal\Game Development\RGS2015\RGS_Game_2015\RGS2015Unity\Spelleo1.0_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Robert Wild\Keep\Personal\Game Development\Spelleo_RGS2015\RGS2015Unity\Spelleo1.0_Data\Managed\System.dll (this message is harmless)
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.071434 ms
+UnloadTime: 2.209778 ms
 
 Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1489.
-Total: 0.460481 ms (FindLiveObjects: 0.041569 ms CreateObjectMapping: 0.034836 ms MarkObjects: 0.375586 ms  DeleteObjects: 0.008196 ms)
+Total: 0.663570 ms (FindLiveObjects: 0.062994 ms CreateObjectMapping: 0.067949 ms MarkObjects: 0.519885 ms  DeleteObjects: 0.012032 ms)
 
 Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.415404 ms
+UnloadTime: 4.004428 ms
 
-Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 1031.
-Total: 1.182380 ms (FindLiveObjects: 0.117389 ms CreateObjectMapping: 0.054449 ms MarkObjects: 0.952285 ms  DeleteObjects: 0.057669 ms)
+Unloading 65 unused Assets to reduce memory usage. Loaded Objects now: 1024.
+Total: 0.814333 ms (FindLiveObjects: 0.089891 ms CreateObjectMapping: 0.030789 ms MarkObjects: 0.653307 ms  DeleteObjects: 0.039637 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.918027 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 1489.
+Total: 0.755231 ms (FindLiveObjects: 0.073258 ms CreateObjectMapping: 0.047069 ms MarkObjects: 0.622163 ms  DeleteObjects: 0.012386 ms)
+
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.428185 ms
+
+Unloading 65 unused Assets to reduce memory usage. Loaded Objects now: 1024.
+Total: 1.044725 ms (FindLiveObjects: 0.087768 ms CreateObjectMapping: 0.044945 ms MarkObjects: 0.863880 ms  DeleteObjects: 0.047423 ms)
 
